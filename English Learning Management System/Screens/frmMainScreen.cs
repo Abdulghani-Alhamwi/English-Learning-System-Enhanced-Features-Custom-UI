@@ -86,7 +86,7 @@ namespace English_Learning_Management_System
             }
 
         }
-
+        
         void RemoveSelectedCheckedWordsFromFile(string FileName)
         {
             if (lstvWords.SelectedItems.Count == 0)
@@ -283,10 +283,15 @@ namespace English_Learning_Management_System
                     clsLib.SpellAWordLEGACY(e.Item.SubItems[0].Text);
                 else
                     clsLib.SpellAWordMOD(e.Item.SubItems[0].Text);
+
+                // In order to be able to spell the same word more than one time we refresh the list view by reloading data and in order to spell right and to not go infinite speak for the word -> we used the thread.Sleep () .
+                Thread.Sleep(700);
+                AddWordsToListView(true);
             }
 
             //The Main Item-> the first item -> the first column is stored as SubItems[0]
             //Additional Columns start from SubItems[1] and so on.
+
         }
 
 
@@ -357,8 +362,12 @@ namespace English_Learning_Management_System
 
         }
 
+        /* We make the list to be local not globally because :
+           if the app is installed on client and it has the microsoft speech run time not installed
+         -> we will have an exception -> So , we made it local to handle exceptions .
+        */
         //private List<InstalledVoice> AllInstalledVoices = clsLib.GetAllModernInstalledVoices();
-        
+
         private void microsoftDavidDesktopToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UnCheckAllUnUsedOptions(1);
@@ -387,6 +396,7 @@ namespace English_Learning_Management_System
             catch // Catch any exception .
             {
                 // Future Enhancement is to saave error on log file .
+                herenaToolStripMenuItem.Checked = false;
             }
         }
         private void hayleyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -402,6 +412,7 @@ namespace English_Learning_Management_System
             catch // Catch any exception .
             {
                 // Future Enhancement is to saave error on log file .
+                hayleyToolStripMenuItem.Checked = false;
             }
         }
         
@@ -419,6 +430,7 @@ namespace English_Learning_Management_System
             catch // Catch any exception .
             {
                 // Future Enhancement is to saave error on log file .
+                gBCHazelToolStripMenuItem.Checked = false;
             }
         }
         
@@ -435,6 +447,7 @@ namespace English_Learning_Management_System
             catch // Catch any exception .
             {
                 // Future Enhancement is to saave error on log file .
+                herenaToolStripMenuItem1.Checked = false;
             }
         }
         private void iNHeeraToolStripMenuItem_Click(object sender, EventArgs e)
@@ -450,6 +463,7 @@ namespace English_Learning_Management_System
             catch // Catch any exception .
             {
                 // Future Enhancement is to saave error on log file .
+                iNHeeraToolStripMenuItem.Checked = false;
             }
         }
         private void daDKvHelleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -465,6 +479,7 @@ namespace English_Learning_Management_System
             catch // Catch any exception .
             {
                 // Future Enhancement is to saave error on log file .
+                daDKvHelleToolStripMenuItem.Checked = false;
             }
         }
         
@@ -481,6 +496,7 @@ namespace English_Learning_Management_System
             catch // Catch any exception .
             {
                 // Future Enhancement is to saave error on log file .
+                esHelenaToolStripMenuItem.Checked = false;
             }
         }
         
@@ -497,6 +513,7 @@ namespace English_Learning_Management_System
             catch // Catch any exception .
             {
                 // Future Enhancement is to saave error on log file .
+                esMXYHildaToolStripMenuItem.Checked = false;
             }
         }
         
@@ -513,6 +530,7 @@ namespace English_Learning_Management_System
             catch // Catch any exception .
             {
                 // Future Enhancement is to saave error on log file .
+                fiHeidiToolStripMenuItem.Checked = false;
             }
         }
         
@@ -529,6 +547,7 @@ namespace English_Learning_Management_System
             catch // Catch any exception .
             {
                 // Future Enhancement is to saave error on log file .
+                frFRYHortenseToolStripMenuItem.Checked = false;
             }
         }
         
@@ -545,6 +564,7 @@ namespace English_Learning_Management_System
             catch // Catch any exception .
             {
                 // Future Enhancement is to saave error on log file .
+                jaHarukaToolStripMenuItem.Checked = false;
             }
         }
         
@@ -561,6 +581,7 @@ namespace English_Learning_Management_System
             catch // Catch any exception .
             {
                 // Future Enhancement is to saave error on log file .
+                kokrKRreAMiToolStripMenuItem.Checked = false;
             }
         }
         
@@ -577,6 +598,7 @@ namespace English_Learning_Management_System
             catch // Catch any exception .
             {
                 // Future Enhancement is to saave error on log file .
+                nbnoHuldaToolStripMenuItem.Checked = false;
             }
         }
         
@@ -593,6 +615,7 @@ namespace English_Learning_Management_System
             catch // Catch any exception .
             {
                 // Future Enhancement is to saave error on log file .
+                nbNOHuldaToolStripMenuItem1.Checked = false;
             }
         }
         
@@ -609,6 +632,7 @@ namespace English_Learning_Management_System
             catch // Catch any exception .
             {
                 // Future Enhancement is to saave error on log file .
+                rUElenaToolStripMenuItem.Checked = false;
             }
         }
         private void plPLPaulinaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -624,6 +648,7 @@ namespace English_Learning_Management_System
             catch // Catch any exception .
             {
                 // Future Enhancement is to saave error on log file .
+                plPLPaulinaToolStripMenuItem.Checked = false;
             }
         }
         private void ptHeliaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -639,6 +664,7 @@ namespace English_Learning_Management_System
             catch // Catch any exception .
             {
                 // Future Enhancement is to saave error on log file .
+                ptHeliaToolStripMenuItem.Checked = false;
             }
         }
         private void zhHKHKHunYeeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -654,6 +680,7 @@ namespace English_Learning_Management_System
             catch // Catch any exception .
             {
                 // Future Enhancement is to saave error on log file .
+                zhHKHKHunYeeToolStripMenuItem.Checked = false;
             }
         }
 
@@ -670,6 +697,7 @@ namespace English_Learning_Management_System
             catch // Catch any exception .
             {
                 // Future Enhancement is to saave error on log file .
+                zhTvVHanHanToolStripMenuItem.Checked = false;
             }
         }
 

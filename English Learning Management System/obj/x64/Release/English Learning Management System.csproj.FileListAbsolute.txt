@@ -23,3 +23,28 @@ D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learn
 D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\x64\Release\English Learning Management System.exe.manifest
 D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\x64\Release\English Learning Management System.application
 D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\x64\Release\English .B1637C8A.Up2Date
+C:\Users\User\Desktop\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\x64\Release\English Learning Management System.exe.config
+C:\Users\User\Desktop\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\x64\Release\English Learning Management System.exe.manifest
+C:\Users\User\Desktop\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\x64\Release\English Learning Management System.application
+C:\Users\User\Desktop\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\x64\Release\English Learning Management System.exe
+C:\Users\User\Desktop\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\x64\Release\English Learning Management System.pdb
+C:\Users\User\Desktop\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\x64\Release\EnahncedControls.dll
+C:\Users\User\Desktop\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\x64\Release\Microsoft.Speech.dll
+C:\Users\User\Desktop\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\x64\Release\NAudio.dll
+C:\Users\User\Desktop\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\x64\Release\Newtonsoft.Json.dll
+C:\Users\User\Desktop\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\x64\Release\Newtonsoft.Json.xml
+C:\Users\User\Desktop\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\x64\Release\English Learning Management System.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\x64\Release\English_Learning_Management_System.Screens.frmEnglishWordsPresentaion.resources
+C:\Users\User\Desktop\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\x64\Release\English_Learning_Management_System.Screens.frmAddMoreATransaltions.resources
+C:\Users\User\Desktop\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\x64\Release\English_Learning_Management_System.Screens.frmAddEnglishWord.resources
+C:\Users\User\Desktop\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\x64\Release\English_Learning_Management_System.Screens.frmExample.resources
+C:\Users\User\Desktop\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\x64\Release\English_Learning_Management_System.Screens.frmLFFirstLoad.resources
+C:\Users\User\Desktop\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\x64\Release\English_Learning_Management_System.Properties.Resources.resources
+C:\Users\User\Desktop\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\x64\Release\English_Learning_Management_System.frmMainScreen.resources
+C:\Users\User\Desktop\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\x64\Release\English Learning Management System.csproj.GenerateResource.cache
+C:\Users\User\Desktop\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\x64\Release\English Learning Management System.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\x64\Release\English Learning Management System.exe.manifest
+C:\Users\User\Desktop\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\x64\Release\English Learning Management System.application
+C:\Users\User\Desktop\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\x64\Release\English .B1637C8A.Up2Date
+C:\Users\User\Desktop\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\x64\Release\English Learning Management System.exe
+C:\Users\User\Desktop\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\x64\Release\English Learning Management System.pdb

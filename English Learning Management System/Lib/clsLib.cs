@@ -1,6 +1,4 @@
-﻿using Microsoft.Speech.Synthesis;
-using NAudio.Dsp;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -8,6 +6,8 @@ using System.Media;
 using System.Speech.Synthesis;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Speech.Synthesis;
+using NAudio.Dsp;
 
 namespace Lib
 {
@@ -26,12 +26,14 @@ namespace Lib
 
 
         static System.Speech.Synthesis.SpeechSynthesizer _speaker = new System.Speech.Synthesis.SpeechSynthesizer();
-        static Microsoft.Speech.Synthesis.SpeechSynthesizer _speakerMOD = new Microsoft.Speech.Synthesis.SpeechSynthesizer();
+       static Microsoft.Speech.Synthesis.SpeechSynthesizer _speakerMOD = null;
 
         public static bool isDefaultOutputSet = false;
         public static void SpellAWordMOD(string Word)
         {
-            if(!isDefaultOutputSet)
+            _speakerMOD = new Microsoft.Speech.Synthesis.SpeechSynthesizer();
+
+            if (!isDefaultOutputSet)
             {
                 _speakerMOD.SetOutputToDefaultAudioDevice();
                 isDefaultOutputSet = true;
@@ -108,8 +110,11 @@ namespace Lib
 
         public static void ChangeSpellVoiceMOD(Microsoft.Speech.Synthesis.InstalledVoice Sendedvoice)
         {
+
             using (Microsoft.Speech.Synthesis.SpeechSynthesizer speaker = new Microsoft.Speech.Synthesis.SpeechSynthesizer())
             {
+                _speakerMOD = new Microsoft.Speech.Synthesis.SpeechSynthesizer();
+
                 // set output first
                 speaker.SetOutputToDefaultAudioDevice();
                 // iterate installed voices safely

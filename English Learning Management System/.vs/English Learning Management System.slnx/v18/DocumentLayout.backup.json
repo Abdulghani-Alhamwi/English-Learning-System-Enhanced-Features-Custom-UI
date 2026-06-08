@@ -1,12 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\My Projects\\English-Learning-System-Custom-UI-Enhanced-Features\\English Learning Management System\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{8667C375-3F72-4863-B5E8-FBA320B2CAB4}|English Learning Management System.csproj|d:\\my projects\\english-learning-system-custom-ui-enhanced-features\\english learning management system\\screens\\frmmainscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8667C375-3F72-4863-B5E8-FBA320B2CAB4}|English Learning Management System.csproj|solutionrelative:screens\\frmmainscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\English-Learning-System-Custom-UI-Enhanced-Features\\English Learning Management System\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -39,19 +34,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmMainScreen.cs",
-              "DocumentMoniker": "D:\\My Projects\\English-Learning-System-Custom-UI-Enhanced-Features\\English Learning Management System\\Screens\\frmMainScreen.cs",
-              "RelativeDocumentMoniker": "Screens\\frmMainScreen.cs",
-              "ToolTip": "D:\\My Projects\\English-Learning-System-Custom-UI-Enhanced-Features\\English Learning Management System\\Screens\\frmMainScreen.cs",
-              "RelativeToolTip": "Screens\\frmMainScreen.cs",
-              "ViewState": "AgIAAMgAAAAAAAAAAAAwwM0AAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-08T20:57:08.187Z",
-              "EditorCaption": ""
             }
           ]
         }
