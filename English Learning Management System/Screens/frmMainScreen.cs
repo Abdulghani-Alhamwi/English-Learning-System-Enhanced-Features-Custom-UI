@@ -34,17 +34,17 @@ namespace English_Learning_Management_System
             frmLifeCycle.Close();
         }
 
-        List <string> AddArabicTranslations (string T1,string T2,string T3,string T4)
+        List<string> AddArabicTranslations(string T1, string T2, string T3, string T4)
         {
-            List <String> Trans = new List<String>();
+            List<String> Trans = new List<String>();
 
-            if (T1 != "" && T1!=null)
-                Trans.Add(T1) ;
-            if(T2!="" && T2 != null)
+            if (T1 != "" && T1 != null)
+                Trans.Add(T1);
+            if (T2 != "" && T2 != null)
                 Trans.Add(T2);
-            if (T3!="" && T3 != null)
+            if (T3 != "" && T3 != null)
                 Trans.Add(T3);
-            if (T4!="" && T4 != null)
+            if (T4 != "" && T4 != null)
                 Trans.Add(T4);
 
             return Trans;
@@ -52,7 +52,7 @@ namespace English_Learning_Management_System
 
         string CheckedWordsFileName = "CheckedStateWords.txt";
 
-        void AddCheckedWordToFile(string FileName,int WordID)
+        void AddCheckedWordToFile(string FileName, int WordID)
         {
             using (StreamWriter MyFile = new StreamWriter(FileName, true))
             {
@@ -66,19 +66,19 @@ namespace English_Learning_Management_System
             File.Delete(FileName);
             int SelectedWordId;
             bool FoundSelectedItem = false;
-            for (int i=0;i<CheckedWordsID.Count; i++)
+            for (int i = 0; i < CheckedWordsID.Count; i++)
             {
                 for (int j = 0; j < lstvWords.SelectedItems.Count; j++)
                 {
                     SelectedWordId = GetWordID(lstvWords.SelectedItems[j].Text);
-                    
-                    if(SelectedWordId == CheckedWordsID[i])
+
+                    if (SelectedWordId == CheckedWordsID[i])
                     {
                         FoundSelectedItem = true;
                         break;
                     }
                 }
-                if(!FoundSelectedItem)
+                if (!FoundSelectedItem)
                 {
                     AddCheckedWordToFile(CheckedWordsFileName, CheckedWordsID[i]);
                 }
@@ -99,9 +99,9 @@ namespace English_Learning_Management_System
             AddWordsToListView(true);
         }
 
-        int GetWordID (string Word)
+        int GetWordID(string Word)
         {
-            for (int i=0; i< lstvWords.Items.Count; i++)
+            for (int i = 0; i < lstvWords.Items.Count; i++)
             {
                 if (lstvWords.Items[i].Text == Word)
                     return i;
@@ -117,12 +117,12 @@ namespace English_Learning_Management_System
                 return;
             }
 
-                for (int i = 0; i < lstvWords.SelectedItems.Count; i++)
-                {
+            for (int i = 0; i < lstvWords.SelectedItems.Count; i++)
+            {
                 AddCheckedWordToFile(CheckedWordsFileName, GetWordID(lstvWords.SelectedItems[i].Text));
-                }
-                AddWordsToListView(true);
-           
+            }
+            AddWordsToListView(true);
+
         }
 
         List<int> LoadCheckedWordsIdFromFile(string FileName)
@@ -136,8 +136,8 @@ namespace English_Learning_Management_System
                     string Line;
                     while ((Line = MyFile.ReadLine()) != null)
                     {
-                        if(Line!="")
-                        lCheckedWordsID.Add(int.Parse(Line.Trim()));
+                        if (Line != "")
+                            lCheckedWordsID.Add(int.Parse(Line.Trim()));
                     }
                 }
             }
@@ -205,23 +205,31 @@ namespace English_Learning_Management_System
 
             device = enumerator.GetDefaultAudioEndpoint(DataFlow.Render, Role.Multimedia);
             trackBar1.Value = (int)(device.AudioEndpointVolume.MasterVolumeLevelScalar * 100);
-            clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[3]);
+            try
+            {
+        List<InstalledVoice> AllInstalledVoices = clsLib.GetAllModernInstalledVoices();
+        clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[3]);
+            }
+            catch // Catch any exception .
+            {
+                // Future Enhancement is to saave error on log file .
+            }
         }
         public void RemovePreviouseCheckedItemForView(short ChoosedItemNumber)
         {
-            if (detailsToolStripMenuItem.Checked && ChoosedItemNumber!=1)
+            if (detailsToolStripMenuItem.Checked && ChoosedItemNumber != 1)
                 detailsToolStripMenuItem.Checked = false;
 
-            if (listToolStripMenuItem.Checked && ChoosedItemNumber!=2)
+            if (listToolStripMenuItem.Checked && ChoosedItemNumber != 2)
                 listToolStripMenuItem.Checked = false;
 
-            if(largeIconToolStripMenuItem.Checked && ChoosedItemNumber!=3)
+            if (largeIconToolStripMenuItem.Checked && ChoosedItemNumber != 3)
                 largeIconToolStripMenuItem.Checked = false;
 
-            if(smallIconToolStripMenuItem.Checked && ChoosedItemNumber!=4)
+            if (smallIconToolStripMenuItem.Checked && ChoosedItemNumber != 4)
                 smallIconToolStripMenuItem.Checked = false;
 
-            if(tileToolStripMenuItem.Checked && ChoosedItemNumber!=5)
+            if (tileToolStripMenuItem.Checked && ChoosedItemNumber != 5)
                 tileToolStripMenuItem.Checked = false;
 
         }
@@ -276,15 +284,15 @@ namespace English_Learning_Management_System
                 else
                     clsLib.SpellAWordMOD(e.Item.SubItems[0].Text);
             }
-            
+
             //The Main Item-> the first item -> the first column is stored as SubItems[0]
             //Additional Columns start from SubItems[1] and so on.
         }
-        
-     
+
+
         private void UnCheckAllUnUsedOptions(short NumberOfUseedOption)
         {
-            if(NumberOfUseedOption!=1)
+            if (NumberOfUseedOption != 1)
                 microsoftDavidDesktopToolStripMenuItem.Checked = false;
 
             if (NumberOfUseedOption != 2)
@@ -349,7 +357,8 @@ namespace English_Learning_Management_System
 
         }
 
-        private List<InstalledVoice> AllInstalledVoices = clsLib.GetAllModernInstalledVoices();
+        //private List<InstalledVoice> AllInstalledVoices = clsLib.GetAllModernInstalledVoices();
+        
         private void microsoftDavidDesktopToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UnCheckAllUnUsedOptions(1);
@@ -367,130 +376,301 @@ namespace English_Learning_Management_System
         }
         private void LisHelenToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            try 
+            {
+                List<InstalledVoice> AllInstalledVoices = clsLib.GetAllModernInstalledVoices();
+
+                clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[0]);
             UnCheckAllUnUsedOptions(3);
-            LEGACY = false;
-            clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[0]);
+                LEGACY = false; 
+            }
+            catch // Catch any exception .
+            {
+                // Future Enhancement is to saave error on log file .
+            }
         }
         private void hayleyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UnCheckAllUnUsedOptions(4);
-            LEGACY = false;
-            clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[1]);
+            try
+            {
+                List<InstalledVoice> AllInstalledVoices = clsLib.GetAllModernInstalledVoices();
+
+                clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[1]);
+                UnCheckAllUnUsedOptions(4);
+                LEGACY = false;
+            }
+            catch // Catch any exception .
+            {
+                // Future Enhancement is to saave error on log file .
+            }
         }
         
 
         private void gBCHazelToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UnCheckAllUnUsedOptions(5);
-            LEGACY = false;
-            clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[2]);
+            try
+            {
+                List<InstalledVoice> AllInstalledVoices = clsLib.GetAllModernInstalledVoices();
+
+                clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[2]);
+                UnCheckAllUnUsedOptions(5);
+                LEGACY = false;
+            }
+            catch // Catch any exception .
+            {
+                // Future Enhancement is to saave error on log file .
+            }
         }
         
         private void herenaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            UnCheckAllUnUsedOptions(6);
-            LEGACY = false;
-            clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[3]);
+            try
+            {
+                List<InstalledVoice> AllInstalledVoices = clsLib.GetAllModernInstalledVoices();
+
+                clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[3]);
+                UnCheckAllUnUsedOptions(6);
+                LEGACY = false;
+            }
+            catch // Catch any exception .
+            {
+                // Future Enhancement is to saave error on log file .
+            }
         }
         private void iNHeeraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UnCheckAllUnUsedOptions(7);
-            LEGACY = false;
-            clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[4]);
+            try
+            {
+                List<InstalledVoice> AllInstalledVoices = clsLib.GetAllModernInstalledVoices();
+
+                clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[4]);
+                UnCheckAllUnUsedOptions(7);
+                LEGACY = false;
+            }
+            catch // Catch any exception .
+            {
+                // Future Enhancement is to saave error on log file .
+            }
         }
         private void daDKvHelleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UnCheckAllUnUsedOptions(8);
-            LEGACY = false;
-            clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[5]);
+            try
+            {
+                List<InstalledVoice> AllInstalledVoices = clsLib.GetAllModernInstalledVoices();
+
+                clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[5]);
+                UnCheckAllUnUsedOptions(8);
+                LEGACY = false;
+            }
+            catch // Catch any exception .
+            {
+                // Future Enhancement is to saave error on log file .
+            }
         }
         
         private void esHelenaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UnCheckAllUnUsedOptions(9);
-            LEGACY = false;
-            clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[6]);
+            try
+            {
+                List<InstalledVoice> AllInstalledVoices = clsLib.GetAllModernInstalledVoices();
+
+                clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[6]);
+                UnCheckAllUnUsedOptions(9);
+                LEGACY = false;
+            }
+            catch // Catch any exception .
+            {
+                // Future Enhancement is to saave error on log file .
+            }
         }
         
         private void esMXYHildaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UnCheckAllUnUsedOptions(10);
-            LEGACY = false;
-            clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[7]);
+            try
+            {
+                List<InstalledVoice> AllInstalledVoices = clsLib.GetAllModernInstalledVoices();
+
+                clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[7]);
+                UnCheckAllUnUsedOptions(10);
+                LEGACY = false;
+            }
+            catch // Catch any exception .
+            {
+                // Future Enhancement is to saave error on log file .
+            }
         }
         
         private void fiHeidiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UnCheckAllUnUsedOptions(11);
-            LEGACY = false;
-            clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[8]);
+            try
+            {
+                List<InstalledVoice> AllInstalledVoices = clsLib.GetAllModernInstalledVoices();
+
+                clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[8]);
+                UnCheckAllUnUsedOptions(11);
+                LEGACY = false;
+            }
+            catch // Catch any exception .
+            {
+                // Future Enhancement is to saave error on log file .
+            }
         }
         
         private void frFRYHortenseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UnCheckAllUnUsedOptions(12);
-            LEGACY = false;
-            clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[9]);
+            try
+            {
+                List<InstalledVoice> AllInstalledVoices = clsLib.GetAllModernInstalledVoices();
+
+                clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[9]);
+                UnCheckAllUnUsedOptions(12);
+                LEGACY = false;
+            }
+            catch // Catch any exception .
+            {
+                // Future Enhancement is to saave error on log file .
+            }
         }
         
         private void jaHarukaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UnCheckAllUnUsedOptions(13);
-            LEGACY = false;
-            clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[10]);
+            try
+            {
+                List<InstalledVoice> AllInstalledVoices = clsLib.GetAllModernInstalledVoices();
+
+                clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[10]);
+                UnCheckAllUnUsedOptions(13);
+                LEGACY = false;
+            }
+            catch // Catch any exception .
+            {
+                // Future Enhancement is to saave error on log file .
+            }
         }
         
         private void kokrKRreAMiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UnCheckAllUnUsedOptions(14);
-            LEGACY = false;
-            clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[11]);
+            try
+            {
+                List<InstalledVoice> AllInstalledVoices = clsLib.GetAllModernInstalledVoices();
+
+                clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[11]);
+                UnCheckAllUnUsedOptions(14);
+                LEGACY = false;
+            }
+            catch // Catch any exception .
+            {
+                // Future Enhancement is to saave error on log file .
+            }
         }
         
         private void nbnoHuldaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UnCheckAllUnUsedOptions(15);
-            LEGACY = false;
-            clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[12]);
+            try
+            {
+                List<InstalledVoice> AllInstalledVoices = clsLib.GetAllModernInstalledVoices();
+
+                clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[12]);
+                UnCheckAllUnUsedOptions(15);
+                LEGACY = false;
+            }
+            catch // Catch any exception .
+            {
+                // Future Enhancement is to saave error on log file .
+            }
         }
         
         private void nbNOHannaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            UnCheckAllUnUsedOptions(16);
-            LEGACY = false;
-            clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[13]);
+            try
+            {
+                List<InstalledVoice> AllInstalledVoices = clsLib.GetAllModernInstalledVoices();
+
+                clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[13]);
+                UnCheckAllUnUsedOptions(16);
+                LEGACY = false;
+            }
+            catch // Catch any exception .
+            {
+                // Future Enhancement is to saave error on log file .
+            }
         }
         
         private void rUElenaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UnCheckAllUnUsedOptions(17);
-            LEGACY = false;
-            clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[14]);
+            try
+            {
+                List<InstalledVoice> AllInstalledVoices = clsLib.GetAllModernInstalledVoices();
+
+                clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[14]);
+                UnCheckAllUnUsedOptions(17);
+                LEGACY = false;
+            }
+            catch // Catch any exception .
+            {
+                // Future Enhancement is to saave error on log file .
+            }
         }
         private void plPLPaulinaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UnCheckAllUnUsedOptions(18);
-            LEGACY = false;
-            clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[15]);
+            try
+            {
+                List<InstalledVoice> AllInstalledVoices = clsLib.GetAllModernInstalledVoices();
+
+                clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[15]);
+                UnCheckAllUnUsedOptions(18);
+                LEGACY = false;
+            }
+            catch // Catch any exception .
+            {
+                // Future Enhancement is to saave error on log file .
+            }
         }
         private void ptHeliaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UnCheckAllUnUsedOptions(19);
-            LEGACY = false;
-            clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[16]);
+            try
+            {
+                List<InstalledVoice> AllInstalledVoices = clsLib.GetAllModernInstalledVoices();
+
+                clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[16]);
+                UnCheckAllUnUsedOptions(19);
+                LEGACY = false;
+            }
+            catch // Catch any exception .
+            {
+                // Future Enhancement is to saave error on log file .
+            }
         }
         private void zhHKHKHunYeeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UnCheckAllUnUsedOptions(20);
-            LEGACY = false;
-            clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[17]);
+            try
+            {
+                List<InstalledVoice> AllInstalledVoices = clsLib.GetAllModernInstalledVoices();
+
+                clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[17]);
+                UnCheckAllUnUsedOptions(20);
+                LEGACY = false;
+            }
+            catch // Catch any exception .
+            {
+                // Future Enhancement is to saave error on log file .
+            }
         }
 
         private void zhTvVHanHanToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UnCheckAllUnUsedOptions(21);
-            LEGACY = false;
-            clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[18]);
+            try
+            {
+                List<InstalledVoice> AllInstalledVoices = clsLib.GetAllModernInstalledVoices();
+
+                clsLib.ChangeSpellVoiceMOD(AllInstalledVoices[18]);
+                UnCheckAllUnUsedOptions(21);
+                LEGACY = false;
+            }
+            catch // Catch any exception .
+            {
+                // Future Enhancement is to saave error on log file .
+            }
         }
 
         private List<ListViewItem> prepareSelectedItemsToMove(ListView.SelectedListViewItemCollection SelectedItems)

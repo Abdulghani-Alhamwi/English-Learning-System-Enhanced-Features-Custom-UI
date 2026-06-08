@@ -14,6 +14,27 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <UpdateUrl>https://abdulghani-alhamwi.github.io/EnglishAppUpdates/</UpdateUrl>
+    <ProductName>English Learning Management System</ProductName>
+    <PublisherName>Abdulghani</PublisherName>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>true</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -74,6 +95,21 @@
     <LangVersion>7.3</LangVersion>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>38E42BCE6FED586564CF7918CDC6B96B143C1EDA</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>English Learning Management System_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Azure.Core">
@@ -180,6 +216,7 @@
     <EmbeddedResource Include="Screens\frmMainScreen.resx">
       <DependentUpon>frmMainScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="English Learning Management System_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -198,43 +235,7 @@
     <None Include="Logo.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Whisk_79977cb11a3ae07b0804415d6a87e69ceg %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Whisk_3ecf997d7e6d1a5862a42ef70cb64c95eg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Whisk_79977cb11a3ae07b0804415d6a87e69ceg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Whisk_7af3eac3b10eebdbad6485e1d9a71c9bdr.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Whisk_076b156fd1bef568fd048361114e5be5eg.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Whisk_5f815065315d09592be4f3ec4ab8d974eg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Whisk_20e41b3c874b33d9ae94b983270bb25beg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Whisk_f4b8d3091f5472eb67a4df5b97e60128eg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Whisk_8d0be457adac59c9b034565f14d4192bdr.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Whisk_b31e7c93bc31ada80ac46f9bf45352dfdr.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Whisk_a8ae8f2288e0db49c3b42f3dcb4a165edr.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Whisk_8479a259422cb13aa384fcab30cfc42adr.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Whisk_5952a128da5ba2d81e44bf130280d6d9dr.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Whisk_464189a0601ec149fd841f6c137a8e2edr.png" />
@@ -243,67 +244,19 @@
     <None Include="Resources\Whisk_b431aa9608a8e569d7d4dd5bb8a1a18bdr.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Whisk_0bf6430918b1f5daae84ab013223a4a5dr.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Whisk_15939799505bc0cb8044a9d2c83a4d19dr.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Whisk_d6d536d0adb262c8ed24e4e327f35e7cdr.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Whisk_5492df75a0d22f3b4ff404404595b627dr.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Whisk_6eeff68830bbca59d794a6bf4cc3afd7dr.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Whisk_3394e9a0b86546a88b841d1cc3de004adr.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Whisk_311aac7ad8568228d29447fcf1b7dc93dr.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Whisk_7a2731d0a50dfd5b1424fb307dcf5f16dr.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Whisk_3e207dfd0bd7267b30041496d6aa7cf9dr.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Whisk_b9b95ee79604c0b91c44d0250172aa6adr.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Whisk_48b8f730db7cef7bbed435fed23e115edr.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Whisk_c556d621e533b8c9615450e8526761c8dr.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Whisk_84374cf987abd289027437745415fc16dr.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Whisk_6aba0891d35a9dcad954bf110b95ef8ddr.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Whisk_129c13e609585c5a034470c1ca88eddedr.jpeg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Whisk_1669068d1a729e2a0e34795a81fb5a40dr.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Whisk_7d4409953bc0d76b679441bb050006fadr.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Whisk_8f39277112fd307b03d4fc2d57204ca5dr.jpeg" />
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="packages\System.Runtime.WindowsRuntime.4.6.0\build\net461\System.Runtime.WindowsRuntime.targets" Condition="Exists('packages\System.Runtime.WindowsRuntime.4.6.0\build\net461\System.Runtime.WindowsRuntime.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('packages\System.Runtime.WindowsRuntime.4.6.0\build\net461\System.Runtime.WindowsRuntime.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\System.Runtime.WindowsRuntime.4.6.0\build\net461\System.Runtime.WindowsRuntime.targets'))" />
-    <Error Condition="!Exists('packages\System.Runtime.WindowsRuntime.UI.Xaml.4.6.0\build\net461\System.Runtime.WindowsRuntime.UI.Xaml.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\System.Runtime.WindowsRuntime.UI.Xaml.4.6.0\build\net461\System.Runtime.WindowsRuntime.UI.Xaml.targets'))" />
-  </Target>
-  <Import Project="packages\System.Runtime.WindowsRuntime.UI.Xaml.4.6.0\build\net461\System.Runtime.WindowsRuntime.UI.Xaml.targets" Condition="Exists('packages\System.Runtime.WindowsRuntime.UI.Xaml.4.6.0\build\net461\System.Runtime.WindowsRuntime.UI.Xaml.targets')" />
 </Project>

@@ -1,86 +1,3 @@
-D:\My Projects\English Learning Management System\bin\x64\Release\English Learning Management System.exe.config
-D:\My Projects\English Learning Management System\bin\x64\Release\English Learning Management System.exe
-D:\My Projects\English Learning Management System\bin\x64\Release\English Learning Management System.pdb
-D:\My Projects\English Learning Management System\bin\x64\Release\Guna.UI2.dll
-D:\My Projects\English Learning Management System\bin\x64\Release\Microsoft.Speech.dll
-D:\My Projects\English Learning Management System\bin\x64\Release\NAudio.dll
-D:\My Projects\English Learning Management System\bin\x64\Release\System.Threading.Tasks.Extensions.dll
-D:\My Projects\English Learning Management System\bin\x64\Release\System.Memory.dll
-D:\My Projects\English Learning Management System\bin\x64\Release\System.Runtime.CompilerServices.Unsafe.dll
-D:\My Projects\English Learning Management System\bin\x64\Release\System.Numerics.Vectors.dll
-D:\My Projects\English Learning Management System\obj\x64\Release\English Learning Management System.csproj.AssemblyReference.cache
-D:\My Projects\English Learning Management System\obj\x64\Release\English Learning Management System.csproj.SuggestedBindingRedirects.cache
-D:\My Projects\English Learning Management System\obj\x64\Release\English Learning Management System.exe.config
-D:\My Projects\English Learning Management System\obj\x64\Release\English_Learning_Management_System.Screens.frmAddEnglishWords.resources
-D:\My Projects\English Learning Management System\obj\x64\Release\English_Learning_Management_System.Screens.frmAddMoreTranslations.resources
-D:\My Projects\English Learning Management System\obj\x64\Release\English_Learning_Management_System.Screens.frmExamplesInsertion.resources
-D:\My Projects\English Learning Management System\obj\x64\Release\English_Learning_Management_System.frmLFFirstLoad.resources
-D:\My Projects\English Learning Management System\obj\x64\Release\English_Learning_Management_System.Properties.Resources.resources
-D:\My Projects\English Learning Management System\obj\x64\Release\English_Learning_Management_System.frmMainScreen.resources
-D:\My Projects\English Learning Management System\obj\x64\Release\English_Learning_Management_System.Screens.frmSpeakWordsWithExample.resources
-D:\My Projects\English Learning Management System\obj\x64\Release\English Learning Management System.csproj.GenerateResource.cache
-D:\My Projects\English Learning Management System\obj\x64\Release\English Learning Management System.csproj.CoreCompileInputs.cache
-D:\My Projects\English Learning Management System\obj\x64\Release\English .B1637C8A.Up2Date
-D:\My Projects\English Learning Management System\obj\x64\Release\English Learning Management System.exe
-D:\My Projects\English Learning Management System\obj\x64\Release\English Learning Management System.pdb
-D:\My Projects\English-Learning-Management-System\English Learning Management System\obj\x64\Release\English Learning Management System.csproj.AssemblyReference.cache
-D:\My Projects\English-Learning-Management-System\English Learning Management System\obj\x64\Release\English Learning Management System.csproj.SuggestedBindingRedirects.cache
-D:\My Projects\English-Learning-Management-System\English Learning Management System\obj\x64\Release\English Learning Management System.exe.config
-D:\My Projects\English-Learning-Management-System\English Learning Management System\obj\x64\Release\English_Learning_Management_System.Screens.frmAddEnglishWords.resources
-D:\My Projects\English-Learning-Management-System\English Learning Management System\obj\x64\Release\English_Learning_Management_System.Screens.frmAddMoreTranslations.resources
-D:\My Projects\English-Learning-Management-System\English Learning Management System\obj\x64\Release\English_Learning_Management_System.Screens.frmExamplesInsertion.resources
-D:\My Projects\English-Learning-Management-System\English Learning Management System\obj\x64\Release\English_Learning_Management_System.Properties.Resources.resources
-D:\My Projects\English-Learning-Management-System\English Learning Management System\obj\x64\Release\English_Learning_Management_System.frmMainScreen.resources
-D:\My Projects\English-Learning-Management-System\English Learning Management System\obj\x64\Release\English_Learning_Management_System.Screens.frmSpeakWordsWithExample.resources
-D:\My Projects\English-Learning-Management-System\English Learning Management System\obj\x64\Release\English Learning Management System.csproj.GenerateResource.cache
-D:\My Projects\English-Learning-Management-System\English Learning Management System\obj\x64\Release\English Learning Management System.csproj.CoreCompileInputs.cache
-D:\My Projects\English-Learning-Management-System\English Learning Management System\obj\x64\Release\English Learning Management System.exe
-D:\My Projects\English-Learning-Management-System\English Learning Management System\obj\x64\Release\English Learning Management System.pdb
-D:\My Projects\English-Learning-Management-System\English Learning Management System\bin\x64\Release\English Learning Management System.exe.config
-D:\My Projects\English-Learning-Management-System\English Learning Management System\bin\x64\Release\English Learning Management System.exe
-D:\My Projects\English-Learning-Management-System\English Learning Management System\bin\x64\Release\English Learning Management System.pdb
-D:\My Projects\English-Learning-Management-System\English Learning Management System\bin\x64\Release\Guna.UI2.dll
-D:\My Projects\English-Learning-Management-System\English Learning Management System\bin\x64\Release\Microsoft.Speech.dll
-D:\My Projects\English-Learning-Management-System\English Learning Management System\bin\x64\Release\NAudio.dll
-D:\My Projects\English-Learning-Management-System\English Learning Management System\bin\x64\Release\System.Threading.Tasks.Extensions.dll
-D:\My Projects\English-Learning-Management-System\English Learning Management System\bin\x64\Release\System.Memory.dll
-D:\My Projects\English-Learning-Management-System\English Learning Management System\bin\x64\Release\System.Runtime.CompilerServices.Unsafe.dll
-D:\My Projects\English-Learning-Management-System\English Learning Management System\bin\x64\Release\System.Numerics.Vectors.dll
-D:\My Projects\English-Learning-Management-System\English Learning Management System\obj\x64\Release\English .B1637C8A.Up2Date
-D:\My Projects\English-Learning-Management-System\English Learning Management System\obj\x64\Release\English_Learning_Management_System.frmSpeakWordsProperViewForSocialM.resources
-D:\My Projects\English-Learning-Management-System\English Learning Management System\bin\x64\Release\Newtonsoft.Json.dll
-D:\My Projects\English-Learning-Management-System\English Learning Management System\bin\x64\Release\Newtonsoft.Json.xml
-D:\My Projects\English-Learning-Management-System\English Learning Management System\bin\x64\Release\EnahncedControls.dll
-D:\My Projects\English-Learning-Management-System\English Learning Management System\obj\x64\Release\English_Learning_Management_System.Screens.frmLFFirstLoad.resources
-D:\My Projects\English-Learning-Management-System-Using-My-Desinged-Controls\English Learning Management System\bin\x64\Release\English Learning Management System.exe.config
-D:\My Projects\English-Learning-Management-System-Using-My-Desinged-Controls\English Learning Management System\bin\x64\Release\English Learning Management System.exe
-D:\My Projects\English-Learning-Management-System-Using-My-Desinged-Controls\English Learning Management System\bin\x64\Release\English Learning Management System.pdb
-D:\My Projects\English-Learning-Management-System-Using-My-Desinged-Controls\English Learning Management System\bin\x64\Release\EnahncedControls.dll
-D:\My Projects\English-Learning-Management-System-Using-My-Desinged-Controls\English Learning Management System\bin\x64\Release\Microsoft.Speech.dll
-D:\My Projects\English-Learning-Management-System-Using-My-Desinged-Controls\English Learning Management System\bin\x64\Release\NAudio.dll
-D:\My Projects\English-Learning-Management-System-Using-My-Desinged-Controls\English Learning Management System\bin\x64\Release\Newtonsoft.Json.dll
-D:\My Projects\English-Learning-Management-System-Using-My-Desinged-Controls\English Learning Management System\bin\x64\Release\Newtonsoft.Json.xml
-D:\My Projects\English-Learning-Management-System-Using-My-Desinged-Controls\English Learning Management System\obj\x64\Release\English Learning Management System.csproj.AssemblyReference.cache
-D:\My Projects\English-Learning-Management-System-Using-My-Desinged-Controls\English Learning Management System\obj\x64\Release\English_Learning_Management_System.Screens.frmEnglishWordsPresentaion.resources
-D:\My Projects\English-Learning-Management-System-Using-My-Desinged-Controls\English Learning Management System\obj\x64\Release\English_Learning_Management_System.Screens.frmAddMoreATransaltions.resources
-D:\My Projects\English-Learning-Management-System-Using-My-Desinged-Controls\English Learning Management System\obj\x64\Release\English_Learning_Management_System.Screens.frmAddEnglishWord.resources
-D:\My Projects\English-Learning-Management-System-Using-My-Desinged-Controls\English Learning Management System\obj\x64\Release\English_Learning_Management_System.Screens.frmExample.resources
-D:\My Projects\English-Learning-Management-System-Using-My-Desinged-Controls\English Learning Management System\obj\x64\Release\English_Learning_Management_System.Screens.frmLFFirstLoad.resources
-D:\My Projects\English-Learning-Management-System-Using-My-Desinged-Controls\English Learning Management System\obj\x64\Release\English_Learning_Management_System.Properties.Resources.resources
-D:\My Projects\English-Learning-Management-System-Using-My-Desinged-Controls\English Learning Management System\obj\x64\Release\English_Learning_Management_System.frmMainScreen.resources
-D:\My Projects\English-Learning-Management-System-Using-My-Desinged-Controls\English Learning Management System\obj\x64\Release\English Learning Management System.csproj.GenerateResource.cache
-D:\My Projects\English-Learning-Management-System-Using-My-Desinged-Controls\English Learning Management System\obj\x64\Release\English Learning Management System.csproj.CoreCompileInputs.cache
-D:\My Projects\English-Learning-Management-System-Using-My-Desinged-Controls\English Learning Management System\obj\x64\Release\English .B1637C8A.Up2Date
-D:\My Projects\English-Learning-Management-System-Using-My-Desinged-Controls\English Learning Management System\obj\x64\Release\English Learning Management System.exe
-D:\My Projects\English-Learning-Management-System-Using-My-Desinged-Controls\English Learning Management System\obj\x64\Release\English Learning Management System.pdb
-D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\x64\Release\English Learning Management System.exe.config
-D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\x64\Release\English Learning Management System.exe
-D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\x64\Release\English Learning Management System.pdb
-D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\x64\Release\EnahncedControls.dll
-D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\x64\Release\Microsoft.Speech.dll
-D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\x64\Release\NAudio.dll
-D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\x64\Release\Newtonsoft.Json.dll
-D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\x64\Release\Newtonsoft.Json.xml
 D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\x64\Release\English Learning Management System.csproj.AssemblyReference.cache
 D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\x64\Release\English_Learning_Management_System.Screens.frmEnglishWordsPresentaion.resources
 D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\x64\Release\English_Learning_Management_System.Screens.frmAddMoreATransaltions.resources
@@ -91,6 +8,18 @@ D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learn
 D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\x64\Release\English_Learning_Management_System.frmMainScreen.resources
 D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\x64\Release\English Learning Management System.csproj.GenerateResource.cache
 D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\x64\Release\English Learning Management System.csproj.CoreCompileInputs.cache
-D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\x64\Release\English .B1637C8A.Up2Date
 D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\x64\Release\English Learning Management System.exe
 D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\x64\Release\English Learning Management System.pdb
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\x64\Release\English Learning Management System.exe.config
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\x64\Release\English Learning Management System.exe.manifest
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\x64\Release\English Learning Management System.application
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\x64\Release\English Learning Management System.exe
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\x64\Release\English Learning Management System.pdb
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\x64\Release\EnahncedControls.dll
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\x64\Release\Microsoft.Speech.dll
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\x64\Release\NAudio.dll
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\x64\Release\Newtonsoft.Json.dll
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\x64\Release\Newtonsoft.Json.xml
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\x64\Release\English Learning Management System.exe.manifest
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\x64\Release\English Learning Management System.application
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\x64\Release\English .B1637C8A.Up2Date
