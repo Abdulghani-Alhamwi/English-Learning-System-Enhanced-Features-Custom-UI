@@ -47,14 +47,14 @@ namespace English_Learning_Management_System.Screens
 
                 if (Result == DialogResult.OK)
                 {
-                    clsWord.SaveArabicTranslationsToFile(_ArabicTranslation1, "ArabicTranslationWords.txt", true, true);
+                    clsWord.SaveArabicTranslationsToFile(_ArabicTranslation1, "ArabicTranslationWords.txt", true);
                     this.Close();
                     return;
                 }
             }
             else
             {
-                clsWord.SaveArabicTranslationsToFile(_ArabicTranslation1, "ArabicTranslationWords.txt", true, true, txtA1.Text, txtA2.Text, txtA3.Text);
+                clsWord.SaveArabicTranslationsToFile(_ArabicTranslation1, "ArabicTranslationWords.txt", true, txtA1.Text, txtA2.Text, txtA3.Text);
 
                 MessageBox.Show("Added Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -67,14 +67,14 @@ namespace English_Learning_Management_System.Screens
             if (!EditMode)
             {
                 if (_EnglishWord != "")
-                    SaveEnglishWordsToFile(_EnglishWord, "EnglishWords.txt", true);
+                    SaveEnglishWordsToFile(_EnglishWord, "EnglishWords.txt");
 
                 if (_ArabicTranslation1 != "")
                     _SaveArabicTranslations();
             }
             else
             {
-                clsWord.ATranslations = new clsWord.ArabicTranslation();
+                clsWord.ATranslations = new clsWord.stArabicTranslation();
                 clsWord.ATranslations.Translation1 = _ArabicTranslation1;
 
                 if ((txtA1.Text == "" || txtA1.Text == "Enter Arabic Translation 2") && (txtA2.Text == "" || txtA2.Text == "Enter Arabic Translation 3") && (txtA3.Text == "" || txtA3.Text == "Enter Arabic Translation 4"))

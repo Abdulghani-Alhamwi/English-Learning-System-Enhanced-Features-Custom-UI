@@ -149,7 +149,7 @@ namespace English_Learning_Management_System
             ListViewItem Item;
 
             List<string> lWords = clsWord.LoadEnglishWordsFromFile("EnglishWords.txt");
-            List<clsWord.ArabicTranslation> lWordsTranslations = clsWord.LoadArabicTranslationsFromFile("ArabicTranslationWords.txt");
+            List<clsWord.stArabicTranslation> lWordsTranslations = clsWord.LoadArabicTranslationsFromFile("ArabicTranslationWords.txt");
             List<int> CheckedWordsID = LoadCheckedWordsIdFromFile(CheckedWordsFileName);
 
 

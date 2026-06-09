@@ -15,7 +15,7 @@ namespace Lib
 {
     internal class clsWord
     {
-        internal static bool SaveEnglishWordsToFile(string EnglishWord, string FileName, bool Append)
+        internal static bool SaveEnglishWordsToFile(string EnglishWord, string FileName)
         {
             //if (EnglishWord == "")
             //{
@@ -67,7 +67,7 @@ namespace Lib
             //    //}
             //    return true;
             //}
-            return SaveArabicTranslationsToFile(EnglishWord, FileName, Append, false);
+            return SaveArabicTranslationsToFile(EnglishWord, FileName, false);
         }
 
         private static bool _SaveMoreTranslations(string T1, string T2, string T3, string T4, string FileName, bool WithSeparator = true)
@@ -100,9 +100,9 @@ namespace Lib
 
         }
 
-        internal static bool SaveArabicTranslationsToFile(string Translation1, string FileName, bool Append, bool WithSeparator = true, string Translation2 = null, string Translation3 = null, string Translation4 = null)
+        internal static bool SaveArabicTranslationsToFile(string Translation1, string FileName, bool WithSeparator = true, string Translation2 = null, string Translation3 = null, string Translation4 = null)
         {
-            if (Translation1 == "")
+            if (Translation1 == "" || Translation1==null)
             {
                 MessageBox.Show("You did'nt enter data", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
@@ -112,7 +112,7 @@ namespace Lib
 
         }
 
-        internal struct ArabicTranslation
+        internal struct stArabicTranslation
         {
             public string Translation1;
             public string Translation2;
@@ -120,25 +120,25 @@ namespace Lib
             public string Translation4;
         }
 
-        internal static ArabicTranslation ATranslations;
+        internal static stArabicTranslation ATranslations;
 
-        internal static List<ArabicTranslation> LoadArabicTranslationsFromFile(string FileName)
+        internal static List<stArabicTranslation> LoadArabicTranslationsFromFile(string FileName)
         {
             List<string> lWords = new List<string>();
-            List<ArabicTranslation> lArabicTranslations = new List<ArabicTranslation>();
+            List<stArabicTranslation> lArabicTranslations = new List<stArabicTranslation>();
 
 
             if (File.Exists(FileName))
                 using (StreamReader MyFile = new StreamReader(FileName))
                 {
                     string Line;
-                    ArabicTranslation AT;
+                    stArabicTranslation AT;
                     while ((Line = MyFile.ReadLine()) != null)
                     {
 
                         if (Line != "#//#" && Line != "")
                         {
-                            AT = new ArabicTranslation();
+                            AT = new stArabicTranslation();
                             lWords = Line.Split(new Char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Where(s => !String.IsNullOrEmpty(s)).ToList();
                             for (short i = 0; i < lWords.Count; i++)
                             {
@@ -207,7 +207,7 @@ namespace Lib
             if (SelectedWord != null)
             {
                 List<string> lEnglishWords = LoadEnglishWordsFromFile(EnglishFileName);
-                List<ArabicTranslation> lArabicTranslations = LoadArabicTranslationsFromFile(ArabicTranslationsFileName);
+                List<stArabicTranslation> lArabicTranslations = LoadArabicTranslationsFromFile(ArabicTranslationsFileName);
 
                 DeleteAllRecords(EnglishFileName, ArabicTranslationsFileName, CheckedWordsFileName);
 
@@ -215,9 +215,9 @@ namespace Lib
                 {
                     if (lEnglishWords[i] != SelectedWord)
                     {
-                        SaveEnglishWordsToFile(lEnglishWords[i], EnglishFileName, true);
+                        SaveEnglishWordsToFile(lEnglishWords[i], EnglishFileName);
 
-                        SaveArabicTranslationsToFile(lArabicTranslations[i].Translation1, ArabicTranslationsFileName, true, true, lArabicTranslations[i].Translation2, lArabicTranslations[i].Translation3, lArabicTranslations[i].Translation4);
+                        SaveArabicTranslationsToFile(lArabicTranslations[i].Translation1, ArabicTranslationsFileName, true, lArabicTranslations[i].Translation2, lArabicTranslations[i].Translation3, lArabicTranslations[i].Translation4);
                     }
 
                 }
@@ -228,12 +228,12 @@ namespace Lib
             }
         }
 
-        internal static void EditWord(string OldSelectedWord, string NewWord, string EnglishFileName, string ArabicTranslationsFileName, ArabicTranslation Tranalations, string CheckedWordsFileName)
+        internal static void EditWord(string OldSelectedWord, string NewWord, string EnglishFileName, string ArabicTranslationsFileName, stArabicTranslation Tranalations, string CheckedWordsFileName)
         {
             if (OldSelectedWord != null && NewWord != null)
             {
                 List<string> lEnglishWords = LoadEnglishWordsFromFile(EnglishFileName);
-                List<ArabicTranslation> lArabicTranslations = LoadArabicTranslationsFromFile(ArabicTranslationsFileName);
+                List<stArabicTranslation> lArabicTranslations = LoadArabicTranslationsFromFile(ArabicTranslationsFileName);
 
                 DeleteAllRecords(EnglishFileName, ArabicTranslationsFileName,CheckedWordsFileName);
 
@@ -241,15 +241,15 @@ namespace Lib
                 {
                     if (lEnglishWords[i] != OldSelectedWord)
                     {
-                        SaveEnglishWordsToFile(lEnglishWords[i], EnglishFileName, true);
+                        SaveEnglishWordsToFile(lEnglishWords[i], EnglishFileName);
 
-                        SaveArabicTranslationsToFile(lArabicTranslations[i].Translation1, ArabicTranslationsFileName, true, true, lArabicTranslations[i].Translation2, lArabicTranslations[i].Translation3, lArabicTranslations[i].Translation4);
+                        SaveArabicTranslationsToFile(lArabicTranslations[i].Translation1, ArabicTranslationsFileName, true, lArabicTranslations[i].Translation2, lArabicTranslations[i].Translation3, lArabicTranslations[i].Translation4);
                     }
                     else
                     {
-                        SaveEnglishWordsToFile(NewWord, EnglishFileName, true);
+                        SaveEnglishWordsToFile(NewWord, EnglishFileName);
 
-                        SaveArabicTranslationsToFile(Tranalations.Translation1, ArabicTranslationsFileName, true, true, Tranalations.Translation2, Tranalations.Translation3, Tranalations.Translation4);
+                        SaveArabicTranslationsToFile(Tranalations.Translation1, ArabicTranslationsFileName, true, Tranalations.Translation2, Tranalations.Translation3, Tranalations.Translation4);
                     }
 
                 }

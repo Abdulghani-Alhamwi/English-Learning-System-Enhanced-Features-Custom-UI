@@ -40,7 +40,7 @@ namespace English_Learning_Management_System.Screens
             {
                 if (!EditWordMode)
                 {
-                    if (clsWord.SaveEnglishWordsToFile(txtBoxEnglishWord.Text, "EnglishWords.txt", true) && clsWord.SaveArabicTranslationsToFile(txtArabicWord.Text, "ArabicTranslationWords.txt", true, true))
+                    if (clsWord.SaveEnglishWordsToFile(txtBoxEnglishWord.Text, "EnglishWords.txt") && clsWord.SaveArabicTranslationsToFile(txtArabicWord.Text, "ArabicTranslationWords.txt",true))
                         MessageBox.Show("Word added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     txtBoxEnglishWord.Clear();
@@ -51,7 +51,7 @@ namespace English_Learning_Management_System.Screens
                 {
                     if (OldSelectedWord != null)
                     {
-                        clsWord.ATranslations = new clsWord.ArabicTranslation();
+                        clsWord.ATranslations = new clsWord.stArabicTranslation();
                         clsWord.ATranslations.Translation1 = txtArabicWord.Text;
                         clsWord.EditWord(OldSelectedWord, txtBoxEnglishWord.Text, "EnglishWords.txt", "ArabicTranslationWords.txt", clsWord.ATranslations, CheckedWordsFileName);
                         MessageBox.Show("Word updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

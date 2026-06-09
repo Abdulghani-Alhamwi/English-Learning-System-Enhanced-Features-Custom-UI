@@ -31,18 +31,54 @@ namespace English_Learning_Management_System.Screens
             // the Application.StartupPath is where the prefilled file live .
             string PreExistEnglishFile = Path.Combine(Application.StartupPath,"EnglishWords.txt");
             string PreExistArabicTFile = Path.Combine(Application.StartupPath,"ArabicTranslationWords.txt");
-
+            
             // Application.UserAppDataPath is Where the user file will live .
             string UserEnglishFile = Path.Combine(Application.UserAppDataPath, "EnglishWords.txt");
             string UserArabicTFile = Path.Combine(Application.UserAppDataPath, "ArabicTranslationWords.txt");
 
+            if (File.Exists(UserEnglishFile))
+            {
+                if (File.Exists(PreExistEnglishFile))
+                {
+                    List<string> PreFilledEnglishWords = clsWord.LoadEnglishWordsFromFile(PreExistEnglishFile);
+                    List<string> UserEnglishWords = clsWord.LoadEnglishWordsFromFile(UserEnglishFile);
 
-            if (!File.Exists(UserEnglishFile) && !File.Exists(UserArabicTFile))
+                    bool IsWordAlreadyExists = false;
+                    int CountEnglishWords = 0;
+
+                    foreach (string PreFilledWord in PreFilledEnglishWords)
+                    {
+                        foreach (string UserEWord in PreFilledEnglishWords)
+                        {
+                            if (PreFilledWord == UserEWord)
+                            {
+                                IsWordAlreadyExists = true;
+                                break;
+                            }
+                        }
+                        if (!IsWordAlreadyExists)
+                        {
+                            clsWord.SaveEnglishWordsToFile(PreFilledWord, UserEnglishFile);
+                            List<clsWord.stArabicTranslation> arabicTranslations = clsWord.LoadArabicTranslationsFromFile(PreExistArabicTFile);
+
+                            clsWord.SaveArabicTranslationsToFile(arabicTranslations[CountEnglishWords].Translation1, UserArabicTFile, true, arabicTranslations[CountEnglishWords].Translation2, arabicTranslations[CountEnglishWords].Translation3, arabicTranslations[CountEnglishWords].Translation4);
+
+                        }
+                        CountEnglishWords++;
+                    }
+
+
+                }
+            }
+            else
             {
                 // Copy everything from pre-filled file to the user file .
                 File.Copy(PreExistEnglishFile, UserEnglishFile);
                 File.Copy(PreExistArabicTFile, UserArabicTFile);
             }
+
+
+
 
         }
         private void frm_Load(object sender, EventArgs e)
