@@ -18,9 +18,7 @@ namespace English_Learning_Management_System
     public partial class frmMainScreen : Form
     {
         Form frmLifeCycle;
-        string EnglishFileName = "EnglishWords.txt";
-        string ArabicTransaltionsFileName = "ArabicTranslationWords.txt";
-
+     
         private MMDeviceEnumerator enumerator;
         private MMDevice device;
         public frmMainScreen(Form frm)
@@ -50,7 +48,6 @@ namespace English_Learning_Management_System
             return Trans;
         }
 
-        string CheckedWordsFileName = "CheckedStateWords.txt";
 
         void AddCheckedWordToFile(string FileName, int WordID)
         {
@@ -62,7 +59,7 @@ namespace English_Learning_Management_System
 
         void AddNonRemovedCheckedStateIds(string FileName)
         {
-            List<int> CheckedWordsID = LoadCheckedWordsIdFromFile(CheckedWordsFileName);
+            List<int> CheckedWordsID = LoadCheckedWordsIdFromFile(clsWord.FixedCheckedWordsFileLocation);
             File.Delete(FileName);
             int SelectedWordId;
             bool FoundSelectedItem = false;
@@ -80,7 +77,7 @@ namespace English_Learning_Management_System
                 }
                 if (!FoundSelectedItem)
                 {
-                    AddCheckedWordToFile(CheckedWordsFileName, CheckedWordsID[i]);
+                    AddCheckedWordToFile(clsWord.FixedCheckedWordsFileLocation, CheckedWordsID[i]);
                 }
                 FoundSelectedItem = false;
             }
@@ -108,21 +105,34 @@ namespace English_Learning_Management_System
             }
             return 0;
         }
+        
 
-        void CheckWords()
+        void _CheckWords(bool UpdateMode=false,List<int>lWordsIds=null)
         {
-            if (lstvWords.SelectedItems.Count == 0)
+            if (!UpdateMode)
             {
-                MessageBox.Show("You must select word/s you want to Check first", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+                if (lstvWords.SelectedItems.Count == 0)
+                {
+                    MessageBox.Show("You must select word/s you want to Check first", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
 
-            for (int i = 0; i < lstvWords.SelectedItems.Count; i++)
+                for (int i = 0; i < lstvWords.SelectedItems.Count; i++)
+                {
+                    AddCheckedWordToFile(clsWord.FixedCheckedWordsFileLocation, GetWordID(lstvWords.SelectedItems[i].Text));
+                }
+            }
+            else
             {
-                AddCheckedWordToFile(CheckedWordsFileName, GetWordID(lstvWords.SelectedItems[i].Text));
+                if (lWordsIds != null)
+                {
+                    for (int i = 0; i < lWordsIds.Count; i++)
+                    {
+                        AddCheckedWordToFile(clsWord.FixedCheckedWordsFileLocation, lWordsIds[i]);
+                    }
+                }
             }
-            AddWordsToListView(true);
-
+             AddWordsToListView(true);
         }
 
         List<int> LoadCheckedWordsIdFromFile(string FileName)
@@ -144,13 +154,18 @@ namespace English_Learning_Management_System
             return lCheckedWordsID;
         }
 
-        private void AddWordsToListView(bool Refresh = false)
+        private void AddWordsToListView(bool Refresh = false, bool UpdateMode = false,List<int>lWordsIds=null)
         {
+            if(UpdateMode)
+            {
+                _CheckWords(UpdateMode,lWordsIds);
+                return;
+            }
             ListViewItem Item;
 
-            List<string> lWords = clsWord.LoadEnglishWordsFromFile("EnglishWords.txt");
-            List<clsWord.stArabicTranslation> lWordsTranslations = clsWord.LoadArabicTranslationsFromFile("ArabicTranslationWords.txt");
-            List<int> CheckedWordsID = LoadCheckedWordsIdFromFile(CheckedWordsFileName);
+            List<string> lWords = clsWord.LoadEnglishWordsFromFile(clsWord.FixedAppDataEnglishWordsLocation);
+            List<clsWord.stArabicTranslation> lWordsTranslations = clsWord.LoadArabicTranslationsFromFile(clsWord.FixedAppDataArabicTLocation);
+            List<int> CheckedWordsID = LoadCheckedWordsIdFromFile(clsWord.FixedCheckedWordsFileLocation);
 
 
             lblTotalWords.Text = "Total Words : " + lWords.Count();
@@ -724,13 +739,14 @@ namespace English_Learning_Management_System
             {
                 for (int i = 0; i < lstvWords.SelectedItems.Count; i++)
                 {
-                    clsWord.DeleteWord(lstvWords.SelectedItems[i].Text, EnglishFileName, ArabicTransaltionsFileName,CheckedWordsFileName);
+                    clsWord.DeleteWord(lstvWords.SelectedItems[i].Text, clsWord.FixedAppDataEnglishWordsLocation, clsWord.FixedAppDataArabicTLocation, clsWord.FixedCheckedWordsFileLocation);
                 }
                     AddWordsToListView(true);
             }
 
         }
 
+   
         private void editWordToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (lstvWords.SelectedItems.Count == 0)
@@ -744,9 +760,22 @@ namespace English_Learning_Management_System
                 MessageBox.Show("You must select Only One Word ! \n You can edit only one word in one time", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            Form frmAddWords = new frmAddEnglishWord(true, lstvWords.SelectedItems[0].Text);
+
+            Form frmAddWords;
+            if (lstvWords.SelectedItems[0].SubItems.Count==2)
+                frmAddWords = new frmAddEnglishWord(true, lstvWords.SelectedItems[0].Text, lstvWords.SelectedItems[0].SubItems[1].Text);
+            else if(lstvWords.SelectedItems[0].SubItems.Count==3)
+                 frmAddWords = new frmAddEnglishWord(true, lstvWords.SelectedItems[0].Text, lstvWords.SelectedItems[0].SubItems[1].Text, lstvWords.SelectedItems[0].SubItems[2].Text);
+            else if(lstvWords.SelectedItems[0].SubItems.Count==4)
+                 frmAddWords = new frmAddEnglishWord(true, lstvWords.SelectedItems[0].Text, lstvWords.SelectedItems[0].SubItems[1].Text, lstvWords.SelectedItems[0].SubItems[2].Text, lstvWords.SelectedItems[0].SubItems[3].Text);
+            else
+                 frmAddWords = new frmAddEnglishWord(true, lstvWords.SelectedItems[0].Text, lstvWords.SelectedItems[0].SubItems[1].Text, lstvWords.SelectedItems[0].SubItems[2].Text, lstvWords.SelectedItems[0].SubItems[3].Text, lstvWords.SelectedItems[0].SubItems[4].Text);
+
+            List<int> lWordsIds = LoadCheckedWordsIdFromFile(clsWord.FixedCheckedWordsFileLocation);
             frmAddWords.ShowDialog();
-            AddWordsToListView(true);
+            AddWordsToListView(true,true, lWordsIds);
+
+
         }
 
         private void ESpeakSelectedWords_Click(object sender, EventArgs e)
@@ -780,19 +809,22 @@ namespace English_Learning_Management_System
         {
             if (MessageBox.Show("Are you sure you want to delete all words ?", "Need Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
-                clsWord.DeleteAllRecords(EnglishFileName, ArabicTransaltionsFileName,CheckedWordsFileName);
+                clsWord.DeleteAllRecords(clsWord.FixedAppDataEnglishWordsLocation, clsWord.FixedAppDataArabicTLocation, clsWord.FixedCheckedWordsFileLocation);
                 lstvWords.Items.Clear();
+                lblTotalWords.Text = "Total Words : " + lstvWords.Items.Count;
             }
         }
 
-        private void deleteAllWordsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CheckAllWordsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CheckWords();
+            _CheckWords();
         }
 
         private void unCheckSelectedWordsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RemoveSelectedCheckedWordsFromFile(CheckedWordsFileName);
+            RemoveSelectedCheckedWordsFromFile(clsWord.FixedCheckedWordsFileLocation);
         }
+
+   
     }
 }

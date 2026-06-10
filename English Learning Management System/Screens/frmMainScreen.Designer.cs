@@ -151,14 +151,14 @@
             this.deleteAllWordsToolStripMenuItem1,
             this.unCheckSelectedWordsToolStripMenuItem});
             this.WordsListViewContextMenu.Name = "WordsListViewContextMenu";
-            this.WordsListViewContextMenu.Size = new System.Drawing.Size(341, 298);
+            this.WordsListViewContextMenu.Size = new System.Drawing.Size(357, 326);
             // 
             // deleteAllWordsToolStripMenuItem
             // 
             this.deleteAllWordsToolStripMenuItem.Name = "deleteAllWordsToolStripMenuItem";
-            this.deleteAllWordsToolStripMenuItem.Size = new System.Drawing.Size(340, 42);
+            this.deleteAllWordsToolStripMenuItem.Size = new System.Drawing.Size(356, 46);
             this.deleteAllWordsToolStripMenuItem.Text = "Check Selected Words";
-            this.deleteAllWordsToolStripMenuItem.Click += new System.EventHandler(this.deleteAllWordsToolStripMenuItem_Click);
+            this.deleteAllWordsToolStripMenuItem.Click += new System.EventHandler(this.CheckAllWordsToolStripMenuItem_Click);
             // 
             // changeVoiceToolStripMenuItem
             // 
@@ -185,14 +185,14 @@
             this.zhHKHKHunYeeToolStripMenuItem,
             this.zhTvVHanHanToolStripMenuItem});
             this.changeVoiceToolStripMenuItem.Name = "changeVoiceToolStripMenuItem";
-            this.changeVoiceToolStripMenuItem.Size = new System.Drawing.Size(340, 42);
+            this.changeVoiceToolStripMenuItem.Size = new System.Drawing.Size(356, 46);
             this.changeVoiceToolStripMenuItem.Text = "Change Voice";
             // 
             // microsoftDavidDesktopToolStripMenuItem
             // 
             this.microsoftDavidDesktopToolStripMenuItem.CheckOnClick = true;
             this.microsoftDavidDesktopToolStripMenuItem.Name = "microsoftDavidDesktopToolStripMenuItem";
-            this.microsoftDavidDesktopToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
+            this.microsoftDavidDesktopToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
             this.microsoftDavidDesktopToolStripMenuItem.Text = "Microsoft David Desktop";
             this.microsoftDavidDesktopToolStripMenuItem.Click += new System.EventHandler(this.microsoftDavidDesktopToolStripMenuItem_Click);
             // 
@@ -202,7 +202,7 @@
             this.microsoftZiraDesktopToolStripMenuItem.CheckOnClick = true;
             this.microsoftZiraDesktopToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.microsoftZiraDesktopToolStripMenuItem.Name = "microsoftZiraDesktopToolStripMenuItem";
-            this.microsoftZiraDesktopToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
+            this.microsoftZiraDesktopToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
             this.microsoftZiraDesktopToolStripMenuItem.Text = "Microsoft Zira Desktop";
             this.microsoftZiraDesktopToolStripMenuItem.Click += new System.EventHandler(this.microsoftZiraDesktopToolStripMenuItem_Click);
             // 
@@ -210,7 +210,7 @@
             // 
             this.herenaToolStripMenuItem.CheckOnClick = true;
             this.herenaToolStripMenuItem.Name = "herenaToolStripMenuItem";
-            this.herenaToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
+            this.herenaToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
             this.herenaToolStripMenuItem.Text = "LISHelen";
             this.herenaToolStripMenuItem.Click += new System.EventHandler(this.LisHelenToolStripMenuItem_Click);
             // 
@@ -218,7 +218,7 @@
             // 
             this.hayleyToolStripMenuItem.CheckOnClick = true;
             this.hayleyToolStripMenuItem.Name = "hayleyToolStripMenuItem";
-            this.hayleyToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
+            this.hayleyToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
             this.hayleyToolStripMenuItem.Text = "Hayley";
             this.hayleyToolStripMenuItem.Click += new System.EventHandler(this.hayleyToolStripMenuItem_Click);
             // 
@@ -226,7 +226,7 @@
             // 
             this.gBCHazelToolStripMenuItem.CheckOnClick = true;
             this.gBCHazelToolStripMenuItem.Name = "gBCHazelToolStripMenuItem";
-            this.gBCHazelToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
+            this.gBCHazelToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
             this.gBCHazelToolStripMenuItem.Text = "GBCHazel";
             this.gBCHazelToolStripMenuItem.Click += new System.EventHandler(this.gBCHazelToolStripMenuItem_Click);
             // 
@@ -234,7 +234,7 @@
             // 
             this.herenaToolStripMenuItem1.CheckOnClick = true;
             this.herenaToolStripMenuItem1.Name = "herenaToolStripMenuItem1";
-            this.herenaToolStripMenuItem1.Size = new System.Drawing.Size(307, 42);
+            this.herenaToolStripMenuItem1.Size = new System.Drawing.Size(363, 48);
             this.herenaToolStripMenuItem1.Text = "Herena";
             this.herenaToolStripMenuItem1.Click += new System.EventHandler(this.herenaToolStripMenuItem1_Click);
             // 
@@ -242,7 +242,7 @@
             // 
             this.iNHeeraToolStripMenuItem.CheckOnClick = true;
             this.iNHeeraToolStripMenuItem.Name = "iNHeeraToolStripMenuItem";
-            this.iNHeeraToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
+            this.iNHeeraToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
             this.iNHeeraToolStripMenuItem.Text = "IN_Heera";
             this.iNHeeraToolStripMenuItem.Click += new System.EventHandler(this.iNHeeraToolStripMenuItem_Click);
             // 
@@ -250,7 +250,7 @@
             // 
             this.daDKvHelleToolStripMenuItem.CheckOnClick = true;
             this.daDKvHelleToolStripMenuItem.Name = "daDKvHelleToolStripMenuItem";
-            this.daDKvHelleToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
+            this.daDKvHelleToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
             this.daDKvHelleToolStripMenuItem.Text = "da_DKvHelle";
             this.daDKvHelleToolStripMenuItem.Click += new System.EventHandler(this.daDKvHelleToolStripMenuItem_Click);
             // 
@@ -258,7 +258,7 @@
             // 
             this.esHelenaToolStripMenuItem.CheckOnClick = true;
             this.esHelenaToolStripMenuItem.Name = "esHelenaToolStripMenuItem";
-            this.esHelenaToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
+            this.esHelenaToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
             this.esHelenaToolStripMenuItem.Text = "es_Helena";
             this.esHelenaToolStripMenuItem.Click += new System.EventHandler(this.esHelenaToolStripMenuItem_Click);
             // 
@@ -266,7 +266,7 @@
             // 
             this.esMXYHildaToolStripMenuItem.CheckOnClick = true;
             this.esMXYHildaToolStripMenuItem.Name = "esMXYHildaToolStripMenuItem";
-            this.esMXYHildaToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
+            this.esMXYHildaToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
             this.esMXYHildaToolStripMenuItem.Text = "es_MXYHilda";
             this.esMXYHildaToolStripMenuItem.Click += new System.EventHandler(this.esMXYHildaToolStripMenuItem_Click);
             // 
@@ -274,7 +274,7 @@
             // 
             this.fiHeidiToolStripMenuItem.CheckOnClick = true;
             this.fiHeidiToolStripMenuItem.Name = "fiHeidiToolStripMenuItem";
-            this.fiHeidiToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
+            this.fiHeidiToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
             this.fiHeidiToolStripMenuItem.Text = "fi_Heidi";
             this.fiHeidiToolStripMenuItem.Click += new System.EventHandler(this.fiHeidiToolStripMenuItem_Click);
             // 
@@ -282,7 +282,7 @@
             // 
             this.frFRYHortenseToolStripMenuItem.CheckOnClick = true;
             this.frFRYHortenseToolStripMenuItem.Name = "frFRYHortenseToolStripMenuItem";
-            this.frFRYHortenseToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
+            this.frFRYHortenseToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
             this.frFRYHortenseToolStripMenuItem.Text = "fr_FRYHortense";
             this.frFRYHortenseToolStripMenuItem.Click += new System.EventHandler(this.frFRYHortenseToolStripMenuItem_Click);
             // 
@@ -290,7 +290,7 @@
             // 
             this.jaHarukaToolStripMenuItem.CheckOnClick = true;
             this.jaHarukaToolStripMenuItem.Name = "jaHarukaToolStripMenuItem";
-            this.jaHarukaToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
+            this.jaHarukaToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
             this.jaHarukaToolStripMenuItem.Text = "ja_Haruka";
             this.jaHarukaToolStripMenuItem.Click += new System.EventHandler(this.jaHarukaToolStripMenuItem_Click);
             // 
@@ -298,7 +298,7 @@
             // 
             this.kokrKRreAMiToolStripMenuItem.CheckOnClick = true;
             this.kokrKRreAMiToolStripMenuItem.Name = "kokrKRreAMiToolStripMenuItem";
-            this.kokrKRreAMiToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
+            this.kokrKRreAMiToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
             this.kokrKRreAMiToolStripMenuItem.Text = "ko-kr_KRre a mi";
             this.kokrKRreAMiToolStripMenuItem.Click += new System.EventHandler(this.kokrKRreAMiToolStripMenuItem_Click);
             // 
@@ -306,7 +306,7 @@
             // 
             this.nbnoHuldaToolStripMenuItem.CheckOnClick = true;
             this.nbnoHuldaToolStripMenuItem.Name = "nbnoHuldaToolStripMenuItem";
-            this.nbnoHuldaToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
+            this.nbnoHuldaToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
             this.nbnoHuldaToolStripMenuItem.Text = "nb-no_Hulda";
             this.nbnoHuldaToolStripMenuItem.Click += new System.EventHandler(this.nbnoHuldaToolStripMenuItem_Click);
             // 
@@ -314,7 +314,7 @@
             // 
             this.nbNOHuldaToolStripMenuItem1.CheckOnClick = true;
             this.nbNOHuldaToolStripMenuItem1.Name = "nbNOHuldaToolStripMenuItem1";
-            this.nbNOHuldaToolStripMenuItem1.Size = new System.Drawing.Size(307, 42);
+            this.nbNOHuldaToolStripMenuItem1.Size = new System.Drawing.Size(363, 48);
             this.nbNOHuldaToolStripMenuItem1.Text = "nl-NL_Hanna";
             this.nbNOHuldaToolStripMenuItem1.Click += new System.EventHandler(this.nbNOHannaToolStripMenuItem1_Click);
             // 
@@ -322,7 +322,7 @@
             // 
             this.rUElenaToolStripMenuItem.CheckOnClick = true;
             this.rUElenaToolStripMenuItem.Name = "rUElenaToolStripMenuItem";
-            this.rUElenaToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
+            this.rUElenaToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
             this.rUElenaToolStripMenuItem.Text = "RU_Elena";
             this.rUElenaToolStripMenuItem.Click += new System.EventHandler(this.rUElenaToolStripMenuItem_Click);
             // 
@@ -330,7 +330,7 @@
             // 
             this.plPLPaulinaToolStripMenuItem.CheckOnClick = true;
             this.plPLPaulinaToolStripMenuItem.Name = "plPLPaulinaToolStripMenuItem";
-            this.plPLPaulinaToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
+            this.plPLPaulinaToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
             this.plPLPaulinaToolStripMenuItem.Text = "pl-PL_Paulina";
             this.plPLPaulinaToolStripMenuItem.Click += new System.EventHandler(this.plPLPaulinaToolStripMenuItem_Click);
             // 
@@ -338,7 +338,7 @@
             // 
             this.ptHeliaToolStripMenuItem.CheckOnClick = true;
             this.ptHeliaToolStripMenuItem.Name = "ptHeliaToolStripMenuItem";
-            this.ptHeliaToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
+            this.ptHeliaToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
             this.ptHeliaToolStripMenuItem.Text = "pt_Helia";
             this.ptHeliaToolStripMenuItem.Click += new System.EventHandler(this.ptHeliaToolStripMenuItem_Click);
             // 
@@ -346,7 +346,7 @@
             // 
             this.zhHKHKHunYeeToolStripMenuItem.CheckOnClick = true;
             this.zhHKHKHunYeeToolStripMenuItem.Name = "zhHKHKHunYeeToolStripMenuItem";
-            this.zhHKHKHunYeeToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
+            this.zhHKHKHunYeeToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
             this.zhHKHKHunYeeToolStripMenuItem.Text = "zh-HK_HKHunYee";
             this.zhHKHKHunYeeToolStripMenuItem.Click += new System.EventHandler(this.zhHKHKHunYeeToolStripMenuItem_Click);
             // 
@@ -354,14 +354,14 @@
             // 
             this.zhTvVHanHanToolStripMenuItem.CheckOnClick = true;
             this.zhTvVHanHanToolStripMenuItem.Name = "zhTvVHanHanToolStripMenuItem";
-            this.zhTvVHanHanToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
+            this.zhTvVHanHanToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
             this.zhTvVHanHanToolStripMenuItem.Text = "zh-TvV_HanHan";
             this.zhTvVHanHanToolStripMenuItem.Click += new System.EventHandler(this.zhTvVHanHanToolStripMenuItem_Click);
             // 
             // editWordToolStripMenuItem
             // 
             this.editWordToolStripMenuItem.Name = "editWordToolStripMenuItem";
-            this.editWordToolStripMenuItem.Size = new System.Drawing.Size(340, 42);
+            this.editWordToolStripMenuItem.Size = new System.Drawing.Size(356, 46);
             this.editWordToolStripMenuItem.Text = "Edit Selected Word";
             this.editWordToolStripMenuItem.Click += new System.EventHandler(this.editWordToolStripMenuItem_Click);
             // 
@@ -369,7 +369,7 @@
             // 
             this.deleteWordToolStripMenuItem.Name = "deleteWordToolStripMenuItem";
             this.deleteWordToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.deleteWordToolStripMenuItem.Size = new System.Drawing.Size(340, 42);
+            this.deleteWordToolStripMenuItem.Size = new System.Drawing.Size(356, 46);
             this.deleteWordToolStripMenuItem.Text = "Delete Selected Word/s";
             this.deleteWordToolStripMenuItem.Click += new System.EventHandler(this.deleteWordToolStripMenuItem_Click);
             // 
@@ -382,7 +382,7 @@
             this.smallIconToolStripMenuItem,
             this.tileToolStripMenuItem});
             this.listViewToolStripMenuItem.Name = "listViewToolStripMenuItem";
-            this.listViewToolStripMenuItem.Size = new System.Drawing.Size(340, 42);
+            this.listViewToolStripMenuItem.Size = new System.Drawing.Size(356, 46);
             this.listViewToolStripMenuItem.Text = "List View";
             // 
             // detailsToolStripMenuItem
@@ -391,7 +391,7 @@
             this.detailsToolStripMenuItem.CheckOnClick = true;
             this.detailsToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.detailsToolStripMenuItem.Name = "detailsToolStripMenuItem";
-            this.detailsToolStripMenuItem.Size = new System.Drawing.Size(182, 42);
+            this.detailsToolStripMenuItem.Size = new System.Drawing.Size(233, 48);
             this.detailsToolStripMenuItem.Tag = "1";
             this.detailsToolStripMenuItem.Text = "Details";
             this.detailsToolStripMenuItem.Click += new System.EventHandler(this.detailsToolStripMenuItem_Click);
@@ -400,7 +400,7 @@
             // 
             this.listToolStripMenuItem.CheckOnClick = true;
             this.listToolStripMenuItem.Name = "listToolStripMenuItem";
-            this.listToolStripMenuItem.Size = new System.Drawing.Size(182, 42);
+            this.listToolStripMenuItem.Size = new System.Drawing.Size(233, 48);
             this.listToolStripMenuItem.Tag = "2";
             this.listToolStripMenuItem.Text = "List";
             this.listToolStripMenuItem.Click += new System.EventHandler(this.listToolStripMenuItem_Click);
@@ -409,7 +409,7 @@
             // 
             this.largeIconToolStripMenuItem.CheckOnClick = true;
             this.largeIconToolStripMenuItem.Name = "largeIconToolStripMenuItem";
-            this.largeIconToolStripMenuItem.Size = new System.Drawing.Size(182, 42);
+            this.largeIconToolStripMenuItem.Size = new System.Drawing.Size(233, 48);
             this.largeIconToolStripMenuItem.Tag = "3";
             this.largeIconToolStripMenuItem.Text = "Large Icon";
             this.largeIconToolStripMenuItem.Click += new System.EventHandler(this.largeIconToolStripMenuItem_Click);
@@ -418,7 +418,7 @@
             // 
             this.smallIconToolStripMenuItem.CheckOnClick = true;
             this.smallIconToolStripMenuItem.Name = "smallIconToolStripMenuItem";
-            this.smallIconToolStripMenuItem.Size = new System.Drawing.Size(182, 42);
+            this.smallIconToolStripMenuItem.Size = new System.Drawing.Size(233, 48);
             this.smallIconToolStripMenuItem.Tag = "4";
             this.smallIconToolStripMenuItem.Text = "Small Icon";
             this.smallIconToolStripMenuItem.Click += new System.EventHandler(this.smallIconToolStripMenuItem_Click);
@@ -427,7 +427,7 @@
             // 
             this.tileToolStripMenuItem.CheckOnClick = true;
             this.tileToolStripMenuItem.Name = "tileToolStripMenuItem";
-            this.tileToolStripMenuItem.Size = new System.Drawing.Size(182, 42);
+            this.tileToolStripMenuItem.Size = new System.Drawing.Size(233, 48);
             this.tileToolStripMenuItem.Tag = "5";
             this.tileToolStripMenuItem.Text = "Tile";
             this.tileToolStripMenuItem.Click += new System.EventHandler(this.tileToolStripMenuItem_Click);
@@ -435,14 +435,14 @@
             // deleteAllWordsToolStripMenuItem1
             // 
             this.deleteAllWordsToolStripMenuItem1.Name = "deleteAllWordsToolStripMenuItem1";
-            this.deleteAllWordsToolStripMenuItem1.Size = new System.Drawing.Size(340, 42);
+            this.deleteAllWordsToolStripMenuItem1.Size = new System.Drawing.Size(356, 46);
             this.deleteAllWordsToolStripMenuItem1.Text = "Delete All Words";
             this.deleteAllWordsToolStripMenuItem1.Click += new System.EventHandler(this.deleteAllWordsToolStripMenuItem1_Click);
             // 
             // unCheckSelectedWordsToolStripMenuItem
             // 
             this.unCheckSelectedWordsToolStripMenuItem.Name = "unCheckSelectedWordsToolStripMenuItem";
-            this.unCheckSelectedWordsToolStripMenuItem.Size = new System.Drawing.Size(340, 42);
+            this.unCheckSelectedWordsToolStripMenuItem.Size = new System.Drawing.Size(356, 46);
             this.unCheckSelectedWordsToolStripMenuItem.Text = "UnCheck Selected Words";
             this.unCheckSelectedWordsToolStripMenuItem.Click += new System.EventHandler(this.unCheckSelectedWordsToolStripMenuItem_Click);
             // 
@@ -455,7 +455,7 @@
             this.lblSystemVolume.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.lblSystemVolume.Location = new System.Drawing.Point(1071, 903);
             this.lblSystemVolume.Name = "lblSystemVolume";
-            this.lblSystemVolume.Size = new System.Drawing.Size(304, 72);
+            this.lblSystemVolume.Size = new System.Drawing.Size(530, 125);
             this.lblSystemVolume.TabIndex = 14;
             this.lblSystemVolume.Text = "System Volume :";
             this.lblSystemVolume.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -470,7 +470,7 @@
             this.trackBar1.Location = new System.Drawing.Point(1436, 963);
             this.trackBar1.Maximum = 100;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(409, 45);
+            this.trackBar1.Size = new System.Drawing.Size(409, 80);
             this.trackBar1.SmallChange = 5;
             this.trackBar1.TabIndex = 2;
             this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.TopLeft;

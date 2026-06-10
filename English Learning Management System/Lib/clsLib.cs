@@ -1,19 +1,20 @@
-﻿using System;
+﻿using Microsoft.Speech.Synthesis;
+using NAudio.Dsp;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Media;
 using System.Speech.Synthesis;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Speech.Synthesis;
-using NAudio.Dsp;
 
 namespace Lib
 {
     public class clsLib
     {
-        
+       
         private static bool ContainsArabic(string text)
         {
             foreach (char c in text)
@@ -66,9 +67,11 @@ namespace Lib
             }
         }
 
+        
         public static void SpellAWordLEGACY(string Word)
         {
             _speaker.SpeakAsync(Word);
+            
         }
 
         public static void PrintAsMsgBoxInstalledVoicesLEGACY()
@@ -166,5 +169,6 @@ namespace Lib
             SoundPlayer P = new SoundPlayer(@"D:\My Projects\English Learning Management System\bin\Release\Click.wav");
             P.Play();
         }
+
     }
 }

@@ -15,6 +15,12 @@ namespace Lib
 {
     internal class clsWord
     {
+        public static string FixedAppDataFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "EnglishLMS");
+
+        public static string FixedAppDataEnglishWordsLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), FixedAppDataFile, "EnglishWords.txt");
+        public static string FixedAppDataArabicTLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), FixedAppDataFile, "ArabicTranslationWords.txt");
+
+        public static string FixedCheckedWordsFileLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), FixedAppDataFile, "CheckedStateWords.txt");
         internal static bool SaveEnglishWordsToFile(string EnglishWord, string FileName)
         {
             //if (EnglishWord == "")
@@ -500,6 +506,63 @@ namespace Lib
                     MessageBoxIcon.Information
                 );
             }
+
         }
+        public static void _CopyPreFilledFileToUserAppDataFile(string PreFilledEnglishWordsFilePath,string PreFilledArabicTFilePath)
+        {
+            //// the Application.StartupPath is where the prefilled file live .
+            //string PreExistEnglishFile = Path.Combine(Application.StartupPath, "EnglishWords.txt");
+            //string PreExistArabicTFile = Path.Combine(Application.StartupPath, "ArabicTranslationWords.txt");
+                      
+            // Application.UserAppDataPath is Where the user file will live but it has changes in every update -> so user data here won't be at same path .
+            //string UserEnglishFile = Path.Combine(Application.UserAppDataPath, "EnglishWords.txt");
+            //string UserArabicTFile = Path.Combine(Application.UserAppDataPath, "ArabicTranslationWords.txt");
+
+            // This file is fixed and do not change with updates .
+            // Application Data folder is a windows safe storage that every app stores its data there and by that it does not get change with updates .
+
+        
+
+        
+            if(!File.Exists(FixedAppDataFile))
+            Directory.CreateDirectory(FixedAppDataFile);
+
+            if (File.Exists(FixedAppDataEnglishWordsLocation) && File.Exists(FixedAppDataArabicTLocation))
+            {
+                List<string> lEnglishWords = clsWord.LoadEnglishWordsFromFile(FixedAppDataEnglishWordsLocation);
+                List<string> lPreFilledEnglishWords = clsWord.LoadEnglishWordsFromFile(PreFilledEnglishWordsFilePath);
+                List<clsWord.stArabicTranslation> PreFilledArabicTranslations = clsWord.LoadArabicTranslationsFromFile(PreFilledArabicTFilePath);
+
+                bool IsWordAlreadyExists = false;
+                int CountEnglishWords = 0;
+
+                foreach (string PreFilledWord in lPreFilledEnglishWords)
+                {
+                    foreach (string UserEWord in lEnglishWords)
+                    {
+                        if (PreFilledWord.Trim() == UserEWord.Trim())
+                        {
+                            IsWordAlreadyExists = true;
+                            break;
+                        }
+                    }
+                    if (!IsWordAlreadyExists)
+                    {
+                        clsWord.SaveEnglishWordsToFile(PreFilledWord, FixedAppDataEnglishWordsLocation);
+
+                        clsWord.SaveArabicTranslationsToFile(PreFilledArabicTranslations[CountEnglishWords].Translation1, FixedAppDataArabicTLocation, true, PreFilledArabicTranslations[CountEnglishWords].Translation2, PreFilledArabicTranslations[CountEnglishWords].Translation3, PreFilledArabicTranslations[CountEnglishWords].Translation4);
+
+                    }
+                    IsWordAlreadyExists = false;
+                    CountEnglishWords++;
+                }
+            }
+            else//
+            {
+                File.Copy(PreFilledEnglishWordsFilePath, FixedAppDataEnglishWordsLocation);
+                File.Copy(PreFilledArabicTFilePath, FixedAppDataArabicTLocation);
+            }
         }
+
+    }
 }

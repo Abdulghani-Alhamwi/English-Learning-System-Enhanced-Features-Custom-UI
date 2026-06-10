@@ -1,14 +1,16 @@
-﻿using System;
+﻿using Lib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Lib;
+using static System.Net.WebRequestMethods;
 
 
 namespace English_Learning_Management_System.Screens
@@ -20,72 +22,22 @@ namespace English_Learning_Management_System.Screens
         {
             InitializeComponent();
             clsLib.ChangeFormProperties(this, Convert.ToInt16(this.Width), Convert.ToInt16(this.Height));
+
+            string PreFilledEWordsFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Pre-Filled Files", "EnglishWords.txt");
+            string PreFilledArabicTFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Pre-Filled Files", "ArabicTranslationWords.txt");
+
+            clsWord._CopyPreFilledFileToUserAppDataFile(PreFilledEWordsFilePath, PreFilledArabicTFilePath);
+
             frmMain = new frmMainScreen(this);
             frmMain.Opacity = 0.0;
             this.ShowInTaskbar = false;
             frmMain.Show();
         }
-
-        private void _CopyPreFilledFileToUserFile()
-        {
-            // the Application.StartupPath is where the prefilled file live .
-            string PreExistEnglishFile = Path.Combine(Application.StartupPath,"EnglishWords.txt");
-            string PreExistArabicTFile = Path.Combine(Application.StartupPath,"ArabicTranslationWords.txt");
-            
-            // Application.UserAppDataPath is Where the user file will live .
-            string UserEnglishFile = Path.Combine(Application.UserAppDataPath, "EnglishWords.txt");
-            string UserArabicTFile = Path.Combine(Application.UserAppDataPath, "ArabicTranslationWords.txt");
-
-            if (File.Exists(UserEnglishFile))
-            {
-                if (File.Exists(PreExistEnglishFile))
-                {
-                    List<string> PreFilledEnglishWords = clsWord.LoadEnglishWordsFromFile(PreExistEnglishFile);
-                    List<string> UserEnglishWords = clsWord.LoadEnglishWordsFromFile(UserEnglishFile);
-
-                    bool IsWordAlreadyExists = false;
-                    int CountEnglishWords = 0;
-
-                    foreach (string PreFilledWord in PreFilledEnglishWords)
-                    {
-                        foreach (string UserEWord in PreFilledEnglishWords)
-                        {
-                            if (PreFilledWord == UserEWord)
-                            {
-                                IsWordAlreadyExists = true;
-                                break;
-                            }
-                        }
-                        if (!IsWordAlreadyExists)
-                        {
-                            clsWord.SaveEnglishWordsToFile(PreFilledWord, UserEnglishFile);
-                            List<clsWord.stArabicTranslation> arabicTranslations = clsWord.LoadArabicTranslationsFromFile(PreExistArabicTFile);
-
-                            clsWord.SaveArabicTranslationsToFile(arabicTranslations[CountEnglishWords].Translation1, UserArabicTFile, true, arabicTranslations[CountEnglishWords].Translation2, arabicTranslations[CountEnglishWords].Translation3, arabicTranslations[CountEnglishWords].Translation4);
-
-                        }
-                        CountEnglishWords++;
-                    }
-
-
-                }
-            }
-            else
-            {
-                // Copy everything from pre-filled file to the user file .
-                File.Copy(PreExistEnglishFile, UserEnglishFile);
-                File.Copy(PreExistArabicTFile, UserArabicTFile);
-            }
-
-
-
-
-        }
+             
         private void frm_Load(object sender, EventArgs e)
         {
             this.Opacity = 0.0;
 
-            _CopyPreFilledFileToUserFile();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -94,7 +46,7 @@ namespace English_Learning_Management_System.Screens
                 this.Opacity = 100.0;
 
             circularProgressBar1.MaximumValue += 5;
-            if (circularProgressBar1.MaximumValue == 100)
+            if (circularProgressBar1.MaximumValue == 95)
             {
                 timer1.Stop();
                 this.Hide();

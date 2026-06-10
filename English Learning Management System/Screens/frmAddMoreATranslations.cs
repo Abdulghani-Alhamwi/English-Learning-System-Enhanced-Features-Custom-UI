@@ -14,14 +14,13 @@ namespace English_Learning_Management_System.Screens
 {
     public partial class frmAddMoreATransaltions: Form
     {
-        string CheckedWordsFileName = "CheckedStateWords.txt";
 
         private string _EnglishWord, _ArabicTranslation1;
         frmAddEnglishWord FormToHandleClose;
 
         bool EditMode = false;
         string OldWord;
-        public frmAddMoreATransaltions(frmAddEnglishWord frm, string EnglshWord, string ArabicTranslation1, string OldSelectedWord = null, bool EditWordMode = false)
+        public frmAddMoreATransaltions(frmAddEnglishWord frm, string EnglshWord, string ArabicTranslation1, string OldSelectedWord = null, bool EditWordMode = false, string Translation2 = null, string Translation3 = null, string Translation4 = null)
         {
             InitializeComponent();
             clsLib.ChangeFormProperties(this, Convert.ToInt16(this.Width), Convert.ToInt16(this.Height));
@@ -32,6 +31,15 @@ namespace English_Learning_Management_System.Screens
             EditMode = EditWordMode;
             OldWord = OldSelectedWord;
 
+            if (Translation2 != null)
+                txtA2.Text = Translation2;
+
+            if (Translation3 != null)
+                txtA3.Text = Translation3;
+
+            if (Translation4 != null)
+                txtA4.Text = Translation3;
+
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -41,33 +49,33 @@ namespace English_Learning_Management_System.Screens
 
         private void _SaveArabicTranslations()
         {
-            if ((txtA1.Text == "" || txtA1.Text == "Enter Arabic Translation 2") && (txtA2.Text == "" || txtA2.Text == "Enter Arabic Translation 3") && (txtA3.Text == "" || txtA3.Text == "Enter Arabic Translation 4"))
+            if ((txtA2.Text == "" || txtA2.Text == "Enter Arabic Translation 2") && (txtA3.Text == "" || txtA3.Text == "Enter Arabic Translation 3") && (txtA4.Text == "" || txtA4.Text == "Enter Arabic Translation 4"))
             {
                 DialogResult Result = MessageBox.Show($"Are you sure you don't want to add more translations and save the english word ({_EnglishWord}) + its One translation ({_ArabicTranslation1})", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (Result == DialogResult.OK)
                 {
-                    clsWord.SaveArabicTranslationsToFile(_ArabicTranslation1, "ArabicTranslationWords.txt", true);
+                    clsWord.SaveArabicTranslationsToFile(_ArabicTranslation1, clsWord.FixedAppDataArabicTLocation, true);
                     this.Close();
                     return;
                 }
             }
             else
             {
-                clsWord.SaveArabicTranslationsToFile(_ArabicTranslation1, "ArabicTranslationWords.txt", true, txtA1.Text, txtA2.Text, txtA3.Text);
+                clsWord.SaveArabicTranslationsToFile(_ArabicTranslation1, clsWord.FixedAppDataArabicTLocation, true, txtA2.Text, txtA3.Text, txtA4.Text);
 
                 MessageBox.Show("Added Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.Close();
             }
         }
-        private void btnaddTranslations_Click(object sender, EventArgs e)
-        {
 
+        internal void AddTranslations()
+        {
             if (!EditMode)
             {
                 if (_EnglishWord != "")
-                    SaveEnglishWordsToFile(_EnglishWord, "EnglishWords.txt");
+                    SaveEnglishWordsToFile(_EnglishWord, clsWord.FixedAppDataEnglishWordsLocation);
 
                 if (_ArabicTranslation1 != "")
                     _SaveArabicTranslations();
@@ -77,30 +85,30 @@ namespace English_Learning_Management_System.Screens
                 clsWord.ATranslations = new clsWord.stArabicTranslation();
                 clsWord.ATranslations.Translation1 = _ArabicTranslation1;
 
-                if ((txtA1.Text == "" || txtA1.Text == "Enter Arabic Translation 2") && (txtA2.Text == "" || txtA2.Text == "Enter Arabic Translation 3") && (txtA3.Text == "" || txtA3.Text == "Enter Arabic Translation 4"))
+                if ((txtA2.Text == "" || txtA2.Text == "Enter Arabic Translation 2") && (txtA3.Text == "" || txtA3.Text == "Enter Arabic Translation 3") && (txtA4.Text == "" || txtA4.Text == "Enter Arabic Translation 4"))
                 {
 
                     DialogResult Result = MessageBox.Show($"Are you sure you don't want to add more translations and save the english word ({_EnglishWord}) + its One translation ({_ArabicTranslation1})", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                     if (Result == DialogResult.OK)
                     {
-                        clsWord.EditWord(OldWord, _EnglishWord, "EnglishWords.txt", "ArabicTranslationWords.txt", clsWord.ATranslations, CheckedWordsFileName);
+                        clsWord.EditWord(OldWord, _EnglishWord, clsWord.FixedAppDataEnglishWordsLocation, clsWord.FixedAppDataArabicTLocation, clsWord.ATranslations, clsWord.FixedCheckedWordsFileLocation);
                         this.Close();
                         return;
                     }
                 }
                 else
                 {
-                    if (txtA1.Text != "")
-                        clsWord.ATranslations.Translation2 = txtA1.Text;
-
                     if (txtA2.Text != "")
-                        clsWord.ATranslations.Translation3 = txtA2.Text;
+                        clsWord.ATranslations.Translation2 = txtA2.Text;
 
                     if (txtA3.Text != "")
-                        clsWord.ATranslations.Translation4 = txtA3.Text;
+                        clsWord.ATranslations.Translation3 = txtA3.Text;
 
-                    clsWord.EditWord(OldWord, _EnglishWord, "EnglishWords.txt", "ArabicTranslationWords.txt", clsWord.ATranslations,"");
+                    if (txtA4.Text != "")
+                        clsWord.ATranslations.Translation4 = txtA4.Text;
+
+                    clsWord.EditWord(OldWord, _EnglishWord, clsWord.FixedAppDataEnglishWordsLocation, clsWord.FixedAppDataArabicTLocation, clsWord.ATranslations, "");
 
                     MessageBox.Show("Updated Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -109,11 +117,18 @@ namespace English_Learning_Management_System.Screens
             }
         }
 
+        private void btnaddTranslations_Click(object sender, EventArgs e)
+        {
+            AddTranslations();
+        }
+
         private void txtBox_Enter(object sender, EventArgs e)
         {
-
-            ((TextBox)sender).Clear();
-            ((TextBox)sender).ForeColor = Color.FromArgb(255, 30, 30, 30);
+            if (!EditMode)
+            {
+                ((TextBox)sender).Clear();
+                ((TextBox)sender).ForeColor = Color.FromArgb(255, 30, 30, 30);
+            }
         }
 
         private void frmAddMoreATransaltions_FormClosing(object sender, FormClosingEventArgs e)

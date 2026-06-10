@@ -16,31 +16,54 @@ namespace English_Learning_Management_System.Screens
         bool EditWordMode = false;
         bool AllowTabMovingForControl = false;
         string OldSelectedWord;
-        public frmAddEnglishWord(bool EditWord = false, string OldWord = null)
+        string T2;
+        string T3;
+        string T4;
+        bool MoreTranslations = false;
+        
+        public frmAddEnglishWord(bool EditWord = false, string OldWord = null,string Translation1=null, string Translation2 = null, string Translation3 = null, string Translation4 = null)
         {
             InitializeComponent();
             clsLib.ChangeFormProperties(this, Convert.ToInt16(this.Width), Convert.ToInt16(this.Height));
             EditWordMode = EditWord;
             OldSelectedWord = OldWord;
-
+            
             if (EditWordMode)
                 btnAddWord.Text = "Update Word";
 
+            if (OldWord != null && Translation1 != null)
+            {
+                txtBoxEnglishWord.Text = OldWord;
+                txtArabicWord.Text = Translation1;
+            }
+
+            T2 = Translation2;
+            T3 = Translation3;
+            T4 = Translation4;
+
+            if (Translation2 != null)
+                MoreTranslations = true;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        string CheckedWordsFileName = "CheckedStateWords.txt";
 
         private void btnAddWord_Click(object sender, EventArgs e)
         {
+            if(MoreTranslations)
+            {
+                frmAddMoreATransaltions frmMoreArabicTranslations = new frmAddMoreATransaltions(this, txtBoxEnglishWord.Text, txtArabicWord.Text, OldSelectedWord, EditWordMode, T2, T3, T4);
+                frmMoreArabicTranslations.AddTranslations();
+                this.Close();
+                return;
+            }
             if ((txtBoxEnglishWord.Text != "" && txtBoxEnglishWord.Text != "Enter English Word/s") && (txtArabicWord.Text != "" && txtArabicWord.Text != "Enter Arabic Translation"))
             {
                 if (!EditWordMode)
                 {
-                    if (clsWord.SaveEnglishWordsToFile(txtBoxEnglishWord.Text, "EnglishWords.txt") && clsWord.SaveArabicTranslationsToFile(txtArabicWord.Text, "ArabicTranslationWords.txt",true))
+                    if (clsWord.SaveEnglishWordsToFile(txtBoxEnglishWord.Text, clsWord.FixedAppDataEnglishWordsLocation) && clsWord.SaveArabicTranslationsToFile(txtArabicWord.Text, clsWord.FixedAppDataArabicTLocation,true))
                         MessageBox.Show("Word added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     txtBoxEnglishWord.Clear();
@@ -53,7 +76,7 @@ namespace English_Learning_Management_System.Screens
                     {
                         clsWord.ATranslations = new clsWord.stArabicTranslation();
                         clsWord.ATranslations.Translation1 = txtArabicWord.Text;
-                        clsWord.EditWord(OldSelectedWord, txtBoxEnglishWord.Text, "EnglishWords.txt", "ArabicTranslationWords.txt", clsWord.ATranslations, CheckedWordsFileName);
+                        clsWord.EditWord(OldSelectedWord, txtBoxEnglishWord.Text, clsWord.FixedAppDataEnglishWordsLocation, clsWord.FixedAppDataArabicTLocation, clsWord.ATranslations, clsWord.FixedCheckedWordsFileLocation);
                         MessageBox.Show("Word updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         txtBoxEnglishWord.Clear();
@@ -66,9 +89,11 @@ namespace English_Learning_Management_System.Screens
 
         private void btngAddMoreTranslations_Click(object sender, EventArgs e)
         {
+            
             if (txtBoxEnglishWord.Text != "" && txtArabicWord.Text != "")
             {
-                Form frmMoreArabicTranslations = new frmAddMoreATransaltions(this, txtBoxEnglishWord.Text, txtArabicWord.Text, OldSelectedWord, EditWordMode);
+                
+                Form frmMoreArabicTranslations = new frmAddMoreATransaltions(this, txtBoxEnglishWord.Text, txtArabicWord.Text, OldSelectedWord, EditWordMode,T2,T3,T4);
                 frmMoreArabicTranslations.ShowDialog();
 
             }
@@ -101,6 +126,7 @@ namespace English_Learning_Management_System.Screens
         }
         private void txtBoxWord_Validating(object sender, CancelEventArgs e)
         {
+            if(txtBoxEnglishWord.Text =="" || txtArabicWord.Text=="")
             clsUtilControls.ValidateTextBox(sender, txterrorprovider, e, true, AllowTabMovingForControl);
         }
 

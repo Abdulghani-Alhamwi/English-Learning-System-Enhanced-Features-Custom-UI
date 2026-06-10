@@ -1,0 +1,11 @@
+We used in deployment Folder :
+
+1)
+.nojekyll empty file :
+Jekyll is a static site generator that GitHub Pages uses by default. Jekyll ignores certain files and folders, especially those whose names start with an underscore _.
+
+For web applications and desktop applications deployments, files and folders must be published exactly as they exist in the repository. Otherwise, the application may fail because some required files or folders were ignored by Jekyll.
+
+To avoid this problem, we create an empty .nojekyll file. This file tells GitHub Pages  to not process the site with Jekyll and to use all files exactly as they are stored in the repository. 
+
+2) We use .gitattributes file contains the sentence * binary inside -> this to prevent GitHub from making changes on the repository files by treating all files as binary files and disabling make text conversions and by that GitHub wont make text conversions which cause problems when deployment and installation -> and by disabling GitHub from making text conversions -> we avoid the risk of having problems when deployment and installation cause of the file content changes .

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="English Learning Management System.exe" version="1.0.0.4" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="amd64" type="win32" />
+  <asmv1:assemblyIdentity name="English Learning Management System.exe" version="1.0.0.14" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="amd64" type="win32" />
   <description asmv2:iconFile="Logo.ico" asmv2:publisher="Abdulghani" asmv2:product="English Learning Management System" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -56,14 +56,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="English Learning Management System.exe" size="6276544">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="English Learning Management System.exe" size="6278592">
       <assemblyIdentity name="English Learning Management System" version="1.0.0.0" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>fx7+qkmk895Uw6S9DouB66GGN+zMcCgMSJ3NvFnBH1E=</dsig:DigestValue>
+        <dsig:DigestValue>z3sIc3U+2oR0HPr5sXVMH/JmCsHof9cAKGuzW6jpX9g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -103,15 +103,6 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="ArabicTranslationWords.txt" size="55">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>vCG5aIwT07Hfi4FSgxu+vV4+/xU1EHIrjAyb7XfisRs=</dsig:DigestValue>
-    </hash>
-  </file>
   <file name="English Learning Management System.exe.config" size="189">
     <hash>
       <dsig:Transforms>
@@ -121,15 +112,6 @@
       <dsig:DigestValue>oWu74zvPy0v3fB+cE0VM1nicyfA0TvANUiqy8USokWE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="EnglishWords.txt" size="28">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>kYktoGdPpHD7BclgJLaZSt63z7Se1itF3F9TKIffjQg=</dsig:DigestValue>
-    </hash>
-  </file>
   <file name="Logo.ico" size="1150">
     <hash>
       <dsig:Transforms>
@@ -137,6 +119,24 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>0R281FA3tLfZUz3GSZV83CKeORG4R5a8FTXFg+nvSCg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Pre-Filled Files\ArabicTranslationWords.txt" size="194">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>tPfPTOiJkL7TjvWxenO6VG+lO7S/9xZ6xFr3VQ7p9u8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Pre-Filled Files\EnglishWords.txt" size="90">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>tqBc9gwpCila4p+VqxUflyBrjEokLHxy4ZhGmPABnNQ=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
