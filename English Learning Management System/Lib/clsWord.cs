@@ -15,6 +15,8 @@ namespace Lib
 {
     internal class clsWord
     {
+        // This file is fixed and do not change with updates .
+        // Application Data folder is a windows safe storage that every app stores its data there and by that it does not get change with updates .
         public static string FixedAppDataFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "EnglishLMS");
 
         public static string FixedAppDataEnglishWordsLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), FixedAppDataFile, "EnglishWords.txt");
@@ -516,13 +518,7 @@ namespace Lib
                       
             // Application.UserAppDataPath is Where the user file will live but it has changes in every update -> so user data here won't be at same path .
             //string UserEnglishFile = Path.Combine(Application.UserAppDataPath, "EnglishWords.txt");
-            //string UserArabicTFile = Path.Combine(Application.UserAppDataPath, "ArabicTranslationWords.txt");
-
-            // This file is fixed and do not change with updates .
-            // Application Data folder is a windows safe storage that every app stores its data there and by that it does not get change with updates .
-
-        
-
+            //string UserArabicTFile = Path.Combine(Application.UserAppDataPath, "ArabicTranslationWords.txt");    
         
             if(!File.Exists(FixedAppDataFile))
             Directory.CreateDirectory(FixedAppDataFile);
@@ -557,7 +553,7 @@ namespace Lib
                     CountEnglishWords++;
                 }
             }
-            else//
+            else
             {
                 File.Copy(PreFilledEnglishWordsFilePath, FixedAppDataEnglishWordsLocation);
                 File.Copy(PreFilledArabicTFilePath, FixedAppDataArabicTLocation);
