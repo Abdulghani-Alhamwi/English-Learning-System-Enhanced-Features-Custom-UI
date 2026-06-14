@@ -49,27 +49,38 @@ namespace English_Learning_Management_System
         }
 
 
-        void AddCheckedWordToFile(string FileName, int WordID)
+        async void AddCheckedWordToFile(string FileName, int WordID)
         {
             using (StreamWriter MyFile = new StreamWriter(FileName, true))
             {
                 MyFile.WriteLine(WordID);
             }
         }
-
-        void AddNonRemovedCheckedStateIds(string FileName)
+         void AddNonRemovedCheckedStateIds(string FileName)
         {
-            List<int> CheckedWordsID = LoadCheckedWordsIdFromFile(clsWord.FixedCheckedWordsFileLocation);
+            List<int> lCheckedWordsID = LoadCheckedWordsIdFromFile(clsWord.FixedCheckedWordsFileLocation);
+
+            if (lCheckedWordsID.Count == 0)
+            {
+                MessageBox.Show("There are no checked words !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }    
+                if (lstvWords.SelectedItems.Count>10)
+            {
+                MessageBox.Show("You can uncheck up to 10 words only in one time", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             File.Delete(FileName);
             int SelectedWordId;
             bool FoundSelectedItem = false;
-            for (int i = 0; i < CheckedWordsID.Count; i++)
+
+            for (int i = 0; i < lCheckedWordsID.Count; i++)
             {
                 for (int j = 0; j < lstvWords.SelectedItems.Count; j++)
                 {
                     SelectedWordId = GetWordID(lstvWords.SelectedItems[j].Text);
 
-                    if (SelectedWordId == CheckedWordsID[i])
+                    if (SelectedWordId == lCheckedWordsID[i])
                     {
                         FoundSelectedItem = true;
                         break;
@@ -77,14 +88,14 @@ namespace English_Learning_Management_System
                 }
                 if (!FoundSelectedItem)
                 {
-                    AddCheckedWordToFile(clsWord.FixedCheckedWordsFileLocation, CheckedWordsID[i]);
+                    AddCheckedWordToFile(clsWord.FixedCheckedWordsFileLocation, lCheckedWordsID[i]);
                 }
                 FoundSelectedItem = false;
             }
 
         }
         
-        void RemoveSelectedCheckedWordsFromFile(string FileName)
+         void RemoveSelectedCheckedWordsFromFile(string FileName)
         {
             if (lstvWords.SelectedItems.Count == 0)
             {
@@ -96,7 +107,8 @@ namespace English_Learning_Management_System
             AddWordsToListView(true);
         }
 
-        int GetWordID(string Word)
+        [MTAThread]
+         int GetWordID(string Word)
         {
             for (int i = 0; i < lstvWords.Items.Count; i++)
             {
@@ -154,7 +166,7 @@ namespace English_Learning_Management_System
             return lCheckedWordsID;
         }
 
-        private void AddWordsToListView(bool Refresh = false, bool UpdateMode = false,List<int>lWordsIds=null)
+        private async void AddWordsToListView(bool Refresh = false, bool UpdateMode = false,List<int>lWordsIds=null)
         {
             if(UpdateMode)
             {
@@ -299,9 +311,9 @@ namespace English_Learning_Management_System
                 else
                     clsLib.SpellAWordMOD(e.Item.SubItems[0].Text);
 
-                // In order to be able to spell the same word more than one time we refresh the list view by reloading data and in order to spell right and to not go infinite speak for the word -> we used the thread.Sleep () .
-                Thread.Sleep(700);
-                AddWordsToListView(true);
+                //// In order to be able to spell the same word more than one time we refresh the list view by reloading data and in order to spell right and to not go infinite speak for the word -> we used the thread.Sleep () .
+                //Thread.Sleep(700);
+                //AddWordsToListView(true);
             }
 
             //The Main Item-> the first item -> the first column is stored as SubItems[0]
@@ -825,6 +837,17 @@ namespace English_Learning_Management_System
             RemoveSelectedCheckedWordsFromFile(clsWord.FixedCheckedWordsFileLocation);
         }
 
-   
+        private void uncheckAllWordsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(clsWord.FixedCheckedWordsFileLocation))
+            {
+                if (DialogResult.OK == MessageBox.Show("Are you sure you want to uncheck all ?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question))
+                    File.Delete(clsWord.FixedCheckedWordsFileLocation);
+
+                AddWordsToListView(true);
+            }
+            else
+                MessageBox.Show("There are no checked words !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

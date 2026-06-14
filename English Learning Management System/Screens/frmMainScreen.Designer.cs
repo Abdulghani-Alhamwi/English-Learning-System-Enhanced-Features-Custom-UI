@@ -78,6 +78,7 @@
             this.btnExit = new EnhancedControls.EnhancedButton();
             this.lblTotalWords = new EnahncedControls.EnhancedLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.uncheckAllWordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.WordsListViewContextMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -99,10 +100,10 @@
             this.lstvWords.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lstvWords.GridLines = true;
             this.lstvWords.HideSelection = false;
-            this.lstvWords.Location = new System.Drawing.Point(68, 234);
+            this.lstvWords.Location = new System.Drawing.Point(27, 193);
             this.lstvWords.Name = "lstvWords";
             this.lstvWords.ShowItemToolTips = true;
-            this.lstvWords.Size = new System.Drawing.Size(1777, 625);
+            this.lstvWords.Size = new System.Drawing.Size(1773, 625);
             this.lstvWords.TabIndex = 0;
             this.lstvWords.TileSize = new System.Drawing.Size(5, 5);
             this.lstvWords.UseCompatibleStateImageBehavior = false;
@@ -130,7 +131,7 @@
             // 
             this.colArabicTranslation3.Text = "Arabic Translation 3";
             this.colArabicTranslation3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colArabicTranslation3.Width = 337;
+            this.colArabicTranslation3.Width = 340;
             // 
             // colArabicTranslation4
             // 
@@ -149,9 +150,10 @@
             this.deleteWordToolStripMenuItem,
             this.listViewToolStripMenuItem,
             this.deleteAllWordsToolStripMenuItem1,
-            this.unCheckSelectedWordsToolStripMenuItem});
+            this.unCheckSelectedWordsToolStripMenuItem,
+            this.uncheckAllWordsToolStripMenuItem});
             this.WordsListViewContextMenu.Name = "WordsListViewContextMenu";
-            this.WordsListViewContextMenu.Size = new System.Drawing.Size(357, 326);
+            this.WordsListViewContextMenu.Size = new System.Drawing.Size(357, 372);
             // 
             // deleteAllWordsToolStripMenuItem
             // 
@@ -569,6 +571,7 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.lblTotalWords);
             this.panel1.Controls.Add(this.btnExit);
+            this.panel1.Controls.Add(this.lstvWords);
             this.panel1.Controls.Add(this.btnAddENGWords);
             this.panel1.Controls.Add(this.ESpeakSelectedWords);
             this.panel1.Controls.Add(this.lblSystemVolume);
@@ -577,6 +580,13 @@
             this.panel1.Size = new System.Drawing.Size(1837, 1064);
             this.panel1.TabIndex = 21;
             // 
+            // uncheckAllWordsToolStripMenuItem
+            // 
+            this.uncheckAllWordsToolStripMenuItem.Name = "uncheckAllWordsToolStripMenuItem";
+            this.uncheckAllWordsToolStripMenuItem.Size = new System.Drawing.Size(356, 46);
+            this.uncheckAllWordsToolStripMenuItem.Text = "Uncheck All Words";
+            this.uncheckAllWordsToolStripMenuItem.Click += new System.EventHandler(this.uncheckAllWordsToolStripMenuItem_Click);
+            // 
             // frmMainScreen
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -584,7 +594,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.trackBar1);
-            this.Controls.Add(this.lstvWords);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Cairo", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -653,5 +662,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem deleteAllWordsToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem unCheckSelectedWordsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem uncheckAllWordsToolStripMenuItem;
     }
 }
