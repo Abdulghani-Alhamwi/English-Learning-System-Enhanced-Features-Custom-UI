@@ -70,6 +70,7 @@
             this.tileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteAllWordsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.unCheckSelectedWordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uncheckAllWordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblSystemVolume = new System.Windows.Forms.Label();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.ESpeakSelectedWords = new EnhancedControls.EnhancedButton();
@@ -77,16 +78,17 @@
             this.btnAddENGWords = new EnhancedControls.EnhancedButton();
             this.btnExit = new EnhancedControls.EnhancedButton();
             this.lblTotalWords = new EnahncedControls.EnhancedLabel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.uncheckAllWordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSearch = new EnhancedControls.EnhancedButton();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.tFoundedSearchedItem = new System.Windows.Forms.Timer(this.components);
             this.WordsListViewContextMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstvWords
             // 
             this.lstvWords.Alignment = System.Windows.Forms.ListViewAlignment.Default;
+            this.lstvWords.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lstvWords.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.lstvWords.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lstvWords.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -100,10 +102,11 @@
             this.lstvWords.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lstvWords.GridLines = true;
             this.lstvWords.HideSelection = false;
-            this.lstvWords.Location = new System.Drawing.Point(27, 193);
+            this.lstvWords.Location = new System.Drawing.Point(55, 238);
+            this.lstvWords.Margin = new System.Windows.Forms.Padding(5);
             this.lstvWords.Name = "lstvWords";
             this.lstvWords.ShowItemToolTips = true;
-            this.lstvWords.Size = new System.Drawing.Size(1773, 625);
+            this.lstvWords.Size = new System.Drawing.Size(1774, 491);
             this.lstvWords.TabIndex = 0;
             this.lstvWords.TileSize = new System.Drawing.Size(5, 5);
             this.lstvWords.UseCompatibleStateImageBehavior = false;
@@ -113,7 +116,7 @@
             // colEnglishWords
             // 
             this.colEnglishWords.Text = "English Words";
-            this.colEnglishWords.Width = 311;
+            this.colEnglishWords.Width = 329;
             // 
             // colArabicTranslation1
             // 
@@ -131,13 +134,13 @@
             // 
             this.colArabicTranslation3.Text = "Arabic Translation 3";
             this.colArabicTranslation3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colArabicTranslation3.Width = 340;
+            this.colArabicTranslation3.Width = 345;
             // 
             // colArabicTranslation4
             // 
             this.colArabicTranslation4.Text = "Arabic Translation 4";
             this.colArabicTranslation4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.colArabicTranslation4.Width = 500;
+            this.colArabicTranslation4.Width = 419;
             // 
             // WordsListViewContextMenu
             // 
@@ -153,12 +156,12 @@
             this.unCheckSelectedWordsToolStripMenuItem,
             this.uncheckAllWordsToolStripMenuItem});
             this.WordsListViewContextMenu.Name = "WordsListViewContextMenu";
-            this.WordsListViewContextMenu.Size = new System.Drawing.Size(357, 372);
+            this.WordsListViewContextMenu.Size = new System.Drawing.Size(341, 340);
             // 
             // deleteAllWordsToolStripMenuItem
             // 
             this.deleteAllWordsToolStripMenuItem.Name = "deleteAllWordsToolStripMenuItem";
-            this.deleteAllWordsToolStripMenuItem.Size = new System.Drawing.Size(356, 46);
+            this.deleteAllWordsToolStripMenuItem.Size = new System.Drawing.Size(340, 42);
             this.deleteAllWordsToolStripMenuItem.Text = "Check Selected Words";
             this.deleteAllWordsToolStripMenuItem.Click += new System.EventHandler(this.CheckAllWordsToolStripMenuItem_Click);
             // 
@@ -187,14 +190,14 @@
             this.zhHKHKHunYeeToolStripMenuItem,
             this.zhTvVHanHanToolStripMenuItem});
             this.changeVoiceToolStripMenuItem.Name = "changeVoiceToolStripMenuItem";
-            this.changeVoiceToolStripMenuItem.Size = new System.Drawing.Size(356, 46);
+            this.changeVoiceToolStripMenuItem.Size = new System.Drawing.Size(340, 42);
             this.changeVoiceToolStripMenuItem.Text = "Change Voice";
             // 
             // microsoftDavidDesktopToolStripMenuItem
             // 
             this.microsoftDavidDesktopToolStripMenuItem.CheckOnClick = true;
             this.microsoftDavidDesktopToolStripMenuItem.Name = "microsoftDavidDesktopToolStripMenuItem";
-            this.microsoftDavidDesktopToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
+            this.microsoftDavidDesktopToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
             this.microsoftDavidDesktopToolStripMenuItem.Text = "Microsoft David Desktop";
             this.microsoftDavidDesktopToolStripMenuItem.Click += new System.EventHandler(this.microsoftDavidDesktopToolStripMenuItem_Click);
             // 
@@ -204,7 +207,7 @@
             this.microsoftZiraDesktopToolStripMenuItem.CheckOnClick = true;
             this.microsoftZiraDesktopToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.microsoftZiraDesktopToolStripMenuItem.Name = "microsoftZiraDesktopToolStripMenuItem";
-            this.microsoftZiraDesktopToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
+            this.microsoftZiraDesktopToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
             this.microsoftZiraDesktopToolStripMenuItem.Text = "Microsoft Zira Desktop";
             this.microsoftZiraDesktopToolStripMenuItem.Click += new System.EventHandler(this.microsoftZiraDesktopToolStripMenuItem_Click);
             // 
@@ -212,7 +215,7 @@
             // 
             this.herenaToolStripMenuItem.CheckOnClick = true;
             this.herenaToolStripMenuItem.Name = "herenaToolStripMenuItem";
-            this.herenaToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
+            this.herenaToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
             this.herenaToolStripMenuItem.Text = "LISHelen";
             this.herenaToolStripMenuItem.Click += new System.EventHandler(this.LisHelenToolStripMenuItem_Click);
             // 
@@ -220,7 +223,7 @@
             // 
             this.hayleyToolStripMenuItem.CheckOnClick = true;
             this.hayleyToolStripMenuItem.Name = "hayleyToolStripMenuItem";
-            this.hayleyToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
+            this.hayleyToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
             this.hayleyToolStripMenuItem.Text = "Hayley";
             this.hayleyToolStripMenuItem.Click += new System.EventHandler(this.hayleyToolStripMenuItem_Click);
             // 
@@ -228,7 +231,7 @@
             // 
             this.gBCHazelToolStripMenuItem.CheckOnClick = true;
             this.gBCHazelToolStripMenuItem.Name = "gBCHazelToolStripMenuItem";
-            this.gBCHazelToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
+            this.gBCHazelToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
             this.gBCHazelToolStripMenuItem.Text = "GBCHazel";
             this.gBCHazelToolStripMenuItem.Click += new System.EventHandler(this.gBCHazelToolStripMenuItem_Click);
             // 
@@ -236,7 +239,7 @@
             // 
             this.herenaToolStripMenuItem1.CheckOnClick = true;
             this.herenaToolStripMenuItem1.Name = "herenaToolStripMenuItem1";
-            this.herenaToolStripMenuItem1.Size = new System.Drawing.Size(363, 48);
+            this.herenaToolStripMenuItem1.Size = new System.Drawing.Size(307, 42);
             this.herenaToolStripMenuItem1.Text = "Herena";
             this.herenaToolStripMenuItem1.Click += new System.EventHandler(this.herenaToolStripMenuItem1_Click);
             // 
@@ -244,7 +247,7 @@
             // 
             this.iNHeeraToolStripMenuItem.CheckOnClick = true;
             this.iNHeeraToolStripMenuItem.Name = "iNHeeraToolStripMenuItem";
-            this.iNHeeraToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
+            this.iNHeeraToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
             this.iNHeeraToolStripMenuItem.Text = "IN_Heera";
             this.iNHeeraToolStripMenuItem.Click += new System.EventHandler(this.iNHeeraToolStripMenuItem_Click);
             // 
@@ -252,7 +255,7 @@
             // 
             this.daDKvHelleToolStripMenuItem.CheckOnClick = true;
             this.daDKvHelleToolStripMenuItem.Name = "daDKvHelleToolStripMenuItem";
-            this.daDKvHelleToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
+            this.daDKvHelleToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
             this.daDKvHelleToolStripMenuItem.Text = "da_DKvHelle";
             this.daDKvHelleToolStripMenuItem.Click += new System.EventHandler(this.daDKvHelleToolStripMenuItem_Click);
             // 
@@ -260,7 +263,7 @@
             // 
             this.esHelenaToolStripMenuItem.CheckOnClick = true;
             this.esHelenaToolStripMenuItem.Name = "esHelenaToolStripMenuItem";
-            this.esHelenaToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
+            this.esHelenaToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
             this.esHelenaToolStripMenuItem.Text = "es_Helena";
             this.esHelenaToolStripMenuItem.Click += new System.EventHandler(this.esHelenaToolStripMenuItem_Click);
             // 
@@ -268,7 +271,7 @@
             // 
             this.esMXYHildaToolStripMenuItem.CheckOnClick = true;
             this.esMXYHildaToolStripMenuItem.Name = "esMXYHildaToolStripMenuItem";
-            this.esMXYHildaToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
+            this.esMXYHildaToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
             this.esMXYHildaToolStripMenuItem.Text = "es_MXYHilda";
             this.esMXYHildaToolStripMenuItem.Click += new System.EventHandler(this.esMXYHildaToolStripMenuItem_Click);
             // 
@@ -276,7 +279,7 @@
             // 
             this.fiHeidiToolStripMenuItem.CheckOnClick = true;
             this.fiHeidiToolStripMenuItem.Name = "fiHeidiToolStripMenuItem";
-            this.fiHeidiToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
+            this.fiHeidiToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
             this.fiHeidiToolStripMenuItem.Text = "fi_Heidi";
             this.fiHeidiToolStripMenuItem.Click += new System.EventHandler(this.fiHeidiToolStripMenuItem_Click);
             // 
@@ -284,7 +287,7 @@
             // 
             this.frFRYHortenseToolStripMenuItem.CheckOnClick = true;
             this.frFRYHortenseToolStripMenuItem.Name = "frFRYHortenseToolStripMenuItem";
-            this.frFRYHortenseToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
+            this.frFRYHortenseToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
             this.frFRYHortenseToolStripMenuItem.Text = "fr_FRYHortense";
             this.frFRYHortenseToolStripMenuItem.Click += new System.EventHandler(this.frFRYHortenseToolStripMenuItem_Click);
             // 
@@ -292,7 +295,7 @@
             // 
             this.jaHarukaToolStripMenuItem.CheckOnClick = true;
             this.jaHarukaToolStripMenuItem.Name = "jaHarukaToolStripMenuItem";
-            this.jaHarukaToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
+            this.jaHarukaToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
             this.jaHarukaToolStripMenuItem.Text = "ja_Haruka";
             this.jaHarukaToolStripMenuItem.Click += new System.EventHandler(this.jaHarukaToolStripMenuItem_Click);
             // 
@@ -300,7 +303,7 @@
             // 
             this.kokrKRreAMiToolStripMenuItem.CheckOnClick = true;
             this.kokrKRreAMiToolStripMenuItem.Name = "kokrKRreAMiToolStripMenuItem";
-            this.kokrKRreAMiToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
+            this.kokrKRreAMiToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
             this.kokrKRreAMiToolStripMenuItem.Text = "ko-kr_KRre a mi";
             this.kokrKRreAMiToolStripMenuItem.Click += new System.EventHandler(this.kokrKRreAMiToolStripMenuItem_Click);
             // 
@@ -308,7 +311,7 @@
             // 
             this.nbnoHuldaToolStripMenuItem.CheckOnClick = true;
             this.nbnoHuldaToolStripMenuItem.Name = "nbnoHuldaToolStripMenuItem";
-            this.nbnoHuldaToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
+            this.nbnoHuldaToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
             this.nbnoHuldaToolStripMenuItem.Text = "nb-no_Hulda";
             this.nbnoHuldaToolStripMenuItem.Click += new System.EventHandler(this.nbnoHuldaToolStripMenuItem_Click);
             // 
@@ -316,7 +319,7 @@
             // 
             this.nbNOHuldaToolStripMenuItem1.CheckOnClick = true;
             this.nbNOHuldaToolStripMenuItem1.Name = "nbNOHuldaToolStripMenuItem1";
-            this.nbNOHuldaToolStripMenuItem1.Size = new System.Drawing.Size(363, 48);
+            this.nbNOHuldaToolStripMenuItem1.Size = new System.Drawing.Size(307, 42);
             this.nbNOHuldaToolStripMenuItem1.Text = "nl-NL_Hanna";
             this.nbNOHuldaToolStripMenuItem1.Click += new System.EventHandler(this.nbNOHannaToolStripMenuItem1_Click);
             // 
@@ -324,7 +327,7 @@
             // 
             this.rUElenaToolStripMenuItem.CheckOnClick = true;
             this.rUElenaToolStripMenuItem.Name = "rUElenaToolStripMenuItem";
-            this.rUElenaToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
+            this.rUElenaToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
             this.rUElenaToolStripMenuItem.Text = "RU_Elena";
             this.rUElenaToolStripMenuItem.Click += new System.EventHandler(this.rUElenaToolStripMenuItem_Click);
             // 
@@ -332,7 +335,7 @@
             // 
             this.plPLPaulinaToolStripMenuItem.CheckOnClick = true;
             this.plPLPaulinaToolStripMenuItem.Name = "plPLPaulinaToolStripMenuItem";
-            this.plPLPaulinaToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
+            this.plPLPaulinaToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
             this.plPLPaulinaToolStripMenuItem.Text = "pl-PL_Paulina";
             this.plPLPaulinaToolStripMenuItem.Click += new System.EventHandler(this.plPLPaulinaToolStripMenuItem_Click);
             // 
@@ -340,7 +343,7 @@
             // 
             this.ptHeliaToolStripMenuItem.CheckOnClick = true;
             this.ptHeliaToolStripMenuItem.Name = "ptHeliaToolStripMenuItem";
-            this.ptHeliaToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
+            this.ptHeliaToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
             this.ptHeliaToolStripMenuItem.Text = "pt_Helia";
             this.ptHeliaToolStripMenuItem.Click += new System.EventHandler(this.ptHeliaToolStripMenuItem_Click);
             // 
@@ -348,7 +351,7 @@
             // 
             this.zhHKHKHunYeeToolStripMenuItem.CheckOnClick = true;
             this.zhHKHKHunYeeToolStripMenuItem.Name = "zhHKHKHunYeeToolStripMenuItem";
-            this.zhHKHKHunYeeToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
+            this.zhHKHKHunYeeToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
             this.zhHKHKHunYeeToolStripMenuItem.Text = "zh-HK_HKHunYee";
             this.zhHKHKHunYeeToolStripMenuItem.Click += new System.EventHandler(this.zhHKHKHunYeeToolStripMenuItem_Click);
             // 
@@ -356,14 +359,14 @@
             // 
             this.zhTvVHanHanToolStripMenuItem.CheckOnClick = true;
             this.zhTvVHanHanToolStripMenuItem.Name = "zhTvVHanHanToolStripMenuItem";
-            this.zhTvVHanHanToolStripMenuItem.Size = new System.Drawing.Size(363, 48);
+            this.zhTvVHanHanToolStripMenuItem.Size = new System.Drawing.Size(307, 42);
             this.zhTvVHanHanToolStripMenuItem.Text = "zh-TvV_HanHan";
             this.zhTvVHanHanToolStripMenuItem.Click += new System.EventHandler(this.zhTvVHanHanToolStripMenuItem_Click);
             // 
             // editWordToolStripMenuItem
             // 
             this.editWordToolStripMenuItem.Name = "editWordToolStripMenuItem";
-            this.editWordToolStripMenuItem.Size = new System.Drawing.Size(356, 46);
+            this.editWordToolStripMenuItem.Size = new System.Drawing.Size(340, 42);
             this.editWordToolStripMenuItem.Text = "Edit Selected Word";
             this.editWordToolStripMenuItem.Click += new System.EventHandler(this.editWordToolStripMenuItem_Click);
             // 
@@ -371,7 +374,7 @@
             // 
             this.deleteWordToolStripMenuItem.Name = "deleteWordToolStripMenuItem";
             this.deleteWordToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.deleteWordToolStripMenuItem.Size = new System.Drawing.Size(356, 46);
+            this.deleteWordToolStripMenuItem.Size = new System.Drawing.Size(340, 42);
             this.deleteWordToolStripMenuItem.Text = "Delete Selected Word/s";
             this.deleteWordToolStripMenuItem.Click += new System.EventHandler(this.deleteWordToolStripMenuItem_Click);
             // 
@@ -384,7 +387,7 @@
             this.smallIconToolStripMenuItem,
             this.tileToolStripMenuItem});
             this.listViewToolStripMenuItem.Name = "listViewToolStripMenuItem";
-            this.listViewToolStripMenuItem.Size = new System.Drawing.Size(356, 46);
+            this.listViewToolStripMenuItem.Size = new System.Drawing.Size(340, 42);
             this.listViewToolStripMenuItem.Text = "List View";
             // 
             // detailsToolStripMenuItem
@@ -393,7 +396,7 @@
             this.detailsToolStripMenuItem.CheckOnClick = true;
             this.detailsToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.detailsToolStripMenuItem.Name = "detailsToolStripMenuItem";
-            this.detailsToolStripMenuItem.Size = new System.Drawing.Size(233, 48);
+            this.detailsToolStripMenuItem.Size = new System.Drawing.Size(182, 42);
             this.detailsToolStripMenuItem.Tag = "1";
             this.detailsToolStripMenuItem.Text = "Details";
             this.detailsToolStripMenuItem.Click += new System.EventHandler(this.detailsToolStripMenuItem_Click);
@@ -402,7 +405,7 @@
             // 
             this.listToolStripMenuItem.CheckOnClick = true;
             this.listToolStripMenuItem.Name = "listToolStripMenuItem";
-            this.listToolStripMenuItem.Size = new System.Drawing.Size(233, 48);
+            this.listToolStripMenuItem.Size = new System.Drawing.Size(182, 42);
             this.listToolStripMenuItem.Tag = "2";
             this.listToolStripMenuItem.Text = "List";
             this.listToolStripMenuItem.Click += new System.EventHandler(this.listToolStripMenuItem_Click);
@@ -411,7 +414,7 @@
             // 
             this.largeIconToolStripMenuItem.CheckOnClick = true;
             this.largeIconToolStripMenuItem.Name = "largeIconToolStripMenuItem";
-            this.largeIconToolStripMenuItem.Size = new System.Drawing.Size(233, 48);
+            this.largeIconToolStripMenuItem.Size = new System.Drawing.Size(182, 42);
             this.largeIconToolStripMenuItem.Tag = "3";
             this.largeIconToolStripMenuItem.Text = "Large Icon";
             this.largeIconToolStripMenuItem.Click += new System.EventHandler(this.largeIconToolStripMenuItem_Click);
@@ -420,7 +423,7 @@
             // 
             this.smallIconToolStripMenuItem.CheckOnClick = true;
             this.smallIconToolStripMenuItem.Name = "smallIconToolStripMenuItem";
-            this.smallIconToolStripMenuItem.Size = new System.Drawing.Size(233, 48);
+            this.smallIconToolStripMenuItem.Size = new System.Drawing.Size(182, 42);
             this.smallIconToolStripMenuItem.Tag = "4";
             this.smallIconToolStripMenuItem.Text = "Small Icon";
             this.smallIconToolStripMenuItem.Click += new System.EventHandler(this.smallIconToolStripMenuItem_Click);
@@ -429,7 +432,7 @@
             // 
             this.tileToolStripMenuItem.CheckOnClick = true;
             this.tileToolStripMenuItem.Name = "tileToolStripMenuItem";
-            this.tileToolStripMenuItem.Size = new System.Drawing.Size(233, 48);
+            this.tileToolStripMenuItem.Size = new System.Drawing.Size(182, 42);
             this.tileToolStripMenuItem.Tag = "5";
             this.tileToolStripMenuItem.Text = "Tile";
             this.tileToolStripMenuItem.Click += new System.EventHandler(this.tileToolStripMenuItem_Click);
@@ -437,16 +440,23 @@
             // deleteAllWordsToolStripMenuItem1
             // 
             this.deleteAllWordsToolStripMenuItem1.Name = "deleteAllWordsToolStripMenuItem1";
-            this.deleteAllWordsToolStripMenuItem1.Size = new System.Drawing.Size(356, 46);
+            this.deleteAllWordsToolStripMenuItem1.Size = new System.Drawing.Size(340, 42);
             this.deleteAllWordsToolStripMenuItem1.Text = "Delete All Words";
             this.deleteAllWordsToolStripMenuItem1.Click += new System.EventHandler(this.deleteAllWordsToolStripMenuItem1_Click);
             // 
             // unCheckSelectedWordsToolStripMenuItem
             // 
             this.unCheckSelectedWordsToolStripMenuItem.Name = "unCheckSelectedWordsToolStripMenuItem";
-            this.unCheckSelectedWordsToolStripMenuItem.Size = new System.Drawing.Size(356, 46);
+            this.unCheckSelectedWordsToolStripMenuItem.Size = new System.Drawing.Size(340, 42);
             this.unCheckSelectedWordsToolStripMenuItem.Text = "UnCheck Selected Words";
             this.unCheckSelectedWordsToolStripMenuItem.Click += new System.EventHandler(this.unCheckSelectedWordsToolStripMenuItem_Click);
+            // 
+            // uncheckAllWordsToolStripMenuItem
+            // 
+            this.uncheckAllWordsToolStripMenuItem.Name = "uncheckAllWordsToolStripMenuItem";
+            this.uncheckAllWordsToolStripMenuItem.Size = new System.Drawing.Size(340, 42);
+            this.uncheckAllWordsToolStripMenuItem.Text = "Uncheck All Words";
+            this.uncheckAllWordsToolStripMenuItem.Click += new System.EventHandler(this.uncheckAllWordsToolStripMenuItem_Click);
             // 
             // lblSystemVolume
             // 
@@ -455,24 +465,25 @@
             this.lblSystemVolume.BackColor = System.Drawing.Color.Transparent;
             this.lblSystemVolume.Font = new System.Drawing.Font("Cairo", 28F, System.Drawing.FontStyle.Bold);
             this.lblSystemVolume.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.lblSystemVolume.Location = new System.Drawing.Point(1071, 903);
+            this.lblSystemVolume.Location = new System.Drawing.Point(1032, 924);
+            this.lblSystemVolume.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblSystemVolume.Name = "lblSystemVolume";
-            this.lblSystemVolume.Size = new System.Drawing.Size(530, 125);
+            this.lblSystemVolume.Size = new System.Drawing.Size(304, 72);
             this.lblSystemVolume.TabIndex = 14;
             this.lblSystemVolume.Text = "System Volume :";
             this.lblSystemVolume.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // trackBar1
             // 
-            this.trackBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.trackBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.trackBar1.BackColor = System.Drawing.Color.DarkGreen;
             this.trackBar1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.trackBar1.LargeChange = 10;
-            this.trackBar1.Location = new System.Drawing.Point(1436, 963);
+            this.trackBar1.Location = new System.Drawing.Point(1357, 941);
+            this.trackBar1.Margin = new System.Windows.Forms.Padding(5);
             this.trackBar1.Maximum = 100;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(409, 80);
+            this.trackBar1.Size = new System.Drawing.Size(466, 45);
             this.trackBar1.SmallChange = 5;
             this.trackBar1.TabIndex = 2;
             this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
@@ -489,9 +500,10 @@
             this.ESpeakSelectedWords.ForeColor = System.Drawing.Color.White;
             this.ESpeakSelectedWords.GradientEndColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.ESpeakSelectedWords.GradientStartColor = System.Drawing.Color.OliveDrab;
-            this.ESpeakSelectedWords.Location = new System.Drawing.Point(19, 26);
+            this.ESpeakSelectedWords.Location = new System.Drawing.Point(83, 51);
+            this.ESpeakSelectedWords.Margin = new System.Windows.Forms.Padding(5);
             this.ESpeakSelectedWords.Name = "ESpeakSelectedWords";
-            this.ESpeakSelectedWords.Size = new System.Drawing.Size(377, 105);
+            this.ESpeakSelectedWords.Size = new System.Drawing.Size(449, 115);
             this.ESpeakSelectedWords.TabIndex = 3;
             this.ESpeakSelectedWords.Text = "Speak Selected Words";
             this.ESpeakSelectedWords.UseVisualStyleBackColor = false;
@@ -506,6 +518,7 @@
             // 
             // btnAddENGWords
             // 
+            this.btnAddENGWords.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddENGWords.BackColor = System.Drawing.Color.Transparent;
             this.btnAddENGWords.BorderRadius = 30;
             this.btnAddENGWords.BorderSize = 1;
@@ -515,9 +528,10 @@
             this.btnAddENGWords.ForeColor = System.Drawing.Color.White;
             this.btnAddENGWords.GradientEndColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnAddENGWords.GradientStartColor = System.Drawing.Color.OliveDrab;
-            this.btnAddENGWords.Location = new System.Drawing.Point(1419, 26);
+            this.btnAddENGWords.Location = new System.Drawing.Point(1374, 51);
+            this.btnAddENGWords.Margin = new System.Windows.Forms.Padding(5);
             this.btnAddENGWords.Name = "btnAddENGWords";
-            this.btnAddENGWords.Size = new System.Drawing.Size(377, 105);
+            this.btnAddENGWords.Size = new System.Drawing.Size(449, 115);
             this.btnAddENGWords.TabIndex = 1;
             this.btnAddENGWords.Text = "Add English Word";
             this.btnAddENGWords.UseVisualStyleBackColor = false;
@@ -525,6 +539,7 @@
             // 
             // btnExit
             // 
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnExit.BackColor = System.Drawing.Color.Transparent;
             this.btnExit.BorderSize = 1;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -533,9 +548,10 @@
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.GradientEndColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnExit.GradientStartColor = System.Drawing.Color.IndianRed;
-            this.btnExit.Location = new System.Drawing.Point(23, 903);
+            this.btnExit.Location = new System.Drawing.Point(55, 924);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(5);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(211, 72);
+            this.btnExit.Size = new System.Drawing.Size(208, 73);
             this.btnExit.TabIndex = 4;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -543,6 +559,7 @@
             // 
             // lblTotalWords
             // 
+            this.lblTotalWords.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTotalWords.BackColor = System.Drawing.Color.Transparent;
             this.lblTotalWords.EnableAutoSize = false;
             this.lblTotalWords.FocusEffect = false;
@@ -553,51 +570,85 @@
             this.lblTotalWords.GradientEndColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblTotalWords.GradientStartColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.lblTotalWords.HoverEffect = false;
-            this.lblTotalWords.Location = new System.Drawing.Point(610, 19);
+            this.lblTotalWords.Location = new System.Drawing.Point(729, 51);
+            this.lblTotalWords.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblTotalWords.MouseDownEffect = false;
             this.lblTotalWords.Name = "lblTotalWords";
             this.lblTotalWords.Padding = new System.Windows.Forms.Padding(3);
             this.lblTotalWords.Radius = 40;
             this.lblTotalWords.ScaleEffect = false;
             this.lblTotalWords.ScaleFactor = 1.1F;
-            this.lblTotalWords.Size = new System.Drawing.Size(595, 118);
+            this.lblTotalWords.Size = new System.Drawing.Size(449, 115);
             this.lblTotalWords.TabIndex = 20;
             this.lblTotalWords.Text = "Total Words :";
             this.lblTotalWords.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblTotalWords.UseGradient = true;
             // 
-            // panel1
+            // btnSearch
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.lblTotalWords);
-            this.panel1.Controls.Add(this.btnExit);
-            this.panel1.Controls.Add(this.lstvWords);
-            this.panel1.Controls.Add(this.btnAddENGWords);
-            this.panel1.Controls.Add(this.ESpeakSelectedWords);
-            this.panel1.Controls.Add(this.lblSystemVolume);
-            this.panel1.Location = new System.Drawing.Point(45, 41);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1837, 1064);
-            this.panel1.TabIndex = 21;
+            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnSearch.BorderRadius = 30;
+            this.btnSearch.BorderSize = 1;
+            this.btnSearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.FocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnSearch.Font = new System.Drawing.Font("Cairo", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.GradientEndColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnSearch.GradientStartColor = System.Drawing.Color.OliveDrab;
+            this.btnSearch.Location = new System.Drawing.Point(1595, 791);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(5);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(228, 69);
+            this.btnSearch.TabIndex = 23;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // uncheckAllWordsToolStripMenuItem
+            // txtSearch
             // 
-            this.uncheckAllWordsToolStripMenuItem.Name = "uncheckAllWordsToolStripMenuItem";
-            this.uncheckAllWordsToolStripMenuItem.Size = new System.Drawing.Size(356, 46);
-            this.uncheckAllWordsToolStripMenuItem.Text = "Uncheck All Words";
-            this.uncheckAllWordsToolStripMenuItem.Click += new System.EventHandler(this.uncheckAllWordsToolStripMenuItem_Click);
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearch.BackColor = System.Drawing.Color.DarkGreen;
+            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txtSearch.Location = new System.Drawing.Point(1032, 807);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(5);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(526, 36);
+            this.txtSearch.TabIndex = 21;
+            this.txtSearch.Text = "Search By English Word";
+            this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSearch.WordWrap = false;
+            this.txtSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtSearch_MouseClick);
+            // 
+            // tFoundedSearchedItem
+            // 
+            this.tFoundedSearchedItem.Interval = 2000;
+            this.tFoundedSearchedItem.Tick += new System.EventHandler(this.tFoundedSearchedItem_Tick);
             // 
             // frmMainScreen
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScroll = true;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.ClientSize = new System.Drawing.Size(1890, 1044);
             this.Controls.Add(this.trackBar1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.lblSystemVolume);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.btnAddENGWords);
+            this.Controls.Add(this.lstvWords);
+            this.Controls.Add(this.lblTotalWords);
+            this.Controls.Add(this.ESpeakSelectedWords);
             this.Font = new System.Drawing.Font("Cairo", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
+            this.Margin = new System.Windows.Forms.Padding(10, 16, 10, 16);
             this.Name = "frmMainScreen";
             this.Text = "English Learning Management System";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -605,8 +656,6 @@
             this.Load += new System.EventHandler(this.frmMainScreen_Load);
             this.WordsListViewContextMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -659,9 +708,11 @@
         private EnhancedControls.EnhancedButton btnAddENGWords;
         private EnhancedControls.EnhancedButton btnExit;
         private EnahncedControls.EnhancedLabel lblTotalWords;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem deleteAllWordsToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem unCheckSelectedWordsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uncheckAllWordsToolStripMenuItem;
+        private System.Windows.Forms.TextBox txtSearch;
+        private EnhancedControls.EnhancedButton btnSearch;
+        private System.Windows.Forms.Timer tFoundedSearchedItem;
     }
 }

@@ -849,5 +849,65 @@ namespace English_Learning_Management_System
             else
                 MessageBox.Show("There are no checked words !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+     
+        bool _SearchForEnglishWord(string EnglishWord , out ListViewItem Item)
+        {
+            for(int i=0;i < lstvWords.Items.Count;i++)
+            {
+                if (lstvWords.Items[i].Text.ToLower() == EnglishWord.ToLower())
+                {                    
+                    lstvWords.TopItem = lstvWords.Items[i];
+                    Item = lstvWords.Items[i];
+                    lstvWords.Items[i].BackColor = Color.DarkViolet;
+                    return true;
+                }
+            }
+
+            Item = null;
+
+            return false;
+        }
+          ListViewItem SearchedItem;
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if(txtSearch.Text=="" || txtSearch.Text == "Search By English Word")
+            {
+                MessageBox.Show("Enter English Word to search for it !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if(!_SearchForEnglishWord(txtSearch.Text,out SearchedItem))
+                {
+                    MessageBox.Show("English Word is Not Found", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    txtSearch.Text = "Seatch By English Word";
+
+                    tFoundedSearchedItem.Enabled = true;
+                    
+                }
+                lstvWords.Focus();
+
+            }
+
+        }
+
+        private void txtSearch_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtSearch.Clear();
+
+        }
+
+        private void tFoundedSearchedItem_Tick(object sender, EventArgs e)
+        {
+            if(SearchedItem!=null)
+            {
+                SearchedItem.BackColor = lstvWords.BackColor;
+            }
+        }
+
+       
     }
 }

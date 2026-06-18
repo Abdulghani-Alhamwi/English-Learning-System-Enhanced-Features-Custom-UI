@@ -1,0 +1,28 @@
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\Debug\Pre-Filled Files\ArabicTranslationWords.txt
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\Debug\Pre-Filled Files\EnglishWords.txt
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\Debug\English Learning Management System.exe.config
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\Debug\English Learning Management System.exe.manifest
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\Debug\English Learning Management System.application
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\Debug\English Learning Management System.exe
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\Debug\English Learning Management System.pdb
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\Debug\EnahncedControls.dll
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\Debug\Microsoft.Speech.dll
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\Debug\NAudio.dll
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\Debug\Newtonsoft.Json.dll
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\bin\Debug\Newtonsoft.Json.xml
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\Debug\English Learning Management System.csproj.AssemblyReference.cache
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\Debug\English_Learning_Management_System.Screens.frmEnglishWordsPresentaion.resources
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\Debug\English_Learning_Management_System.Screens.frmAddMoreATransaltions.resources
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\Debug\English_Learning_Management_System.Screens.frmAddEnglishWord.resources
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\Debug\English_Learning_Management_System.Screens.frmExample.resources
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\Debug\English_Learning_Management_System.Screens.frmLFFirstLoad.resources
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\Debug\English_Learning_Management_System.Properties.Resources.resources
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\Debug\English_Learning_Management_System.frmMainScreen.resources
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\Debug\English Learning Management System.csproj.GenerateResource.cache
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\Debug\English Learning Management System.csproj.CoreCompileInputs.cache
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\Debug\English Learning Management System.exe.manifest
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\Debug\English Learning Management System.application
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\Debug\English .B1637C8A.Up2Date
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\Debug\English Learning Management System.exe
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\Debug\English Learning Management System.pdb
+D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\Debug\English Learning Management System.exe.config

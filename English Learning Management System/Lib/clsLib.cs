@@ -32,16 +32,23 @@ namespace Lib
         public static bool isDefaultOutputSet = false;
         public static void SpellAWordMOD(string Word)
         {
-            _speakerMOD = new Microsoft.Speech.Synthesis.SpeechSynthesizer();
-
-            if (!isDefaultOutputSet)
+            try
             {
-                _speakerMOD.SetOutputToDefaultAudioDevice();
-                isDefaultOutputSet = true;
-                SpellAWordMOD(Word);
-                return;
+                _speakerMOD = new Microsoft.Speech.Synthesis.SpeechSynthesizer();
+
+                if (!isDefaultOutputSet)
+                {
+                    _speakerMOD.SetOutputToDefaultAudioDevice();
+                    isDefaultOutputSet = true;
+                    SpellAWordMOD(Word);
+                    return;
+                }
+                _speakerMOD.SpeakAsync(Word);
             }
-            _speakerMOD.SpeakAsync(Word);
+            catch
+            {
+                SpellAWordLEGACY(Word);
+            }
         }
 
         public static void PrintAsMsgBoxInstalledVoicesMOD()

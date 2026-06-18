@@ -1,7 +1,16 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\My Projects\\English-Learning-Management-System\\English Learning Management System\\",
-  "Documents": [],
+  "WorkspaceRootPath": "D:\\My Projects\\English-Learning-System-Custom-UI-Enhanced-Features\\English Learning Management System\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8667C375-3F72-4863-B5E8-FBA320B2CAB4}|English Learning Management System.csproj|d:\\my projects\\english-learning-system-custom-ui-enhanced-features\\english learning management system\\lib\\clsword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8667C375-3F72-4863-B5E8-FBA320B2CAB4}|English Learning Management System.csproj|solutionrelative:lib\\clsword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8667C375-3F72-4863-B5E8-FBA320B2CAB4}|English Learning Management System.csproj|d:\\my projects\\english-learning-system-custom-ui-enhanced-features\\english learning management system\\screens\\frmlffirstload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8667C375-3F72-4863-B5E8-FBA320B2CAB4}|English Learning Management System.csproj|solutionrelative:screens\\frmlffirstload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +18,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "clsWord.cs",
+              "DocumentMoniker": "D:\\My Projects\\English-Learning-System-Custom-UI-Enhanced-Features\\English Learning Management System\\Lib\\clsWord.cs",
+              "RelativeDocumentMoniker": "Lib\\clsWord.cs",
+              "ToolTip": "D:\\My Projects\\English-Learning-System-Custom-UI-Enhanced-Features\\English Learning Management System\\Lib\\clsWord.cs",
+              "RelativeToolTip": "Lib\\clsWord.cs",
+              "ViewState": "AgIAAPoBAAAAAAAAAADwvwICAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-18T16:51:26.56Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Bookmark",
@@ -30,6 +52,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmLFFirstLoad.cs",
+              "DocumentMoniker": "D:\\My Projects\\English-Learning-System-Custom-UI-Enhanced-Features\\English Learning Management System\\Screens\\frmLFFirstLoad.cs",
+              "RelativeDocumentMoniker": "Screens\\frmLFFirstLoad.cs",
+              "ToolTip": "D:\\My Projects\\English-Learning-System-Custom-UI-Enhanced-Features\\English Learning Management System\\Screens\\frmLFFirstLoad.cs",
+              "RelativeToolTip": "Screens\\frmLFFirstLoad.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAIwBwAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-18T16:51:12.256Z",
+              "EditorCaption": ""
             }
           ]
         }
