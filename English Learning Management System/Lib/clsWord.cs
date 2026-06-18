@@ -1,4 +1,5 @@
-﻿using System;
+﻿using English_Learning_Management_System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -109,7 +110,7 @@ namespace Lib
 
         }
 
-        internal static bool SaveArabicTranslationsToFile(string Translation1, string FileName, bool WithSeparator = true, string Translation2 = null, string Translation3 = null, string Translation4 = null)
+        internal  static bool SaveArabicTranslationsToFile(string Translation1, string FileName, bool WithSeparator = true, string Translation2 = null, string Translation3 = null, string Translation4 = null)
         {
             if (Translation1 == "" || Translation1==null)
             {
@@ -211,23 +212,72 @@ namespace Lib
                 File.Delete(CheckedWordsFileName);
         }
 
-        internal static void DeleteWord(string SelectedWord, string EnglishFileName, string ArabicTranslationsFileName, string CheckedWordsFileName)
+      internal static List<int> LoadCheckedWordsIdFromFile(string FileName)
+        {
+            List<int> lCheckedWordsID = new List<int>();
+
+            if (File.Exists(FileName))
+            {
+                using (StreamReader MyFile = new StreamReader(FileName))
+                {
+                    string Line;
+                    while ((Line = MyFile.ReadLine()) != null)
+                    {
+                        if (Line != "")
+                            lCheckedWordsID.Add(int.Parse(Line.Trim()));
+                    }
+                }
+            }
+            return lCheckedWordsID;
+        }
+
+        static int _GetWordLocationId(List<string> lEnglishWords,string SelectedWordToDelete)
+        {
+            if (lEnglishWords == null)
+                return -1;
+            else
+            {
+                for (int i = 0; i < lEnglishWords.Count; i++)
+                {
+                    if (lEnglishWords[i] == SelectedWordToDelete)
+                    {
+                        return i;
+                    }
+                }
+            }
+            return -1;
+        }
+
+        internal async static void DeleteWord(string SelectedWord, string EnglishFileName, string ArabicTranslationsFileName, string CheckedWordsFileName)
         {
             if (SelectedWord != null)
             {
                 List<string> lEnglishWords = LoadEnglishWordsFromFile(EnglishFileName);
                 List<stArabicTranslation> lArabicTranslations = LoadArabicTranslationsFromFile(ArabicTranslationsFileName);
+                List<int> lCheckedWordsIds = LoadCheckedWordsIdFromFile(clsWord.FixedCheckedWordsFileLocation);
 
                 DeleteAllRecords(EnglishFileName, ArabicTranslationsFileName, CheckedWordsFileName);
+
+               int SelectedWordLocation = _GetWordLocationId(lEnglishWords, SelectedWord);
+
+                if (SelectedWordLocation != -1) 
+               lCheckedWordsIds.Remove(SelectedWordLocation);
 
                 for (int i = 0; i < lEnglishWords.Count; i++)
                 {
                     if (lEnglishWords[i] != SelectedWord)
                     {
                         SaveEnglishWordsToFile(lEnglishWords[i], EnglishFileName);
-
                         SaveArabicTranslationsToFile(lArabicTranslations[i].Translation1, ArabicTranslationsFileName, true, lArabicTranslations[i].Translation2, lArabicTranslations[i].Translation3, lArabicTranslations[i].Translation4);
+                        
                     }
+                }
+                for (int j = 0; j < lCheckedWordsIds.Count; j++)
+                {
+                    if ((SelectedWordLocation < lCheckedWordsIds[j]))
+                        frmMainScreen.AddCheckedWordToFile(FixedCheckedWordsFileLocation, lCheckedWordsIds[j] - 1);
+                    else 
+                        frmMainScreen.AddCheckedWordToFile(FixedCheckedWordsFileLocation, lCheckedWordsIds[j]);
 
                 }
             }
@@ -539,61 +589,69 @@ namespace Lib
                 bool IsPreFilledWord = false;
                 int CountEnglishWords = 0;
 
-                foreach (string PreFilledWord in lPreFilledEnglishWords)
-                {
+
+                    foreach (string PreFilledWord in lPreFilledEnglishWords)
+                    {
+
                     foreach (string UserEWord in lUserEnglishWords)
                     {
                         if (PreFilledWord.Trim() == UserEWord.Trim())
                         {
-                            if (!((PreFilledArabicTranslations[CountEnglishWords].Translation1 == lUserArabicTranslations[CountEnglishWords].Translation1) && (PreFilledArabicTranslations[CountEnglishWords].Translation2 == lUserArabicTranslations[CountEnglishWords].Translation2) && (PreFilledArabicTranslations[CountEnglishWords].Translation3 == lUserArabicTranslations[CountEnglishWords].Translation3) && (PreFilledArabicTranslations[CountEnglishWords].Translation4 == lUserArabicTranslations[CountEnglishWords].Translation4)))
-                            {
-                                clsWord.stArabicTranslation NewTranslations;
-                                NewTranslations.Translation1 = PreFilledArabicTranslations[CountEnglishWords].Translation1;
-                                NewTranslations.Translation2 = PreFilledArabicTranslations[CountEnglishWords].Translation2;
-                                NewTranslations.Translation3 = PreFilledArabicTranslations[CountEnglishWords].Translation3;
-                                NewTranslations.Translation4 = PreFilledArabicTranslations[CountEnglishWords].Translation4;
+                            if (!((CountEnglishWords + 1) == lUserEnglishWords.Count))
+                                if (!((PreFilledArabicTranslations[CountEnglishWords].Translation1 == lUserArabicTranslations[CountEnglishWords].Translation1) && (PreFilledArabicTranslations[CountEnglishWords].Translation2 == lUserArabicTranslations[CountEnglishWords].Translation2) && (PreFilledArabicTranslations[CountEnglishWords].Translation3 == lUserArabicTranslations[CountEnglishWords].Translation3) && (PreFilledArabicTranslations[CountEnglishWords].Translation4 == lUserArabicTranslations[CountEnglishWords].Translation4)))
+                                {
+                                    clsWord.stArabicTranslation NewTranslations;
+                                    NewTranslations.Translation1 = PreFilledArabicTranslations[CountEnglishWords].Translation1;
+                                    NewTranslations.Translation2 = PreFilledArabicTranslations[CountEnglishWords].Translation2;
+                                    NewTranslations.Translation3 = PreFilledArabicTranslations[CountEnglishWords].Translation3;
+                                    NewTranslations.Translation4 = PreFilledArabicTranslations[CountEnglishWords].Translation4;
 
-                                lUserArabicTranslations[CountEnglishWords] = NewTranslations;
-                                IsWordNeedsModification = true;                            }
-                                break;
+                                    lUserArabicTranslations[CountEnglishWords] = NewTranslations;
+                                    IsWordNeedsModification = true;
+                                }
                         }
-                    }
+                        break;
+                    }                      
+                        
 
-                    if(!IsWordNeedsModification)
-                    {
-                        clsWord.SaveEnglishWordsToFile(PreFilledWord, FixedAppDataEnglishWordsLocation);
-                        clsWord.SaveArabicTranslationsToFile(PreFilledArabicTranslations[CountEnglishWords].Translation1, FixedAppDataArabicTLocation, true, PreFilledArabicTranslations[CountEnglishWords].Translation2, PreFilledArabicTranslations[CountEnglishWords].Translation3, PreFilledArabicTranslations[CountEnglishWords].Translation4);
-                    }
-                    else
-                    {
-                        clsWord.SaveEnglishWordsToFile(PreFilledWord, FixedAppDataEnglishWordsLocation);
-                        clsWord.SaveArabicTranslationsToFile(lUserArabicTranslations[CountEnglishWords].Translation1, FixedAppDataArabicTLocation, true, lUserArabicTranslations[CountEnglishWords].Translation2, lUserArabicTranslations[CountEnglishWords].Translation3, lUserArabicTranslations[CountEnglishWords].Translation4);
-                    }
-                    IsWordNeedsModification = false;
-                    CountEnglishWords++;
-                }
-
-
-                CountEnglishWords = 0;
-
-                foreach (string UserEWord in lUserEnglishWords) 
-                {
-                    foreach (string PreFilledWord in lPreFilledEnglishWords) 
-                    {
-                        if (UserEWord.Trim() == PreFilledWord.Trim())
+                        if (!IsWordNeedsModification)
                         {
-                            IsPreFilledWord = true;
-                            break;
+                            clsWord.SaveEnglishWordsToFile(PreFilledWord, FixedAppDataEnglishWordsLocation);
+                            clsWord.SaveArabicTranslationsToFile(PreFilledArabicTranslations[CountEnglishWords].Translation1, FixedAppDataArabicTLocation, true, PreFilledArabicTranslations[CountEnglishWords].Translation2, PreFilledArabicTranslations[CountEnglishWords].Translation3, PreFilledArabicTranslations[CountEnglishWords].Translation4);
                         }
-                    }
-                    if(!IsPreFilledWord)
-                    {
-                        clsWord.SaveEnglishWordsToFile(UserEWord, FixedAppDataEnglishWordsLocation);
-                        clsWord.SaveArabicTranslationsToFile(lUserArabicTranslations[CountEnglishWords].Translation1, FixedAppDataArabicTLocation, true, lUserArabicTranslations[CountEnglishWords].Translation2, lUserArabicTranslations[CountEnglishWords].Translation3, lUserArabicTranslations[CountEnglishWords].Translation4);
-                    }
+                        else
+                        {
+                            clsWord.SaveEnglishWordsToFile(PreFilledWord, FixedAppDataEnglishWordsLocation);
+                            clsWord.SaveArabicTranslationsToFile(lUserArabicTranslations[CountEnglishWords].Translation1, FixedAppDataArabicTLocation, true, lUserArabicTranslations[CountEnglishWords].Translation2, lUserArabicTranslations[CountEnglishWords].Translation3, lUserArabicTranslations[CountEnglishWords].Translation4);
+                        }
+                        IsWordNeedsModification = false;
+                        CountEnglishWords++;
 
-                    IsPreFilledWord = false;
-                    CountEnglishWords++;
+                    
+                    }
+                
+
+                    CountEnglishWords = 0;
+
+                    foreach (string UserEWord in lUserEnglishWords)
+                    {
+                        foreach (string PreFilledWord in lPreFilledEnglishWords)
+                        {
+                            if (UserEWord.Trim() == PreFilledWord.Trim())
+                            {
+                                IsPreFilledWord = true;
+                                break;
+                            }
+                        }
+                        if (!IsPreFilledWord)
+                        {
+                            clsWord.SaveEnglishWordsToFile(UserEWord, FixedAppDataEnglishWordsLocation);
+                            clsWord.SaveArabicTranslationsToFile(lUserArabicTranslations[CountEnglishWords].Translation1, FixedAppDataArabicTLocation, true, lUserArabicTranslations[CountEnglishWords].Translation2, lUserArabicTranslations[CountEnglishWords].Translation3, lUserArabicTranslations[CountEnglishWords].Translation4);
+                        }
+
+                        IsPreFilledWord = false;
+                        CountEnglishWords++;
+                    
                 }
             }
 

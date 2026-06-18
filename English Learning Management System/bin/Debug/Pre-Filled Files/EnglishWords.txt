@@ -275,7 +275,6 @@ Coalescing
 Wraps Around
 Compound Assignment Operator
 Bitwise Operator
-Callbacks
 Descending
 Ascending
 Palette
@@ -361,7 +360,6 @@ Fold
 Syntactically
 Robust
 Robust Application
-Constructs
 Paradigm
 Basic Constructs
 Semantics
@@ -706,3 +704,10 @@ Advanced
 Function
 Previous
 Boolean
+Performant
+expressive
+Convenient
+in this regard
+Extensive
+Resulting in
+Constructs

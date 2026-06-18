@@ -49,7 +49,7 @@ namespace English_Learning_Management_System
         }
 
 
-        async void AddCheckedWordToFile(string FileName, int WordID)
+        internal static async void AddCheckedWordToFile(string FileName, int WordID)
         {
             using (StreamWriter MyFile = new StreamWriter(FileName, true))
             {
@@ -58,7 +58,7 @@ namespace English_Learning_Management_System
         }
          void AddNonRemovedCheckedStateIds(string FileName)
         {
-            List<int> lCheckedWordsID = LoadCheckedWordsIdFromFile(clsWord.FixedCheckedWordsFileLocation);
+            List<int> lCheckedWordsID = clsWord.LoadCheckedWordsIdFromFile(clsWord.FixedCheckedWordsFileLocation);
 
             if (lCheckedWordsID.Count == 0)
             {
@@ -108,7 +108,7 @@ namespace English_Learning_Management_System
         }
 
         [MTAThread]
-         int GetWordID(string Word)
+          int GetWordID(string Word)
         {
             for (int i = 0; i < lstvWords.Items.Count; i++)
             {
@@ -147,24 +147,6 @@ namespace English_Learning_Management_System
              AddWordsToListView(true);
         }
 
-        List<int> LoadCheckedWordsIdFromFile(string FileName)
-        {
-            List<int> lCheckedWordsID = new List<int>();
-
-            if (File.Exists(FileName))
-            {
-                using (StreamReader MyFile = new StreamReader(FileName))
-                {
-                    string Line;
-                    while ((Line = MyFile.ReadLine()) != null)
-                    {
-                        if (Line != "")
-                            lCheckedWordsID.Add(int.Parse(Line.Trim()));
-                    }
-                }
-            }
-            return lCheckedWordsID;
-        }
 
         private async void AddWordsToListView(bool Refresh = false, bool UpdateMode = false,List<int>lWordsIds=null)
         {
@@ -177,7 +159,7 @@ namespace English_Learning_Management_System
 
             List<string> lWords = clsWord.LoadEnglishWordsFromFile(clsWord.FixedAppDataEnglishWordsLocation);
             List<clsWord.stArabicTranslation> lWordsTranslations = clsWord.LoadArabicTranslationsFromFile(clsWord.FixedAppDataArabicTLocation);
-            List<int> CheckedWordsID = LoadCheckedWordsIdFromFile(clsWord.FixedCheckedWordsFileLocation);
+            List<int> CheckedWordsID = clsWord.LoadCheckedWordsIdFromFile(clsWord.FixedCheckedWordsFileLocation);
 
 
             lblTotalWords.Text = "Total Words : " + lWords.Count();
@@ -747,13 +729,20 @@ namespace English_Learning_Management_System
                     return;
             }
 
-            if (MessageBox.Show("Are you sure you want to delete selected word ?", "Need Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            if (lstvWords.SelectedItems.Count > 3)
+            {
+                MessageBox.Show("You can select maximum 3 words in order to delete them", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (MessageBox.Show("Are you sure you want to delete selected word/s ?", "Need Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
                 for (int i = 0; i < lstvWords.SelectedItems.Count; i++)
                 {
                     clsWord.DeleteWord(lstvWords.SelectedItems[i].Text, clsWord.FixedAppDataEnglishWordsLocation, clsWord.FixedAppDataArabicTLocation, clsWord.FixedCheckedWordsFileLocation);
                 }
-                    AddWordsToListView(true);
+
+                AddWordsToListView(true);
             }
 
         }
@@ -783,7 +772,7 @@ namespace English_Learning_Management_System
             else
                  frmAddWords = new frmAddEnglishWord(true, lstvWords.SelectedItems[0].Text, lstvWords.SelectedItems[0].SubItems[1].Text, lstvWords.SelectedItems[0].SubItems[2].Text, lstvWords.SelectedItems[0].SubItems[3].Text, lstvWords.SelectedItems[0].SubItems[4].Text);
 
-            List<int> lWordsIds = LoadCheckedWordsIdFromFile(clsWord.FixedCheckedWordsFileLocation);
+            List<int> lWordsIds = clsWord.LoadCheckedWordsIdFromFile(clsWord.FixedCheckedWordsFileLocation);
             frmAddWords.ShowDialog();
             AddWordsToListView(true,true, lWordsIds);
 

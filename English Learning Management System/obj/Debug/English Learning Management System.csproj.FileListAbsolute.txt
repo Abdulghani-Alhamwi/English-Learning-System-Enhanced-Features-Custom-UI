@@ -25,4 +25,3 @@ D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learn
 D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\Debug\English .B1637C8A.Up2Date
 D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\Debug\English Learning Management System.exe
 D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\Debug\English Learning Management System.pdb
-D:\My Projects\English-Learning-System-Custom-UI-Enhanced-Features\English Learning Management System\obj\Debug\English Learning Management System.exe.config
