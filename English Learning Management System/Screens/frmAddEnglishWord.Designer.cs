@@ -56,12 +56,12 @@
             // txtBoxEnglishWord
             // 
             this.txtBoxEnglishWord.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtBoxEnglishWord.Font = new System.Drawing.Font("Cairo", 35F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.txtBoxEnglishWord.Font = new System.Drawing.Font("Cairo", 37F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.txtBoxEnglishWord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.txtBoxEnglishWord.Location = new System.Drawing.Point(169, 121);
             this.txtBoxEnglishWord.Multiline = true;
             this.txtBoxEnglishWord.Name = "txtBoxEnglishWord";
-            this.txtBoxEnglishWord.Size = new System.Drawing.Size(485, 69);
+            this.txtBoxEnglishWord.Size = new System.Drawing.Size(485, 76);
             this.txtBoxEnglishWord.TabIndex = 0;
             this.txtBoxEnglishWord.Tag = "E";
             this.txtBoxEnglishWord.Text = "Enter English Word";
@@ -73,12 +73,12 @@
             // txtArabicWord
             // 
             this.txtArabicWord.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtArabicWord.Font = new System.Drawing.Font("Cairo", 35F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.txtArabicWord.Font = new System.Drawing.Font("Cairo", 37F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.txtArabicWord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.txtArabicWord.Location = new System.Drawing.Point(169, 234);
             this.txtArabicWord.Multiline = true;
             this.txtArabicWord.Name = "txtArabicWord";
-            this.txtArabicWord.Size = new System.Drawing.Size(485, 69);
+            this.txtArabicWord.Size = new System.Drawing.Size(485, 76);
             this.txtArabicWord.TabIndex = 1;
             this.txtArabicWord.Tag = "A";
             this.txtArabicWord.Text = "Enter Arabic Translation";

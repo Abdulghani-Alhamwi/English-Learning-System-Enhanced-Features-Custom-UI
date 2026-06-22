@@ -98,7 +98,7 @@
             this.colArabicTranslation3,
             this.colArabicTranslation4});
             this.lstvWords.ContextMenuStrip = this.WordsListViewContextMenu;
-            this.lstvWords.Font = new System.Drawing.Font("Cairo", 35F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lstvWords.Font = new System.Drawing.Font("Cairo", 37F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.lstvWords.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lstvWords.GridLines = true;
             this.lstvWords.HideSelection = false;
@@ -460,12 +460,11 @@
             // 
             // lblSystemVolume
             // 
-            this.lblSystemVolume.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSystemVolume.AutoSize = true;
             this.lblSystemVolume.BackColor = System.Drawing.Color.Transparent;
             this.lblSystemVolume.Font = new System.Drawing.Font("Cairo", 28F, System.Drawing.FontStyle.Bold);
             this.lblSystemVolume.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.lblSystemVolume.Location = new System.Drawing.Point(1032, 924);
+            this.lblSystemVolume.Location = new System.Drawing.Point(916, 912);
             this.lblSystemVolume.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblSystemVolume.Name = "lblSystemVolume";
             this.lblSystemVolume.Size = new System.Drawing.Size(304, 72);
@@ -479,11 +478,11 @@
             this.trackBar1.BackColor = System.Drawing.Color.DarkGreen;
             this.trackBar1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.trackBar1.LargeChange = 10;
-            this.trackBar1.Location = new System.Drawing.Point(1357, 941);
+            this.trackBar1.Location = new System.Drawing.Point(1401, 939);
             this.trackBar1.Margin = new System.Windows.Forms.Padding(5);
             this.trackBar1.Maximum = 100;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(466, 45);
+            this.trackBar1.Size = new System.Drawing.Size(428, 45);
             this.trackBar1.SmallChange = 5;
             this.trackBar1.TabIndex = 2;
             this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
@@ -500,7 +499,7 @@
             this.ESpeakSelectedWords.ForeColor = System.Drawing.Color.White;
             this.ESpeakSelectedWords.GradientEndColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.ESpeakSelectedWords.GradientStartColor = System.Drawing.Color.OliveDrab;
-            this.ESpeakSelectedWords.Location = new System.Drawing.Point(83, 51);
+            this.ESpeakSelectedWords.Location = new System.Drawing.Point(55, 51);
             this.ESpeakSelectedWords.Margin = new System.Windows.Forms.Padding(5);
             this.ESpeakSelectedWords.Name = "ESpeakSelectedWords";
             this.ESpeakSelectedWords.Size = new System.Drawing.Size(449, 115);
@@ -528,7 +527,7 @@
             this.btnAddENGWords.ForeColor = System.Drawing.Color.White;
             this.btnAddENGWords.GradientEndColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnAddENGWords.GradientStartColor = System.Drawing.Color.OliveDrab;
-            this.btnAddENGWords.Location = new System.Drawing.Point(1374, 51);
+            this.btnAddENGWords.Location = new System.Drawing.Point(1380, 51);
             this.btnAddENGWords.Margin = new System.Windows.Forms.Padding(5);
             this.btnAddENGWords.Name = "btnAddENGWords";
             this.btnAddENGWords.Size = new System.Drawing.Size(449, 115);
@@ -570,7 +569,7 @@
             this.lblTotalWords.GradientEndColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblTotalWords.GradientStartColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.lblTotalWords.HoverEffect = false;
-            this.lblTotalWords.Location = new System.Drawing.Point(729, 51);
+            this.lblTotalWords.Location = new System.Drawing.Point(718, 51);
             this.lblTotalWords.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblTotalWords.MouseDownEffect = false;
             this.lblTotalWords.Name = "lblTotalWords";
@@ -599,7 +598,7 @@
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.GradientEndColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnSearch.GradientStartColor = System.Drawing.Color.OliveDrab;
-            this.btnSearch.Location = new System.Drawing.Point(1595, 791);
+            this.btnSearch.Location = new System.Drawing.Point(1601, 791);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(5);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(228, 69);
@@ -615,10 +614,11 @@
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtSearch.Location = new System.Drawing.Point(1032, 807);
+            this.txtSearch.Location = new System.Drawing.Point(916, 793);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(5);
+            this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(526, 36);
+            this.txtSearch.Size = new System.Drawing.Size(642, 64);
             this.txtSearch.TabIndex = 21;
             this.txtSearch.Text = "Search By English Word";
             this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
