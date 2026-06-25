@@ -14,7 +14,6 @@ namespace English_Learning_Management_System.Screens
     public partial class frmAddEnglishWord : Form
     {
         bool EditWordMode = false;
-        bool AllowTabMovingForControl = false;
         string OldSelectedWord;
         string T2;
         string T3;
@@ -126,13 +125,13 @@ namespace English_Learning_Management_System.Screens
         }
         private void txtBoxWord_Validating(object sender, CancelEventArgs e)
         {
-            if(txtBoxEnglishWord.Text =="" || txtArabicWord.Text=="")
-            clsUtilControls.ValidateTextBox(sender, txterrorprovider, e, true, AllowTabMovingForControl);
+            if (txtBoxEnglishWord.Text == null || txtArabicWord.Text == null || txtBoxEnglishWord.Text == "Enter English Word" || txtArabicWord.Text=="Enter Arabic Translation")
+            clsUtilControls.ValidateTextBox(sender, txterrorprovider, e,true);
         }
 
         private void txtWord_Enter(object sender, EventArgs e)
         {
-            AllowTabMovingForControl = false;
+            
 
             if (((TextBox)sender).Tag.ToString() == "A" && (((TextBox)sender).Text == "" || ((TextBox)sender).Text == "Enter Arabic Translation"))
             {
@@ -165,9 +164,7 @@ namespace English_Learning_Management_System.Screens
                     txtArabicWord.CausesValidation = true;
                 }
             }
-            else
-                AllowTabMovingForControl = true;
-        }
+           }
 
         private void frmAddEnglishWord_Shown(object sender, EventArgs e)
         {

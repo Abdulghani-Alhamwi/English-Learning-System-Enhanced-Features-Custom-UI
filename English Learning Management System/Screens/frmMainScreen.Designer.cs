@@ -460,6 +460,7 @@
             // 
             // lblSystemVolume
             // 
+            this.lblSystemVolume.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSystemVolume.AutoSize = true;
             this.lblSystemVolume.BackColor = System.Drawing.Color.Transparent;
             this.lblSystemVolume.Font = new System.Drawing.Font("Cairo", 28F, System.Drawing.FontStyle.Bold);
@@ -506,6 +507,7 @@
             this.ESpeakSelectedWords.TabIndex = 3;
             this.ESpeakSelectedWords.Text = "Speak Selected Words";
             this.ESpeakSelectedWords.UseVisualStyleBackColor = false;
+            this.ESpeakSelectedWords.Visible = false;
             this.ESpeakSelectedWords.Click += new System.EventHandler(this.ESpeakSelectedWords_Click);
             // 
             // makeAnyPartOfFormDraggable1

@@ -75,7 +75,7 @@ namespace English_Learning_Management_System.Lib
         private void PrepareEnglishButton()
         {
             Word.GbtnEnglishWord.Visible = true;
-            Word.GradientPanel1.Refresh();
+            //Word.GradientPanel1.Refresh();
             if (SpeakEnglishWord)
             {
                 clsLib.SpellAWordMOD(Word.GbtnEnglishWord.Text);
@@ -135,7 +135,7 @@ namespace English_Learning_Management_System.Lib
             Word.lblReady.Visible = false;
             Word.ProgressIndicator1.Visible = false;
             Word.ProgressIndicator1.Stop();
-            Word.GradientPanel1.Refresh();
+            //Word.GradientPanel1.Refresh();
 
         }
 
@@ -145,7 +145,7 @@ namespace English_Learning_Management_System.Lib
             Word.lblReady.Visible = true;
             Word.ProgressIndicator1.Start();
             Word.ProgressIndicator1.Visible = true;
-            Word.GradientPanel1.Refresh();
+            //Word.GradientPanel1.Refresh();
         }
 
         private void _HideTranslationsButtons()
@@ -154,7 +154,7 @@ namespace English_Learning_Management_System.Lib
             Word.GbtnTranslation2.Visible = false;
             Word.GbtnTranslation3.Visible = false;
             Word.GbtnTranslation4.Visible = false;
-            Word.GradientPanel1.Refresh();
+            //Word.GradientPanel1.Refresh();
 
         }
 
@@ -163,7 +163,7 @@ namespace English_Learning_Management_System.Lib
             Word.lblExample.Visible = true;
             Word.lblTE.Visible = true;
             Word.lblTranslation.Visible = true;
-            Word.GradientPanel1.Refresh();
+            //Word.GradientPanel1.Refresh();
             clsLib.SpellAWordMOD("Example");
             Thread.Sleep(800);
             clsLib.SpellAWordMOD(Word.lblExample.Text);
@@ -175,7 +175,7 @@ namespace English_Learning_Management_System.Lib
             Word.lblExample.Visible = false;
             Word.lblTranslation.Visible = false;
             Word.lblTE.Visible = false;
-            Word.GradientPanel1.Refresh();
+            //Word.GradientPanel1.Refresh();
         }
 
         void _ShownTranslationsButtons(short WaitShowing)
@@ -189,7 +189,7 @@ namespace English_Learning_Management_System.Lib
                 if (!TrasnaltionsBtn1HasShowed)
                 {
                     Word.GbtnTranslation1.Visible = true;
-                    Word.GradientPanel1.Refresh();
+                    //Word.GradientPanel1.Refresh();
                     clsLib.SpellAWordMOD(Word.GbtnEnglishWord.Text);
                     TrasnaltionsBtn1HasShowed = true;
                 }
@@ -199,7 +199,7 @@ namespace English_Learning_Management_System.Lib
                 if (!TrasnaltionsBtn2HasShowed)
                 {
                     Word.GbtnTranslation2.Visible = true;
-                    Word.GradientPanel1.Refresh();
+                    //Word.GradientPanel1.Refresh();
                     clsLib.SpellAWordMOD(Word.GbtnEnglishWord.Text);
                     TrasnaltionsBtn2HasShowed = true;
                 }
@@ -210,7 +210,7 @@ namespace English_Learning_Management_System.Lib
                 if (!TrasnaltionsBtn3HasShowed)
                 {
                     Word.GbtnTranslation3.Visible = true;
-                    Word.GradientPanel1.Refresh();
+                    //Word.GradientPanel1.Refresh();
                     clsLib.SpellAWordMOD(Word.GbtnEnglishWord.Text);
                     TrasnaltionsBtn3HasShowed = true;
                 }
@@ -221,7 +221,7 @@ namespace English_Learning_Management_System.Lib
                 {
                     //ChangeGunaButtonColor(GbtnTranslation4, GbtnTranslation1.FillColor, Color.DarkSeaGreen);64, 0, 0
                     Word.GbtnTranslation4.Visible = true;
-                    Word.GradientPanel1.Refresh();
+                  //  Word.GradientPanel1.Refresh();
                     clsLib.SpellAWordMOD(Word.GbtnEnglishWord.Text);
                     TrasnaltionsBtn4HasShowed = true;
                 }
@@ -245,7 +245,7 @@ namespace English_Learning_Management_System.Lib
                 TrasnaltionsBtn4HasShowed = false;
                 _HideExample();
                 Word.GbtnEnglishWord.Visible = false;
-                Word.GradientPanel1.Refresh();
+                //Word.GradientPanel1.Refresh();
                 WaitShTranslationsBtns = -1;
                 AllowExampleshawn = true;
                 ShowIntroControls();
@@ -319,7 +319,7 @@ namespace English_Learning_Management_System.Lib
             if (HideIntro)
             {
                 _HideIntroControls();
-                Word.GradientPanel1.Refresh();
+                //Word.GradientPanel1.Refresh();
                 HideIntro = false;
             }
 

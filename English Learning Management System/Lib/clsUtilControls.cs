@@ -19,9 +19,9 @@ namespace Lib
         Validated Event
         LostFocus Event
          */
-        private static void txtBox_Validating(object txtsender, object errorprovidersender, CancelEventArgs e,bool HasExplainingText=false,bool AllowMoving=false)
+        private static void txtBox_Validating(object txtsender, object errorprovidersender, CancelEventArgs e, bool HasDefaultText)
         {
-            if ((string.IsNullOrWhiteSpace(((TextBox)txtsender).Text) || String.IsNullOrEmpty(((TextBox)txtsender).Text)|| HasExplainingText) && !AllowMoving)
+            if ((string.IsNullOrWhiteSpace(((TextBox)txtsender).Text) || String.IsNullOrEmpty(((TextBox)txtsender).Text)) || HasDefaultText)
             {
                 e.Cancel = true;//Block leaving the control till the validation passes
                 ((ErrorProvider)errorprovidersender).SetError(((TextBox)txtsender),"text boxs can't be empty");
@@ -34,7 +34,7 @@ namespace Lib
             }
         }
 
-        public delegate void textboxvalidate(object txtsender, object errorprovidersender, CancelEventArgs e, bool HasExplainingText = false, bool AllowMoving = false);
+        public delegate void textboxvalidate(object txtsender, object errorprovidersender, CancelEventArgs e , bool HasDefaultText);
 
         public static textboxvalidate ValidateTextBox = txtBox_Validating;
 

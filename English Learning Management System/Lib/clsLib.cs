@@ -47,6 +47,7 @@ namespace Lib
             }
             catch
             {
+                ChangeSpellVoice("Microsoft Zira Desktop");
                 SpellAWordLEGACY(Word);
             }
         }
