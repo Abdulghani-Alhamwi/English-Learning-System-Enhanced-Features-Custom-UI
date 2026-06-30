@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="English Learning Management System.exe" version="1.0.0.32" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="English Learning Management System.exe" version="1.0.0.36" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="Logo.ico" asmv2:publisher="Abdulghani" asmv2:product="English Learning Management System" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -63,7 +63,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>2rZJDIi69gbaYzDH05X0ZWwqdgOZdarGhABbB/PG4mE=</dsig:DigestValue>
+        <dsig:DigestValue>+YWXQQf+NJvBzJWy0VjQ4lAKK9tUj2Ff6IZ7Oart6P0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -121,22 +121,22 @@
       <dsig:DigestValue>0R281FA3tLfZUz3GSZV83CKeORG4R5a8FTXFg+nvSCg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Pre-Filled Files\ArabicTranslationWords.txt" size="16811">
+  <file name="Pre-Filled Files\ArabicTranslationWords.txt" size="17193">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>0urefioW2CJC/llyuP/icCLMH5ZlyzdpXDF20i5ZxiU=</dsig:DigestValue>
+      <dsig:DigestValue>W77//8WrMohrfvQ9cgs9gPBpt1Ij54/jWbEeQloHR2s=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Pre-Filled Files\EnglishWords.txt" size="8850">
+  <file name="Pre-Filled Files\EnglishWords.txt" size="9062">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>BPSLB7YJJbFQxC6C4ljylQ8f2ns3/cp8a7H8HlCmjRo=</dsig:DigestValue>
+      <dsig:DigestValue>lLjCLCM9/yi1a9hxndDk0I5M02D5xdjCTwyhmB6olWM=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

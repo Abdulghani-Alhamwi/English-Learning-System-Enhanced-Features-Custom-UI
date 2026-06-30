@@ -716,3 +716,17 @@ Issuance
 Renewal
 Detain
 Release
+Delegate
+Delegation
+Ordinary
+Agricultural
+Agricultural vehicles
+Ordinary driving license
+Tillage
+Machinery
+Tillage Machinery
+Handler
+Data Back Event Handler
+Person Selector
+Miscellaneous
+Enumerator

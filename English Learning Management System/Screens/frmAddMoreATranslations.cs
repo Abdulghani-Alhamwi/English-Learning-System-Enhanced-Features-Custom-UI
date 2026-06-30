@@ -74,11 +74,11 @@ namespace English_Learning_Management_System.Screens
         {
             if (!EditMode)
             {
-                if (_EnglishWord != "")
+                if (_EnglishWord != "" && _ArabicTranslation1 != "")
+               {
                     SaveEnglishWordsToFile(_EnglishWord, clsWord.FixedAppDataEnglishWordsLocation);
-
-                if (_ArabicTranslation1 != "")
                     _SaveArabicTranslations();
+               }
             }
             else
             {
