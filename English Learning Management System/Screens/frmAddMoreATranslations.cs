@@ -56,9 +56,10 @@ namespace English_Learning_Management_System.Screens
                 if (Result == DialogResult.OK)
                 {
                     clsWord.SaveArabicTranslationsToFile(_ArabicTranslation1, clsWord.FixedAppDataArabicTLocation, true);
+                    SaveEnglishWordsToFile(_EnglishWord, clsWord.FixedAppDataEnglishWordsLocation);
                     this.Close();
-                    return;
                 }
+                
             }
             else
             {
@@ -75,10 +76,8 @@ namespace English_Learning_Management_System.Screens
             if (!EditMode)
             {
                 if (_EnglishWord != "" && _ArabicTranslation1 != "")
-               {
-                    SaveEnglishWordsToFile(_EnglishWord, clsWord.FixedAppDataEnglishWordsLocation);
                     _SaveArabicTranslations();
-               }
+               
             }
             else
             {
