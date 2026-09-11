@@ -52,3 +52,4 @@ D:\My Projects\English-Learning-System-Enhanced-Features-Custom-UI\English Learn
 D:\My Projects\English-Learning-System-Enhanced-Features-Custom-UI\English Learning Management System\obj\Release\English .B1637C8A.Up2Date
 D:\My Projects\English-Learning-System-Enhanced-Features-Custom-UI\English Learning Management System\obj\Release\English Learning Management System.exe
 D:\My Projects\English-Learning-System-Enhanced-Features-Custom-UI\English Learning Management System\obj\Release\English Learning Management System.pdb
+D:\My Projects\English-Learning-System-Enhanced-Features-Custom-UI\English Learning Management System\bin\Release\ThirdPartyNotices\ThirdPartyNotices.txt

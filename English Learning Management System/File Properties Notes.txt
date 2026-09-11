@@ -1,0 +1,1 @@
+The file property build action if it is none it will be ignored when publishing and the file won't be with the published package like developers files for building project while the build action : content -> it includes the file in thje published package but it is not compiled with the exe
