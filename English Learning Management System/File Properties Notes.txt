@@ -1,1 +1,4 @@
-The file property build action if it is none it will be ignored when publishing and the file won't be with the published package like developers files for building project while the build action : content -> it includes the file in thje published package but it is not compiled with the exe
+The file property build action if it is none it will be ignored when publishing and the file won't be with the published package like developers files for building project while the build action : content -> it includes the file in the published package but it is not compiled with in the exe file
+
+
+To access the app data we can go to C:\Users\User\AppData then local or roaming and roaming data stays forever and even with updates for app with the local if we stored there then each update -> the app won't use the previous version user data therefore if we stored user data it will not appear for user in new version.
