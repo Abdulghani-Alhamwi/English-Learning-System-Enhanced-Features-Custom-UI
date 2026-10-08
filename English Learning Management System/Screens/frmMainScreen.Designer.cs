@@ -507,6 +507,7 @@
             this.ESpeakSelectedWords.TabIndex = 3;
             this.ESpeakSelectedWords.Text = "Speak Selected Words";
             this.ESpeakSelectedWords.UseVisualStyleBackColor = false;
+            this.ESpeakSelectedWords.Visible = false;
             this.ESpeakSelectedWords.Click += new System.EventHandler(this.ESpeakSelectedWords_Click);
             // 
             // makeAnyPartOfFormDraggable1

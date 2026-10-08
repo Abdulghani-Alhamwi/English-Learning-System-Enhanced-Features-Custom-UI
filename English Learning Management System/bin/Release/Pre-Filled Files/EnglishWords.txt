@@ -740,3 +740,12 @@ Chunk
 Application
 Favor
 Appreviated
+Camel Case Naming Style
+Parallelism
+Pagination
+Analogy
+Axis
+Tiered Compilation
+Credential
+blob
+Leak
