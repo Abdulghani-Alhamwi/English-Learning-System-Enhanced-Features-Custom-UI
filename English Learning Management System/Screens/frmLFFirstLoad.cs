@@ -1,14 +1,6 @@
 ﻿using Lib;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics.Eventing.Reader;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace English_Learning_Management_System.Screens
@@ -23,8 +15,14 @@ namespace English_Learning_Management_System.Screens
 
             string PreFilledEWordsFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Pre-Filled Files", "EnglishWords.txt");
             string PreFilledArabicTFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Pre-Filled Files", "ArabicTranslationWords.txt");
+            string FilesInitializerPath = Path.Combine(clsWord.FixedAppDataFile, "InitializePreFilledFiles.txt");
+            bool IsFirstTimeUsingApp = !File.Exists(FilesInitializerPath);
 
-            clsWord._CopyPreFilledFileToUserAppDataFile(PreFilledEWordsFilePath, PreFilledArabicTFilePath);
+            if (IsFirstTimeUsingApp)
+            {
+                clsWord._CopyPreFilledFileToUserAppDataFile(PreFilledEWordsFilePath, PreFilledArabicTFilePath);
+                File.Create(FilesInitializerPath);
+            }
 
             frmMain = new frmMainScreen(this);
             frmMain.Opacity = 0.0;

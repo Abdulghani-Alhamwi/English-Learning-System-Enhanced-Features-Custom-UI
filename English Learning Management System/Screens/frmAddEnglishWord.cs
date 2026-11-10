@@ -68,8 +68,6 @@ namespace English_Learning_Management_System.Screens
                         MessageBox.Show("Word added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
-                    txtBoxEnglishWord.Clear();
-                    txtArabicWord.Clear();
                     this.Close();
                 }
                 else
@@ -82,8 +80,6 @@ namespace English_Learning_Management_System.Screens
                         MessageBox.Show("Word updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         OnSavingOrUpdating?.Invoke(txtBoxEnglishWord.Text, txtArabicWord.Text, null, null, null);
 
-                        txtBoxEnglishWord.Clear();
-                        txtArabicWord.Clear();
                         this.Close();
                     }
                 }

@@ -571,9 +571,9 @@ namespace Lib
             if (File.Exists(FixedAppDataEnglishWordsLocation) && File.Exists(FixedAppDataArabicTLocation))
             {
                 List<string> lUserEnglishWords = clsWord.LoadEnglishWordsFromFile(FixedAppDataEnglishWordsLocation);
+                List<clsWord.stArabicTranslation> lUserArabicTranslations = clsWord.LoadArabicTranslationsFromFile(FixedAppDataArabicTLocation);
                 List<string> lPreFilledEnglishWords = clsWord.LoadEnglishWordsFromFile(PreFilledEnglishWordsFilePath);
                 List<clsWord.stArabicTranslation> PreFilledArabicTranslations = clsWord.LoadArabicTranslationsFromFile(PreFilledArabicTFilePath);
-                List<clsWord.stArabicTranslation> lUserArabicTranslations = clsWord.LoadArabicTranslationsFromFile(FixedAppDataArabicTLocation);
 
                 File.Delete(FixedAppDataEnglishWordsLocation);
                 File.Delete(FixedAppDataArabicTLocation);

@@ -74,7 +74,6 @@
             this.lblSystemVolume = new System.Windows.Forms.Label();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.ESpeakSelectedWords = new EnhancedControls.EnhancedButton();
-            this.makeAnyPartOfFormDraggable1 = new EnhancedControls.MakeAnyPartOfFormDraggable();
             this.btnAddENGWords = new EnhancedControls.EnhancedButton();
             this.btnExit = new EnhancedControls.EnhancedButton();
             this.lblTotalWords = new EnahncedControls.EnhancedLabel();
@@ -510,13 +509,6 @@
             this.ESpeakSelectedWords.Visible = false;
             this.ESpeakSelectedWords.Click += new System.EventHandler(this.ESpeakSelectedWords_Click);
             // 
-            // makeAnyPartOfFormDraggable1
-            // 
-            this.makeAnyPartOfFormDraggable1.ConstrainToScreen = false;
-            this.makeAnyPartOfFormDraggable1.DragSmoothingFactor = 0.3F;
-            this.makeAnyPartOfFormDraggable1.EnableSmoothDrag = true;
-            this.makeAnyPartOfFormDraggable1.ShowDragGlow = false;
-            // 
             // btnAddENGWords
             // 
             this.btnAddENGWords.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -706,7 +698,6 @@
         private System.Windows.Forms.ToolStripMenuItem deleteWordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteAllWordsToolStripMenuItem;
         private EnhancedControls.EnhancedButton ESpeakSelectedWords;
-        private EnhancedControls.MakeAnyPartOfFormDraggable makeAnyPartOfFormDraggable1;
         private EnhancedControls.EnhancedButton btnAddENGWords;
         private EnhancedControls.EnhancedButton btnExit;
         private EnahncedControls.EnhancedLabel lblTotalWords;

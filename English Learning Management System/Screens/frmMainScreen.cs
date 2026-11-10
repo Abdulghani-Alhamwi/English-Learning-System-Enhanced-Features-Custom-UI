@@ -8,7 +8,6 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using static System.Windows.Forms.ListViewItem;
 
 namespace English_Learning_Management_System
 {
@@ -159,7 +158,6 @@ namespace English_Learning_Management_System
             if(UpdateMode)
             {
                 _CheckWords(UpdateMode,lWordsIds);
-                return;
             }
             ListViewItem Item;
 
@@ -199,7 +197,7 @@ namespace English_Learning_Management_System
                             if (Counter == CheckedWordsID[i])
                             {
                                 Item.BackColor = Color.Green;
-                                for (short j = 0; i < lArabicTranslations.Count(); i++)
+                                for (short j = 0; j < lArabicTranslations.Count(); j++)
                                 {
                                     Item.SubItems[j].BackColor = Color.Green;
                                 }
@@ -766,9 +764,9 @@ namespace English_Learning_Management_System
             else
                  frmAddWords = new frmAddEnglishWord(true, lstvWords.SelectedItems[0].Text, lstvWords.SelectedItems[0].SubItems[1].Text, lstvWords.SelectedItems[0].SubItems[2].Text, lstvWords.SelectedItems[0].SubItems[3].Text, lstvWords.SelectedItems[0].SubItems[4].Text);
 
-            List<int> lWordsIds = clsWord.LoadCheckedWordsIdFromFile(clsWord.FixedCheckedWordsFileLocation);
+            List<int> lCheckedWordsIds = clsWord.LoadCheckedWordsIdFromFile(clsWord.FixedCheckedWordsFileLocation);
             frmAddWords.ShowDialog();
-            AddWordsToListView(true);
+            AddWordsToListView(true,true,lCheckedWordsIds);
         }
         bool IsScale100()
         {
