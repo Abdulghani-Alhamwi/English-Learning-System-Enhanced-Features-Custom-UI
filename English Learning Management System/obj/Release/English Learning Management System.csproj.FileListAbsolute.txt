@@ -40,7 +40,6 @@ D:\My Projects\English-Learning-System-Enhanced-Features-Custom-UI\English Learn
 D:\My Projects\English-Learning-System-Enhanced-Features-Custom-UI\English Learning Management System\obj\Release\English Learning Management System.csproj.AssemblyReference.cache
 D:\My Projects\English-Learning-System-Enhanced-Features-Custom-UI\English Learning Management System\obj\Release\English_Learning_Management_System.Screens.frmEnglishWordsPresentaion.resources
 D:\My Projects\English-Learning-System-Enhanced-Features-Custom-UI\English Learning Management System\obj\Release\English_Learning_Management_System.Screens.frmAddMoreATransaltions.resources
-D:\My Projects\English-Learning-System-Enhanced-Features-Custom-UI\English Learning Management System\obj\Release\English_Learning_Management_System.Screens.frmAddEnglishWord.resources
 D:\My Projects\English-Learning-System-Enhanced-Features-Custom-UI\English Learning Management System\obj\Release\English_Learning_Management_System.Screens.frmExample.resources
 D:\My Projects\English-Learning-System-Enhanced-Features-Custom-UI\English Learning Management System\obj\Release\English_Learning_Management_System.Screens.frmLFFirstLoad.resources
 D:\My Projects\English-Learning-System-Enhanced-Features-Custom-UI\English Learning Management System\obj\Release\English_Learning_Management_System.Properties.Resources.resources
@@ -53,3 +52,4 @@ D:\My Projects\English-Learning-System-Enhanced-Features-Custom-UI\English Learn
 D:\My Projects\English-Learning-System-Enhanced-Features-Custom-UI\English Learning Management System\obj\Release\English Learning Management System.exe
 D:\My Projects\English-Learning-System-Enhanced-Features-Custom-UI\English Learning Management System\obj\Release\English Learning Management System.pdb
 D:\My Projects\English-Learning-System-Enhanced-Features-Custom-UI\English Learning Management System\bin\Release\ThirdPartyNotices\ThirdPartyNotices.txt
+D:\My Projects\English-Learning-System-Enhanced-Features-Custom-UI\English Learning Management System\obj\Release\English_Learning_Management_System.Screens.frmAddUpdateEnglishWord.resources

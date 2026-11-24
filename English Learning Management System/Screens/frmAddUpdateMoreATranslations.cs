@@ -10,14 +10,14 @@ namespace English_Learning_Management_System.Screens
     {
 
         private string _EnglishWord, _ArabicTranslation1;
-        frmAddEnglishWord FormToHandleClose;
+        frmAddUpdateEnglishWord FormToHandleClose;
 
         bool EditMode = false;
         string OldWord;
 
         public event Action<string,string,string,string,string> OnSavingOrUpdatingInfo;
 
-        public frmAddMoreATransaltions(frmAddEnglishWord frm, string EnglshWord, string ArabicTranslation1, string OldSelectedWord = null, bool EditWordMode = false, string Translation2 = null, string Translation3 = null, string Translation4 = null)
+        public frmAddMoreATransaltions(frmAddUpdateEnglishWord frm, string EnglshWord, string ArabicTranslation1, string OldSelectedWord = null, bool EditWordMode = false, string Translation2 = null, string Translation3 = null, string Translation4 = null)
         {
             InitializeComponent();
             clsLib.ChangeFormProperties(this, Convert.ToInt16(this.Width), Convert.ToInt16(this.Height));

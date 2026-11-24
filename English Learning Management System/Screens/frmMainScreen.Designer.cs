@@ -80,6 +80,7 @@
             this.btnSearch = new EnhancedControls.EnhancedButton();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.tFoundedSearchedItem = new System.Windows.Forms.Timer(this.components);
+            this.btnChangeListColors = new EnhancedControls.EnhancedButton();
             this.WordsListViewContextMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
@@ -623,6 +624,30 @@
             this.tFoundedSearchedItem.Interval = 2000;
             this.tFoundedSearchedItem.Tick += new System.EventHandler(this.tFoundedSearchedItem_Tick);
             // 
+            // btnChangeListColors
+            // 
+            this.btnChangeListColors.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnChangeListColors.BackColor = System.Drawing.Color.Transparent;
+            this.btnChangeListColors.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnChangeListColors.BorderRadius = 30;
+            this.btnChangeListColors.BorderSize = 1;
+            this.btnChangeListColors.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnChangeListColors.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnChangeListColors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeListColors.FocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnChangeListColors.Font = new System.Drawing.Font("Cairo", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.btnChangeListColors.ForeColor = System.Drawing.Color.White;
+            this.btnChangeListColors.GradientEndColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnChangeListColors.GradientStartColor = System.Drawing.Color.OliveDrab;
+            this.btnChangeListColors.Location = new System.Drawing.Point(66, 794);
+            this.btnChangeListColors.Margin = new System.Windows.Forms.Padding(5);
+            this.btnChangeListColors.Name = "btnChangeListColors";
+            this.btnChangeListColors.Size = new System.Drawing.Size(502, 62);
+            this.btnChangeListColors.TabIndex = 24;
+            this.btnChangeListColors.Text = "Change List Back Color";
+            this.btnChangeListColors.UseVisualStyleBackColor = false;
+            this.btnChangeListColors.Visible = false;
+            // 
             // frmMainScreen
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -630,6 +655,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1890, 1044);
+            this.Controls.Add(this.btnChangeListColors);
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnSearch);
@@ -707,5 +733,6 @@
         private System.Windows.Forms.TextBox txtSearch;
         private EnhancedControls.EnhancedButton btnSearch;
         private System.Windows.Forms.Timer tFoundedSearchedItem;
+        private EnhancedControls.EnhancedButton btnChangeListColors;
     }
 }

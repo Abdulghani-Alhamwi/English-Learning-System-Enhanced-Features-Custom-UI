@@ -7,7 +7,7 @@ using static Lib.clsWord;
 
 namespace English_Learning_Management_System.Screens
 {
-    public partial class frmAddEnglishWord : Form
+    public partial class frmAddUpdateEnglishWord : Form
     {
         bool EditWordMode = false;
         string OldSelectedWord;
@@ -19,7 +19,7 @@ namespace English_Learning_Management_System.Screens
         public event Action<string, string, string, string, string> OnSavingOrUpdating;
 
         internal stArabicTranslation ArTranslations;
-        public frmAddEnglishWord(bool EditWord = false, string OldWord = null,string Translation1=null, string Translation2 = null, string Translation3 = null, string Translation4 = null)
+        public frmAddUpdateEnglishWord(bool EditWord = false, string OldWord = null,string Translation1=null, string Translation2 = null, string Translation3 = null, string Translation4 = null)
         {
             InitializeComponent();
             clsLib.ChangeFormProperties(this, Convert.ToInt16(this.Width), Convert.ToInt16(this.Height));
@@ -58,6 +58,7 @@ namespace English_Learning_Management_System.Screens
                 this.Close();
                 return;
             }
+
             if ((txtBoxEnglishWord.Text != "" && txtBoxEnglishWord.Text != "Enter English Word/s") && (txtArabicWord.Text != "" && txtArabicWord.Text != "Enter Arabic Translation"))
             {
                 if (!EditWordMode)

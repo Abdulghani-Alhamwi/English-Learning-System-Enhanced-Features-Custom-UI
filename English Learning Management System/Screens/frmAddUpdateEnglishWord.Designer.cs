@@ -1,6 +1,6 @@
 ﻿namespace English_Learning_Management_System.Screens
 {
-    partial class frmAddEnglishWord
+    partial class frmAddUpdateEnglishWord
     {
         /// <summary>
         /// Required designer variable.

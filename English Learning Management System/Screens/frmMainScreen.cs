@@ -4,9 +4,12 @@ using Microsoft.Speech.Synthesis;
 using NAudio.CoreAudioApi;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace English_Learning_Management_System
@@ -44,7 +47,7 @@ namespace English_Learning_Management_System
         }
 
 
-        internal static async void AddCheckedWordToFile(string FileName, int WordID)
+        internal static async void AddCheckedWordsToFile(string FileName, int WordID)
         {
             using (StreamWriter MyFile = new StreamWriter(FileName, true))
             {
@@ -83,7 +86,7 @@ namespace English_Learning_Management_System
                 }
                 if (!FoundSelectedItem)
                 {
-                    AddCheckedWordToFile(clsWord.FixedCheckedWordsFileLocation, lCheckedWordsID[i]);
+                    AddCheckedWordsToFile(clsWord.FixedCheckedWordsFileLocation, lCheckedWordsID[i]);
                 }
                 FoundSelectedItem = false;
             }
@@ -126,27 +129,32 @@ namespace English_Learning_Management_System
 
                 for (int i = 0; i < lstvWords.SelectedItems.Count; i++)
                 {
-                    AddCheckedWordToFile(clsWord.FixedCheckedWordsFileLocation, GetWordID(lstvWords.SelectedItems[i].Text));
-                    lstvWords.SelectedItems[i].BackColor = Color.Green;
+                    if (lstvWords.SelectedItems[i].BackColor != Color.Green)
+                    {
+                        AddCheckedWordsToFile(clsWord.FixedCheckedWordsFileLocation, GetWordID(lstvWords.SelectedItems[i].Text));
 
-                    for (int j = 0; j < lstvWords.SelectedItems[i].SubItems.Count; j++)
-                        lstvWords.SelectedItems[i].SubItems[j].BackColor = Color.Green;
+                        lstvWords.SelectedItems[i].BackColor = Color.Green;
 
+                        for (int j = 0; j < lstvWords.SelectedItems[i].SubItems.Count; j++)
+                        {
+                            lstvWords.SelectedItems[i].SubItems[j].BackColor = Color.Green;
+                        }
+                    }
+                }
+
+                for (int i = 0; i < lstvWords.SelectedItems.Count;)
+                {
+                    lstvWords.SelectedItems[i].Selected = false;
                 }
             }
+
             else
             {
                 if (lWordsIds != null)
                 {
                     for (int i = 0; i < lWordsIds.Count; i++)
                     {
-                        AddCheckedWordToFile(clsWord.FixedCheckedWordsFileLocation, lWordsIds[i]);
-
-
-                        lstvWords.Items[lWordsIds[i]].BackColor = Color.Green;
-
-                        for (int j = 0; j < lstvWords.Items[lWordsIds[i]].SubItems.Count; j++)
-                            lstvWords.Items[lWordsIds[i]].SubItems[j].BackColor = Color.Green;
+                        AddCheckedWordsToFile(clsWord.FixedCheckedWordsFileLocation, lWordsIds[i]);
                     }
                 }
             }
@@ -210,6 +218,7 @@ namespace English_Learning_Management_System
 
                     Counter++;
                 }
+
         }
         private void frmMainScreen_Load(object sender, EventArgs e)
         {
@@ -756,16 +765,17 @@ namespace English_Learning_Management_System
 
             Form frmAddWords;
             if (lstvWords.SelectedItems[0].SubItems.Count==2)
-                frmAddWords = new frmAddEnglishWord(true, lstvWords.SelectedItems[0].Text, lstvWords.SelectedItems[0].SubItems[1].Text);
+                frmAddWords = new frmAddUpdateEnglishWord(true, lstvWords.SelectedItems[0].Text, lstvWords.SelectedItems[0].SubItems[1].Text);
             else if(lstvWords.SelectedItems[0].SubItems.Count==3)
-                 frmAddWords = new frmAddEnglishWord(true, lstvWords.SelectedItems[0].Text, lstvWords.SelectedItems[0].SubItems[1].Text, lstvWords.SelectedItems[0].SubItems[2].Text);
+                 frmAddWords = new frmAddUpdateEnglishWord(true, lstvWords.SelectedItems[0].Text, lstvWords.SelectedItems[0].SubItems[1].Text, lstvWords.SelectedItems[0].SubItems[2].Text);
             else if(lstvWords.SelectedItems[0].SubItems.Count==4)
-                 frmAddWords = new frmAddEnglishWord(true, lstvWords.SelectedItems[0].Text, lstvWords.SelectedItems[0].SubItems[1].Text, lstvWords.SelectedItems[0].SubItems[2].Text, lstvWords.SelectedItems[0].SubItems[3].Text);
+                 frmAddWords = new frmAddUpdateEnglishWord(true, lstvWords.SelectedItems[0].Text, lstvWords.SelectedItems[0].SubItems[1].Text, lstvWords.SelectedItems[0].SubItems[2].Text, lstvWords.SelectedItems[0].SubItems[3].Text);
             else
-                 frmAddWords = new frmAddEnglishWord(true, lstvWords.SelectedItems[0].Text, lstvWords.SelectedItems[0].SubItems[1].Text, lstvWords.SelectedItems[0].SubItems[2].Text, lstvWords.SelectedItems[0].SubItems[3].Text, lstvWords.SelectedItems[0].SubItems[4].Text);
+                 frmAddWords = new frmAddUpdateEnglishWord(true, lstvWords.SelectedItems[0].Text, lstvWords.SelectedItems[0].SubItems[1].Text, lstvWords.SelectedItems[0].SubItems[2].Text, lstvWords.SelectedItems[0].SubItems[3].Text, lstvWords.SelectedItems[0].SubItems[4].Text);
 
             List<int> lCheckedWordsIds = clsWord.LoadCheckedWordsIdFromFile(clsWord.FixedCheckedWordsFileLocation);
             frmAddWords.ShowDialog();
+
             AddWordsToListView(true,true,lCheckedWordsIds);
         }
         bool IsScale100()
@@ -823,7 +833,7 @@ namespace English_Learning_Management_System
 
         private void btnAddENGWords_Click(object sender, EventArgs e)
         {
-            frmAddEnglishWord frmAddWords = new frmAddEnglishWord();
+            frmAddUpdateEnglishWord frmAddWords = new frmAddUpdateEnglishWord();
             frmAddWords.OnSavingOrUpdating += AddNewWordToListView;
             frmAddWords.ShowDialog();
         }

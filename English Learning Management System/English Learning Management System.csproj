@@ -29,7 +29,7 @@
     <ProductName>English Learning Management System</ProductName>
     <PublisherName>Abdulghani</PublisherName>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>48</ApplicationRevision>
+    <ApplicationRevision>49</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -159,17 +159,17 @@
     <Compile Include="Screens\frmExample.Designer.cs">
       <DependentUpon>frmExample.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\frmAddMoreATranslations.cs">
+    <Compile Include="Screens\frmAddUpdateMoreATranslations.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\frmAddMoreATranslations.Designer.cs">
-      <DependentUpon>frmAddMoreATranslations.cs</DependentUpon>
+    <Compile Include="Screens\frmAddUpdateMoreATranslations.Designer.cs">
+      <DependentUpon>frmAddUpdateMoreATranslations.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\frmAddEnglishWord.cs">
+    <Compile Include="Screens\frmAddUpdateEnglishWord.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\frmAddEnglishWord.Designer.cs">
-      <DependentUpon>frmAddEnglishWord.cs</DependentUpon>
+    <Compile Include="Screens\frmAddUpdateEnglishWord.Designer.cs">
+      <DependentUpon>frmAddUpdateEnglishWord.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\frmLFFirstLoad.cs">
       <SubType>Form</SubType>
@@ -191,11 +191,11 @@
     <EmbeddedResource Include="Screens\frmEnglishWordsPresentaion.resx">
       <DependentUpon>frmEnglishWordsPresentaion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\frmAddMoreATranslations.resx">
-      <DependentUpon>frmAddMoreATranslations.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\frmAddUpdateMoreATranslations.resx">
+      <DependentUpon>frmAddUpdateMoreATranslations.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\frmAddEnglishWord.resx">
-      <DependentUpon>frmAddEnglishWord.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\frmAddUpdateEnglishWord.resx">
+      <DependentUpon>frmAddUpdateEnglishWord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmExample.resx">
       <DependentUpon>frmExample.cs</DependentUpon>

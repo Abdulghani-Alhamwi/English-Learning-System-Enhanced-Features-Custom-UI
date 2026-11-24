@@ -711,3 +711,71 @@ in this regard
 Extensive
 Resulting in
 Constructs
+Constantly
+Issuance
+Renewal
+Detain
+Release
+Delegate
+Delegation
+Ordinary
+Agricultural
+Agricultural vehicles
+Ordinary driving license
+Tillage
+Machinery
+Tillage Machinery
+Handler
+Data Back Event Handler
+Person Selector
+Miscellaneous
+Enumerator
+Phases
+Headline
+Phase
+Stub
+Placeholder
+Hashing
+Chunk
+Application
+Favor
+Appreviated
+Camel Case Naming Style
+Parallelism
+Pagination
+Analogy
+Axis
+Tiered Compilation
+Credential
+blob
+Leak
+Webinars
+Territories
+fulfilling
+Affordable
+Degree-granting programs
+Accredited
+Spot on
+Course syllabu
+Race Conditions
+Dependency Injection
+Inversion of Control (IoC)
+Oriented
+Validating my ability to
+Workflows
+Workflow
+Loosely Coupled
+Event Handler Helps making the code loosely coupled
+Thermostat
+Gadgets
+hitting the market
+Weekend
+Weather Forecast
+Final Edition
+Breaking News
+News Publisher
+Tightly Coupled
+Logger
+Observer Pattern
+Multicast Delegate
+Event-Driven Programming

@@ -270,9 +270,9 @@ namespace Lib
                 for (int j = 0; j < lCheckedWordsIds.Count; j++)
                 {
                     if ((SelectedWordLocation < lCheckedWordsIds[j]))
-                        frmMainScreen.AddCheckedWordToFile(FixedCheckedWordsFileLocation, lCheckedWordsIds[j] - 1);
+                        frmMainScreen.AddCheckedWordsToFile(FixedCheckedWordsFileLocation, lCheckedWordsIds[j] - 1);
                     else 
-                        frmMainScreen.AddCheckedWordToFile(FixedCheckedWordsFileLocation, lCheckedWordsIds[j]);
+                        frmMainScreen.AddCheckedWordsToFile(FixedCheckedWordsFileLocation, lCheckedWordsIds[j]);
 
                 }
             }
