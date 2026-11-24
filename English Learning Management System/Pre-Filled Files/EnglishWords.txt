@@ -494,7 +494,6 @@ Maintainable
 Reserved Words
 Specify
 Override
-Immutable
 Validity
 Separate
 Separation
@@ -829,7 +828,6 @@ Sweep
 Allocate
 Ultimately
 Mutable
-Immutable
 One-off operations
 Crucial
 Pros

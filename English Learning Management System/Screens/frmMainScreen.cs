@@ -4,12 +4,9 @@ using Microsoft.Speech.Synthesis;
 using NAudio.CoreAudioApi;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace English_Learning_Management_System
@@ -172,7 +169,6 @@ namespace English_Learning_Management_System
             List<string> lWords = clsWord.LoadEnglishWordsFromFile(clsWord.FixedAppDataEnglishWordsLocation);
             List<clsWord.stArabicTranslation> lWordsTranslations = clsWord.LoadArabicTranslationsFromFile(clsWord.FixedAppDataArabicTLocation);
             List<int> CheckedWordsID = clsWord.LoadCheckedWordsIdFromFile(clsWord.FixedCheckedWordsFileLocation);
-
 
             lblTotalWords.Text = "Total Words : " + lWords.Count();
 
